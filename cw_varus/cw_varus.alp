@@ -260,7 +260,7 @@
 				<Connector>
 					<Id>1717083404651</Id>
 					<Name><![CDATA[connector15]]></Name>
-					<X>645</X><Y>680</Y>
+					<X>640</X><Y>680</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>false</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -287,13 +287,13 @@
 					</TargetConnectableItemReference>
 					<Points>
 						<Point><X>0</X><Y>0</Y></Point>
-						<Point><X>-60</X><Y>0</Y></Point>
+						<Point><X>-40</X><Y>0</Y></Point>
 					</Points>
 				</Connector>
 				<Connector>
 					<Id>1717083404659</Id>
 					<Name><![CDATA[connector16]]></Name>
-					<X>545</X><Y>680</Y>
+					<X>560</X><Y>680</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>false</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -320,7 +320,7 @@
 					</TargetConnectableItemReference>
 					<Points>
 						<Point><X>0</X><Y>0</Y></Point>
-						<Point><X>-20</X><Y>0</Y></Point>
+						<Point><X>-35</X><Y>0</Y></Point>
 					</Points>
 				</Connector>
 				<Connector>
@@ -595,7 +595,7 @@
 				<Connector>
 					<Id>1717156250083</Id>
 					<Name><![CDATA[connector13]]></Name>
-					<X>685</X><Y>680</Y>
+					<X>680</X><Y>680</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>false</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -622,10 +622,10 @@
 					</TargetConnectableItemReference>
 					<Points>
 						<Point><X>0</X><Y>0</Y></Point>
-						<Point><X>30</X><Y>0</Y></Point>
-						<Point><X>30</X><Y>50</Y></Point>
-						<Point><X>-530</X><Y>50</Y></Point>
-						<Point><X>-530</X><Y>100</Y></Point>
+						<Point><X>35</X><Y>0</Y></Point>
+						<Point><X>35</X><Y>50</Y></Point>
+						<Point><X>-525</X><Y>50</Y></Point>
+						<Point><X>-525</X><Y>100</Y></Point>
 					</Points>
 				</Connector>
 				<Connector>
@@ -777,6 +777,44 @@
 	}
 }]]></Action>
 				</Event>
+				<Event>
+					<Id>1717170782746</Id>
+					<Name><![CDATA[enter_school]]></Name>
+					<X>790</X><Y>980</Y>
+					<Label><X>10</X><Y>0</Y></Label>
+					<PublicFlag>false</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>true</ShowLabel>
+					<Properties TriggerType="timeout" Mode="cyclic">
+						<Timeout Class="CodeUnitValue">
+							<Code><![CDATA[1]]></Code>
+							<Unit Class="TimeUnits"><![CDATA[HOUR]]></Unit>
+						</Timeout>
+						<Rate Class="CodeUnitValue">
+							<Code><![CDATA[1]]></Code>
+							<Unit Class="RateUnits"><![CDATA[PER_HOUR]]></Unit>
+						</Rate>
+						<OccurrenceAtTime>false</OccurrenceAtTime>
+						<OccurrenceDate>1272702000000</OccurrenceDate>
+						<OccurrenceTime Class="CodeUnitValue">
+							<Code><![CDATA[0]]></Code>
+							<Unit Class="TimeUnits"><![CDATA[HOUR]]></Unit>
+						</OccurrenceTime>
+						<RecurrenceCode Class="CodeUnitValue">
+							<Code><![CDATA[1]]></Code>
+							<Unit Class="TimeUnits"><![CDATA[DAY]]></Unit>
+						</RecurrenceCode>
+						<Condition><![CDATA[false]]></Condition>
+					</Properties>
+					<Action><![CDATA[if (working_days.getValue()) {
+	for (Student student : students) {
+		if (student.is_healthy_for_school()) {
+			enter.take(student);
+		}
+	}
+}
+]]></Action>
+				</Event>
 			</Events>
 			<Functions>
 				<Function AccessType="default" StaticFunction="false">
@@ -889,34 +927,29 @@ if (bernoulli(factor) == 1) {
 							<ValueColumnReference>
 							</ValueColumnReference>
 					</IntervalsQuery>
-					<Action><![CDATA[for (Student student : students) {
-	if (student.is_healthy_for_school()) {
-		enter.take(student);
-	}
-}]]></Action>
 					<Intervals>
 						<Interval>
-							<Start>30600000</Start>
+							<Start>29940000</Start>
 							<End>45000000</End>
 							<Value>true</Value>
 						</Interval>
 						<Interval>
-							<Start>117000000</Start>
+							<Start>116340000</Start>
 							<End>131400000</End>
 							<Value>true</Value>
 						</Interval>
 						<Interval>
-							<Start>203400000</Start>
+							<Start>202740000</Start>
 							<End>217800000</End>
 							<Value>true</Value>
 						</Interval>
 						<Interval>
-							<Start>289800000</Start>
+							<Start>289140000</Start>
 							<End>304200000</End>
 							<Value>true</Value>
 						</Interval>
 						<Interval>
-							<Start>376200000</Start>
+							<Start>375540000</Start>
 							<End>390600000</End>
 							<Value>true</Value>
 						</Interval>
@@ -1735,7 +1768,7 @@ if (bernoulli(factor) == 1) {
 				<EmbeddedObject>
 					<Id>1717083294469</Id>
 					<Name><![CDATA[sch_break]]></Name>
-					<X>645</X><Y>660</Y>
+					<X>640</X><Y>660</Y>
 					<Label><X>0</X><Y>-10</Y></Label>
 					<PublicFlag>false</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -1910,7 +1943,7 @@ if (bernoulli(factor) == 1) {
 				<EmbeddedObject>
 					<Id>1717083403090</Id>
 					<Name><![CDATA[mv_to_hall]]></Name>
-					<X>545</X><Y>660</Y>
+					<X>560</X><Y>660</Y>
 					<Label><X>-10</X><Y>-10</Y></Label>
 					<PublicFlag>false</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -9187,7 +9220,7 @@ if (bernoulli(factor) == 1) {
 					<Name><![CDATA[window3d]]></Name>
 					<X>40</X><Y>980</Y>
 					<Width>600</Width>
-					<Height>350</Height>
+					<Height>570</Height>
 					<MakeDefaultViewArea>true</MakeDefaultViewArea>
 					<Label><X>0</X><Y>-10</Y></Label>
 					<ShowLabel>false</ShowLabel>
@@ -9458,7 +9491,7 @@ if (bernoulli(factor) == 1) {
 						<UnitType><![CDATA[NONE]]></UnitType>
 						<SdArray>false</SdArray>
 						<DefaultValue Class="CodeValue">
-							<Code><![CDATA[0.01]]></Code>
+							<Code><![CDATA[0.02]]></Code>
 						</DefaultValue>
 						<ParameterEditor>
 							<Id>1717079374211</Id>
@@ -9626,7 +9659,7 @@ is_infectious = false;]]></EntryAction>
 					<PresentationFlag>true</PresentationFlag>
 					<ShowLabel>true</ShowLabel>
 					<Properties Width="100" Height="30">
-						<EntryAction><![CDATA[boy.setColor("Material__5__Surf", new Color(200, 0, 0));
+						<EntryAction><![CDATA[boy.setColor("Material__5__Surf", new Color(255, 0, 255));
 contagiousness = P_contagiousness;
 is_infectious = true;]]></EntryAction>
 						<FillColor/>
@@ -9896,42 +9929,11 @@ return 0;]]></Body>
 					<ShowLabel>true</ShowLabel>
 					<Body><![CDATA[cr_grade = -1;
 infected_dates.clear();
+transmitted_dates.clear();
 contagiousness = 0;
 severity = 0;
 is_vaccinated = (bernoulli(P_vaccinated) == 1) ? true : false;
 ]]></Body>
-				</Function>
-				<Function AccessType="default" StaticFunction="false">
-					<ReturnModificator>RETURNS_VALUE</ReturnModificator>
-					<ReturnType><![CDATA[boolean]]></ReturnType>
-					<Id>1717155313931</Id>
-					<Name><![CDATA[going_to_pe]]></Name>
-					<X>1104</X><Y>104.80000000000001</Y>
-					<Label><X>10</X><Y>0</Y></Label>
-					<PublicFlag>false</PublicFlag>
-					<PresentationFlag>true</PresentationFlag>
-					<ShowLabel>true</ShowLabel>
-					<Parameter>
-						<Name><![CDATA[student]]></Name>
-						<Type><![CDATA[Student]]></Type>
-					</Parameter>
-					<Body><![CDATA[int day = getDayOfWeek();
-
-if (student.attended_classes > 0) {
-	return false;
-}
-
-if (student.cr_grade < 2) {
-	if (day == MONDAY || day == WEDNESDAY) {
-		return true;
-	}
-} else {
-	if (day == TUESDAY || day == THURSDAY) {
-		return true;
-	}
-}
-
-return false;]]></Body>
 				</Function>
 				<Function AccessType="default" StaticFunction="false">
 					<ReturnModificator>RETURNS_VALUE</ReturnModificator>
@@ -10126,7 +10128,7 @@ transmitted_dates.add(time());]]></Body>
 	<TimeAccuracy>1.0E-5</TimeAccuracy>
 	<Frame>
 		<Width>1600</Width>
-		<Height>1400</Height>
+		<Height>1600</Height>
 	</Frame>
 	<Database>
 		<Logging>false</Logging>
