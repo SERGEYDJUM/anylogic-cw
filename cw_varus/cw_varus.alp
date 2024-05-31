@@ -683,16 +683,16 @@
 						<OccurrenceAtTime>true</OccurrenceAtTime>
 						<OccurrenceDate>1717228800000</OccurrenceDate>
 						<OccurrenceTime Class="CodeUnitValue">
-							<Code><![CDATA[10]]></Code>
+							<Code><![CDATA[20]]></Code>
 							<Unit Class="TimeUnits"><![CDATA[MINUTE]]></Unit>
 						</OccurrenceTime>
 						<RecurrenceCode Class="CodeUnitValue">
 							<Code><![CDATA[1]]></Code>
-							<Unit Class="TimeUnits"><![CDATA[WEEK]]></Unit>
+							<Unit Class="TimeUnits"><![CDATA[MONTH]]></Unit>
 						</RecurrenceCode>
 						<Condition><![CDATA[false]]></Condition>
 					</Properties>
-					<Action><![CDATA[send("CatchDesease", randomFrom(students, s -> !s.is_vaccinated));]]></Action>
+					<Action><![CDATA[send("CatchDesease", randomFrom(students));]]></Action>
 				</Event>
 				<Event>
 					<Id>1717159946794</Id>
@@ -738,7 +738,7 @@
 				<Event>
 					<Id>1717170782746</Id>
 					<Name><![CDATA[enter_school]]></Name>
-					<X>790</X><Y>980</Y>
+					<X>790</X><Y>920</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>false</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -752,11 +752,11 @@
 							<Code><![CDATA[1]]></Code>
 							<Unit Class="RateUnits"><![CDATA[PER_HOUR]]></Unit>
 						</Rate>
-						<OccurrenceAtTime>false</OccurrenceAtTime>
+						<OccurrenceAtTime>true</OccurrenceAtTime>
 						<OccurrenceDate>1283329200000</OccurrenceDate>
 						<OccurrenceTime Class="CodeUnitValue">
-							<Code><![CDATA[0]]></Code>
-							<Unit Class="TimeUnits"><![CDATA[HOUR]]></Unit>
+							<Code><![CDATA[20]]></Code>
+							<Unit Class="TimeUnits"><![CDATA[MINUTE]]></Unit>
 						</OccurrenceTime>
 						<RecurrenceCode Class="CodeUnitValue">
 							<Code><![CDATA[1]]></Code>
@@ -774,9 +774,9 @@
 ]]></Action>
 				</Event>
 				<Event>
-					<Id>1717173659751</Id>
-					<Name><![CDATA[september_enrollment]]></Name>
-					<X>790</X><Y>930</Y>
+					<Id>1717176214982</Id>
+					<Name><![CDATA[enroll]]></Name>
+					<X>790</X><Y>970</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>false</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -790,11 +790,11 @@
 							<Code><![CDATA[1]]></Code>
 							<Unit Class="RateUnits"><![CDATA[PER_HOUR]]></Unit>
 						</Rate>
-						<OccurrenceAtTime>false</OccurrenceAtTime>
-						<OccurrenceDate>1283328000000</OccurrenceDate>
+						<OccurrenceAtTime>true</OccurrenceAtTime>
+						<OccurrenceDate>1717228800000</OccurrenceDate>
 						<OccurrenceTime Class="CodeUnitValue">
-							<Code><![CDATA[1]]></Code>
-							<Unit Class="TimeUnits"><![CDATA[YEAR]]></Unit>
+							<Code><![CDATA[10]]></Code>
+							<Unit Class="TimeUnits"><![CDATA[MINUTE]]></Unit>
 						</OccurrenceTime>
 						<RecurrenceCode Class="CodeUnitValue">
 							<Code><![CDATA[1]]></Code>
@@ -10340,7 +10340,7 @@ transmitted_dates.add(time());]]></Body>
 			</PresentationProperties>
 			<ModelTimeProperties>
 				<StopOption><![CDATA[Never]]></StopOption>
-				<InitialDate><![CDATA[1283324400000]]></InitialDate>	
+				<InitialDate><![CDATA[1717143000000]]></InitialDate>	
 				<InitialTime><![CDATA[0.0]]></InitialTime>	
 				<FinalDate><![CDATA[1693526400000]]></FinalDate>	
 				<FinalTime><![CDATA[113945.0]]></FinalTime>	
