@@ -664,48 +664,6 @@
 			</Connectors>
 			<Events>
 				<Event>
-					<Id>1717151281943</Id>
-					<Name><![CDATA[september_enrollment]]></Name>
-					<X>790</X><Y>930</Y>
-					<Label><X>10</X><Y>0</Y></Label>
-					<PublicFlag>false</PublicFlag>
-					<PresentationFlag>true</PresentationFlag>
-					<ShowLabel>true</ShowLabel>
-					<Properties TriggerType="timeout" Mode="cyclic">
-						<Timeout Class="CodeUnitValue">
-							<Code><![CDATA[1]]></Code>
-							<Unit Class="TimeUnits"><![CDATA[HOUR]]></Unit>
-						</Timeout>
-						<Rate Class="CodeUnitValue">
-							<Code><![CDATA[1]]></Code>
-							<Unit Class="RateUnits"><![CDATA[PER_HOUR]]></Unit>
-						</Rate>
-						<OccurrenceAtTime>false</OccurrenceAtTime>
-						<OccurrenceDate>1283324400000</OccurrenceDate>
-						<OccurrenceTime Class="CodeUnitValue">
-							<Code><![CDATA[0]]></Code>
-							<Unit Class="TimeUnits"><![CDATA[HOUR]]></Unit>
-						</OccurrenceTime>
-						<RecurrenceCode Class="CodeUnitValue">
-							<Code><![CDATA[1]]></Code>
-							<Unit Class="TimeUnits"><![CDATA[YEAR]]></Unit>
-						</RecurrenceCode>
-						<Condition><![CDATA[false]]></Condition>
-					</Properties>
-					<Action><![CDATA[for (int i = 0; i < students.size(); i++) {
-	if (students(i).cr_grade == -1) {
-		students(i).reset();
-		students(i).cr_grade = i / 30;
-	} else {
-		if (students(i).cr_grade == 3) {
-			students(i).reset();
-			students(i).cr_grade = 0;
-		}
-		students(i).cr_grade += 1;
-	}
-}]]></Action>
-				</Event>
-				<Event>
 					<Id>1717159712582</Id>
 					<Name><![CDATA[create_patient_zero]]></Name>
 					<X>790</X><Y>880</Y>
@@ -713,7 +671,7 @@
 					<PublicFlag>false</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
 					<ShowLabel>true</ShowLabel>
-					<Properties TriggerType="timeout" Mode="occuresOnce">
+					<Properties TriggerType="timeout" Mode="cyclic">
 						<Timeout Class="CodeUnitValue">
 							<Code><![CDATA[1]]></Code>
 							<Unit Class="TimeUnits"><![CDATA[HOUR]]></Unit>
@@ -730,11 +688,11 @@
 						</OccurrenceTime>
 						<RecurrenceCode Class="CodeUnitValue">
 							<Code><![CDATA[1]]></Code>
-							<Unit Class="TimeUnits"><![CDATA[HOUR]]></Unit>
+							<Unit Class="TimeUnits"><![CDATA[WEEK]]></Unit>
 						</RecurrenceCode>
 						<Condition><![CDATA[false]]></Condition>
 					</Properties>
-					<Action><![CDATA[send("CatchDesease", randomFrom(students));]]></Action>
+					<Action><![CDATA[send("CatchDesease", randomFrom(students, s -> !s.is_vaccinated));]]></Action>
 				</Event>
 				<Event>
 					<Id>1717159946794</Id>
@@ -795,7 +753,7 @@
 							<Unit Class="RateUnits"><![CDATA[PER_HOUR]]></Unit>
 						</Rate>
 						<OccurrenceAtTime>false</OccurrenceAtTime>
-						<OccurrenceDate>1272702000000</OccurrenceDate>
+						<OccurrenceDate>1283329200000</OccurrenceDate>
 						<OccurrenceTime Class="CodeUnitValue">
 							<Code><![CDATA[0]]></Code>
 							<Unit Class="TimeUnits"><![CDATA[HOUR]]></Unit>
@@ -814,6 +772,48 @@
 	}
 }
 ]]></Action>
+				</Event>
+				<Event>
+					<Id>1717173659751</Id>
+					<Name><![CDATA[september_enrollment]]></Name>
+					<X>790</X><Y>930</Y>
+					<Label><X>10</X><Y>0</Y></Label>
+					<PublicFlag>false</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>true</ShowLabel>
+					<Properties TriggerType="timeout" Mode="cyclic">
+						<Timeout Class="CodeUnitValue">
+							<Code><![CDATA[1]]></Code>
+							<Unit Class="TimeUnits"><![CDATA[HOUR]]></Unit>
+						</Timeout>
+						<Rate Class="CodeUnitValue">
+							<Code><![CDATA[1]]></Code>
+							<Unit Class="RateUnits"><![CDATA[PER_HOUR]]></Unit>
+						</Rate>
+						<OccurrenceAtTime>false</OccurrenceAtTime>
+						<OccurrenceDate>1283328000000</OccurrenceDate>
+						<OccurrenceTime Class="CodeUnitValue">
+							<Code><![CDATA[1]]></Code>
+							<Unit Class="TimeUnits"><![CDATA[YEAR]]></Unit>
+						</OccurrenceTime>
+						<RecurrenceCode Class="CodeUnitValue">
+							<Code><![CDATA[1]]></Code>
+							<Unit Class="TimeUnits"><![CDATA[YEAR]]></Unit>
+						</RecurrenceCode>
+						<Condition><![CDATA[false]]></Condition>
+					</Properties>
+					<Action><![CDATA[for (int i = 0; i < students.size(); i++) {
+	if (students(i).cr_grade == -1) {
+		students(i).reset();
+		students(i).cr_grade = i / 30;
+	} else {
+		if (students(i).cr_grade == 3) {
+			students(i).reset();
+			students(i).cr_grade = 0;
+		}
+		students(i).cr_grade += 1;
+	}
+}]]></Action>
 				</Event>
 			</Events>
 			<Functions>
@@ -929,27 +929,27 @@ if (bernoulli(factor) == 1) {
 					</IntervalsQuery>
 					<Intervals>
 						<Interval>
-							<Start>29940000</Start>
+							<Start>30600000</Start>
 							<End>45000000</End>
 							<Value>true</Value>
 						</Interval>
 						<Interval>
-							<Start>116340000</Start>
+							<Start>117000000</Start>
 							<End>131400000</End>
 							<Value>true</Value>
 						</Interval>
 						<Interval>
-							<Start>202740000</Start>
+							<Start>203400000</Start>
 							<End>217800000</End>
 							<Value>true</Value>
 						</Interval>
 						<Interval>
-							<Start>289140000</Start>
+							<Start>289800000</Start>
 							<End>304200000</End>
 							<Value>true</Value>
 						</Interval>
 						<Interval>
-							<Start>375540000</Start>
+							<Start>376200000</Start>
 							<End>390600000</End>
 							<Value>true</Value>
 						</Interval>
@@ -3115,6 +3115,21 @@ if (bernoulli(factor) == 1) {
 											</GenericParameterSubstituteReference>
 										</GenericParameterSubstitute>
 										<Parameters>
+											<Parameter>
+												<Name><![CDATA[D_vaccine_efficiency]]></Name>
+											</Parameter>
+											<Parameter>
+												<Name><![CDATA[P_contagiousness]]></Name>
+											</Parameter>
+											<Parameter>
+												<Name><![CDATA[T_stay_home]]></Name>
+											</Parameter>
+											<Parameter>
+												<Name><![CDATA[P_vaccinated]]></Name>
+											</Parameter>
+											<Parameter>
+												<Name><![CDATA[T_skip_pe]]></Name>
+											</Parameter>
 										</Parameters>
 										<ReplicationFlag>true</ReplicationFlag>
 										<Replication Class="CodeValue">
@@ -3706,6 +3721,21 @@ if (bernoulli(factor) == 1) {
 											</GenericParameterSubstituteReference>
 										</GenericParameterSubstitute>
 										<Parameters>
+											<Parameter>
+												<Name><![CDATA[D_vaccine_efficiency]]></Name>
+											</Parameter>
+											<Parameter>
+												<Name><![CDATA[P_contagiousness]]></Name>
+											</Parameter>
+											<Parameter>
+												<Name><![CDATA[T_stay_home]]></Name>
+											</Parameter>
+											<Parameter>
+												<Name><![CDATA[P_vaccinated]]></Name>
+											</Parameter>
+											<Parameter>
+												<Name><![CDATA[T_skip_pe]]></Name>
+											</Parameter>
 										</Parameters>
 										<ReplicationFlag>true</ReplicationFlag>
 										<Replication Class="CodeValue">
@@ -3897,6 +3927,21 @@ if (bernoulli(factor) == 1) {
 											</GenericParameterSubstituteReference>
 										</GenericParameterSubstitute>
 										<Parameters>
+											<Parameter>
+												<Name><![CDATA[D_vaccine_efficiency]]></Name>
+											</Parameter>
+											<Parameter>
+												<Name><![CDATA[P_contagiousness]]></Name>
+											</Parameter>
+											<Parameter>
+												<Name><![CDATA[T_stay_home]]></Name>
+											</Parameter>
+											<Parameter>
+												<Name><![CDATA[P_vaccinated]]></Name>
+											</Parameter>
+											<Parameter>
+												<Name><![CDATA[T_skip_pe]]></Name>
+											</Parameter>
 										</Parameters>
 										<ReplicationFlag>true</ReplicationFlag>
 										<Replication Class="CodeValue">
@@ -4488,6 +4533,21 @@ if (bernoulli(factor) == 1) {
 											</GenericParameterSubstituteReference>
 										</GenericParameterSubstitute>
 										<Parameters>
+											<Parameter>
+												<Name><![CDATA[D_vaccine_efficiency]]></Name>
+											</Parameter>
+											<Parameter>
+												<Name><![CDATA[P_contagiousness]]></Name>
+											</Parameter>
+											<Parameter>
+												<Name><![CDATA[T_stay_home]]></Name>
+											</Parameter>
+											<Parameter>
+												<Name><![CDATA[P_vaccinated]]></Name>
+											</Parameter>
+											<Parameter>
+												<Name><![CDATA[T_skip_pe]]></Name>
+											</Parameter>
 										</Parameters>
 										<ReplicationFlag>true</ReplicationFlag>
 										<Replication Class="CodeValue">
@@ -5079,6 +5139,21 @@ if (bernoulli(factor) == 1) {
 											</GenericParameterSubstituteReference>
 										</GenericParameterSubstitute>
 										<Parameters>
+											<Parameter>
+												<Name><![CDATA[D_vaccine_efficiency]]></Name>
+											</Parameter>
+											<Parameter>
+												<Name><![CDATA[P_contagiousness]]></Name>
+											</Parameter>
+											<Parameter>
+												<Name><![CDATA[T_stay_home]]></Name>
+											</Parameter>
+											<Parameter>
+												<Name><![CDATA[P_vaccinated]]></Name>
+											</Parameter>
+											<Parameter>
+												<Name><![CDATA[T_skip_pe]]></Name>
+											</Parameter>
 										</Parameters>
 										<ReplicationFlag>true</ReplicationFlag>
 										<Replication Class="CodeValue">
@@ -5670,6 +5745,21 @@ if (bernoulli(factor) == 1) {
 											</GenericParameterSubstituteReference>
 										</GenericParameterSubstitute>
 										<Parameters>
+											<Parameter>
+												<Name><![CDATA[D_vaccine_efficiency]]></Name>
+											</Parameter>
+											<Parameter>
+												<Name><![CDATA[P_contagiousness]]></Name>
+											</Parameter>
+											<Parameter>
+												<Name><![CDATA[T_stay_home]]></Name>
+											</Parameter>
+											<Parameter>
+												<Name><![CDATA[P_vaccinated]]></Name>
+											</Parameter>
+											<Parameter>
+												<Name><![CDATA[T_skip_pe]]></Name>
+											</Parameter>
 										</Parameters>
 										<ReplicationFlag>true</ReplicationFlag>
 										<Replication Class="CodeValue">
@@ -7347,6 +7437,21 @@ if (bernoulli(factor) == 1) {
 											</GenericParameterSubstituteReference>
 										</GenericParameterSubstitute>
 										<Parameters>
+											<Parameter>
+												<Name><![CDATA[D_vaccine_efficiency]]></Name>
+											</Parameter>
+											<Parameter>
+												<Name><![CDATA[P_contagiousness]]></Name>
+											</Parameter>
+											<Parameter>
+												<Name><![CDATA[T_stay_home]]></Name>
+											</Parameter>
+											<Parameter>
+												<Name><![CDATA[P_vaccinated]]></Name>
+											</Parameter>
+											<Parameter>
+												<Name><![CDATA[T_skip_pe]]></Name>
+											</Parameter>
 										</Parameters>
 										<ReplicationFlag>true</ReplicationFlag>
 										<Replication Class="CodeValue">
@@ -7616,6 +7721,21 @@ if (bernoulli(factor) == 1) {
 											</GenericParameterSubstituteReference>
 										</GenericParameterSubstitute>
 										<Parameters>
+											<Parameter>
+												<Name><![CDATA[D_vaccine_efficiency]]></Name>
+											</Parameter>
+											<Parameter>
+												<Name><![CDATA[P_contagiousness]]></Name>
+											</Parameter>
+											<Parameter>
+												<Name><![CDATA[T_stay_home]]></Name>
+											</Parameter>
+											<Parameter>
+												<Name><![CDATA[P_vaccinated]]></Name>
+											</Parameter>
+											<Parameter>
+												<Name><![CDATA[T_skip_pe]]></Name>
+											</Parameter>
 										</Parameters>
 										<ReplicationFlag>true</ReplicationFlag>
 										<Replication Class="CodeValue">
@@ -10222,8 +10342,8 @@ transmitted_dates.add(time());]]></Body>
 				<StopOption><![CDATA[Never]]></StopOption>
 				<InitialDate><![CDATA[1283324400000]]></InitialDate>	
 				<InitialTime><![CDATA[0.0]]></InitialTime>	
-				<FinalDate><![CDATA[1719446400000]]></FinalDate>	
-				<FinalTime><![CDATA[100.0]]></FinalTime>	
+				<FinalDate><![CDATA[1693526400000]]></FinalDate>	
+				<FinalTime><![CDATA[113945.0]]></FinalTime>	
 			</ModelTimeProperties>
 			<BypassInitialScreen>true</BypassInitialScreen>
 		</SimulationExperiment>	
