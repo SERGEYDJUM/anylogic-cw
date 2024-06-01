@@ -510,6 +510,21 @@
 						</InitialValue>
 					</Properties>
 				</Variable>
+				<Variable Class="PlainVariable">
+					<Id>1717262610180</Id>
+					<Name><![CDATA[S_current_skippers]]></Name>
+					<X>900</X><Y>1250</Y>
+					<Label><X>10</X><Y>0</Y></Label>
+					<PublicFlag>false</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>true</ShowLabel>
+					<Properties SaveInSnapshot="true" Constant="false" AccessType="public" StaticVariable="false">
+						<Type><![CDATA[int]]></Type>        
+						<InitialValue Class="CodeValue">
+							<Code><![CDATA[0]]></Code>
+						</InitialValue>
+					</Properties>
+				</Variable>
 				<Variable Class="Parameter">
 					<Id>1717161189066</Id>
 					<Name><![CDATA[D_distance_threshold]]></Name>
@@ -547,7 +562,7 @@
 						<UnitType><![CDATA[NONE]]></UnitType>
 						<SdArray>false</SdArray>
 						<DefaultValue Class="CodeValue">
-							<Code><![CDATA[10]]></Code>
+							<Code><![CDATA[20]]></Code>
 						</DefaultValue>
 						<ParameterEditor>
 							<Id>1717164040750</Id>
@@ -1130,7 +1145,7 @@
 					</Properties>
 					<Action><![CDATA[if (working_days.getValue()) {
 	for (int i = 0; i < students.size(); i++) {
-		if (students(i).is_infectious) {
+		if (students(i).is_infectious && students(i).attended_classes > 0) {
 			for (int j = 0; j < students.size(); j++) {
 				if (!students(j).is_infected) {
 					try_infect(students(i), students(j));
@@ -1214,11 +1229,12 @@
 		students(i).reset();
 		students(i).cr_grade = i / 30;
 	} else {
-		if (students(i).cr_grade == 3) {
+		if (students(i).cr_grade > 2) {
 			students(i).reset();
 			students(i).cr_grade = 0;
+		} else {
+			students(i).cr_grade += 1;
 		}
-		students(i).cr_grade += 1;
 	}
 }]]></Action>
 				</Event>
@@ -1260,6 +1276,7 @@ double R0 = 0;
 int R0_cnt = 0;
 double skipped_classes = 0;
 double avg_infected_cnt = 0;
+int current_skippers = 0;
 
 for (int i = 0; i < students.size(); i++) {
 	Student s = students(i);
@@ -1274,6 +1291,10 @@ for (int i = 0; i < students.size(); i++) {
 		if (s.is_infectious) {
 			infectious[s.cr_grade] += 1;
 		}
+		
+		if (!s.is_healthy_for_school()) {
+			current_skippers += 1;
+		}
 	}
 	avg_infected_cnt += s.infected_cnt;
 	skipped_classes += s.all_skipped_classes;
@@ -1281,6 +1302,7 @@ for (int i = 0; i < students.size(); i++) {
 
 S_skipped_classes = skipped_classes / 120;
 S_avg_infected_times = avg_infected_cnt / 120;
+S_current_skippers = current_skippers;
 
 S_R0 = R0 / max(R0_cnt, 1);
 S_R0_avg.add(S_R0, time());
@@ -1418,7 +1440,7 @@ S_cured_today_3 = 0;]]></Action>
 						<Type><![CDATA[Student]]></Type>
 					</Parameter>
 					<Body><![CDATA[double factor = D_distance_threshold / sender.distanceTo(reciever); 
-factor = min(factor, 1);
+factor = min(factor*factor, 1);
 factor *= 1.0 - reciever.immunity_factor();
 factor *= sender.contagiousness;
 
@@ -1796,7 +1818,7 @@ S_avg_ill_time.add(s.get_ill_time(), time());]]></Body>
 						<Parameter>
 							<Name><![CDATA[onAtEnter]]></Name>
 							<Value Class="CodeValue">
-								<Code><![CDATA[agent.attended_classes = 0;]]></Code>
+								<Code><![CDATA[agent.attended_classes = 1;]]></Code>
 							</Value>
 						</Parameter>
 					</Parameters>
@@ -1954,6 +1976,9 @@ S_avg_ill_time.add(s.get_ill_time(), time());]]></Body>
 						</Parameter>
 						<Parameter>
 							<Name><![CDATA[onExit]]></Name>
+							<Value Class="CodeValue">
+								<Code><![CDATA[agent.attended_classes -= 1;]]></Code>
+							</Value>
 						</Parameter>
 						<Parameter>
 							<Name><![CDATA[onRemove]]></Name>
@@ -3256,6 +3281,9 @@ S_avg_ill_time.add(s.get_ill_time(), time());]]></Body>
 					<Parameters>
 						<Parameter>
 							<Name><![CDATA[onExit]]></Name>
+							<Value Class="CodeValue">
+								<Code><![CDATA[agent.attended_classes = 0;]]></Code>
+							</Value>
 						</Parameter>
 					</Parameters>
 					<ReplicationFlag>false</ReplicationFlag>
@@ -3657,7 +3685,7 @@ S_avg_ill_time.add(s.get_ill_time(), time());]]></Body>
 				<RectangleNode>
 					<Id>1717147140867</Id>
 					<Name><![CDATA[cr2]]></Name>
-					<X>780</X><Y>420</Y>
+					<X>870</X><Y>410</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>true</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -4227,7 +4255,7 @@ S_avg_ill_time.add(s.get_ill_time(), time());]]></Body>
 				<Path SourceId="1717147450417" TargetId="1717147140867">
 					<Id>1717147479616</Id>
 					<Name><![CDATA[path]]></Name>
-					<X>890</X><Y>390</Y>
+					<X>980</X><Y>380</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>true</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -4263,7 +4291,7 @@ S_avg_ill_time.add(s.get_ill_time(), time());]]></Body>
 				<RectangleNode>
 					<Id>1717147450417</Id>
 					<Name><![CDATA[hall]]></Name>
-					<X>650</X><Y>250</Y>
+					<X>770</X><Y>240</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>true</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -4462,14 +4490,14 @@ S_avg_ill_time.add(s.get_ill_time(), time());]]></Body>
 						<SlopeType>angle</SlopeType>	
 					</Slope>
 
-					<Width>460</Width>
+					<Width>430</Width>
 					<Height>140</Height>
 					<Rotation>0.0</Rotation>
 				</RectangleNode>
 				<RectangleNode>
 					<Id>1717147148669</Id>
 					<Name><![CDATA[cr3]]></Name>
-					<X>980</X><Y>420</Y>
+					<X>1070</X><Y>410</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>true</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -5039,7 +5067,7 @@ S_avg_ill_time.add(s.get_ill_time(), time());]]></Body>
 				<Path SourceId="1717147450417" TargetId="1717147148669">
 					<Id>1717147497181</Id>
 					<Name><![CDATA[path1]]></Name>
-					<X>1080</X><Y>390</Y>
+					<X>1170</X><Y>380</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>true</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -5075,7 +5103,7 @@ S_avg_ill_time.add(s.get_ill_time(), time());]]></Body>
 				<RectangleNode>
 					<Id>1717146925087</Id>
 					<Name><![CDATA[cr0]]></Name>
-					<X>780</X><Y>140</Y>
+					<X>870</X><Y>130</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>true</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -5645,7 +5673,7 @@ S_avg_ill_time.add(s.get_ill_time(), time());]]></Body>
 				<Path SourceId="1717146925087" TargetId="1717147450417">
 					<Id>1717147535336</Id>
 					<Name><![CDATA[path2]]></Name>
-					<X>885</X><Y>220</Y>
+					<X>975</X><Y>210</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>true</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -5681,7 +5709,7 @@ S_avg_ill_time.add(s.get_ill_time(), time());]]></Body>
 				<RectangleNode>
 					<Id>1717147132123</Id>
 					<Name><![CDATA[cr1]]></Name>
-					<X>980</X><Y>140</Y>
+					<X>1070</X><Y>130</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>true</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -6251,7 +6279,7 @@ S_avg_ill_time.add(s.get_ill_time(), time());]]></Body>
 				<Path SourceId="1717147132123" TargetId="1717147450417">
 					<Id>1717147542675</Id>
 					<Name><![CDATA[path3]]></Name>
-					<X>1080</X><Y>220</Y>
+					<X>1170</X><Y>210</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>true</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -6287,7 +6315,7 @@ S_avg_ill_time.add(s.get_ill_time(), time());]]></Body>
 				<RectangleNode>
 					<Id>1717147298950</Id>
 					<Name><![CDATA[canteen]]></Name>
-					<X>1200</X><Y>30</Y>
+					<X>1290</X><Y>20</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>true</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -7937,7 +7965,7 @@ S_avg_ill_time.add(s.get_ill_time(), time());]]></Body>
 				<Path SourceId="1717147450417" TargetId="1717147298950">
 					<Id>1717147575944</Id>
 					<Name><![CDATA[path6]]></Name>
-					<X>1110</X><Y>265</Y>
+					<X>1200</X><Y>255</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>true</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -7979,7 +8007,7 @@ S_avg_ill_time.add(s.get_ill_time(), time());]]></Body>
 				<RectangleNode>
 					<Id>1717147184810</Id>
 					<Name><![CDATA[gym]]></Name>
-					<X>1200</X><Y>380</Y>
+					<X>1290</X><Y>370</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>true</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -8185,7 +8213,7 @@ S_avg_ill_time.add(s.get_ill_time(), time());]]></Body>
 				<Path SourceId="1717147450417" TargetId="1717147184810">
 					<Id>1717147584264</Id>
 					<Name><![CDATA[path7]]></Name>
-					<X>1110</X><Y>290</Y>
+					<X>1200</X><Y>280</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>true</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -8227,7 +8255,7 @@ S_avg_ill_time.add(s.get_ill_time(), time());]]></Body>
 				<Path SourceId="1717146867427" TargetId="1717147450417">
 					<Id>1717156782515</Id>
 					<Name><![CDATA[path4]]></Name>
-					<X>590</X><Y>280</Y>
+					<X>650</X><Y>280</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>true</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -8247,9 +8275,9 @@ S_avg_ill_time.add(s.get_ill_time(), time());]]></Body>
 						<Point><X>0</X><Y>0</Y><Z>0</Z></Point>
 						<Point><X>-25</X><Y>0</Y><Z>0</Z></Point>
 						<Point><X>25</X><Y>0</Y><Z>0</Z></Point>
-						<Point><X>60</X><Y>0</Y><Z>0</Z></Point>
-						<Point><X>35</X><Y>0</Y><Z>0</Z></Point>
-						<Point><X>-140</X><Y>0</Y><Z>0</Z></Point>
+						<Point><X>120</X><Y>0</Y><Z>0</Z></Point>
+						<Point><X>95</X><Y>0</Y><Z>0</Z></Point>
+						<Point><X>-80</X><Y>0</Y><Z>0</Z></Point>
 					</Points>
 					<Bidirectional>true</Bidirectional>
 					<SpeedLimit>false</SpeedLimit>
@@ -8263,7 +8291,7 @@ S_avg_ill_time.add(s.get_ill_time(), time());]]></Body>
 				<RectangleNode>
 					<Id>1717146867427</Id>
 					<Name><![CDATA[outside]]></Name>
-					<X>40</X><Y>30</Y>
+					<X>50</X><Y>50</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>true</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -8449,9 +8477,81 @@ S_avg_ill_time.add(s.get_ill_time(), time());]]></Body>
 
 			<Presentation>
 				<Attractor>
-					<Id>1717153971208</Id>
+					<Id>1717263158211</Id>
+					<Name><![CDATA[attractor120]]></Name>
+					<X>50</X><Y>45.833333333333336</Y>
+					<Label><X>10</X><Y>0</Y></Label>
+					<PublicFlag>true</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>false</ShowLabel>
+					<DrawMode>SHAPE_DRAW_2D3D</DrawMode>
+					<Z>0</Z>
+					<Rotation>0.0</Rotation>	
+				</Attractor>
+				<Attractor>
+					<Id>1717263158213</Id>
+					<Name><![CDATA[attractor121]]></Name>
+					<X>100</X><Y>45.833333333333336</Y>
+					<Label><X>10</X><Y>0</Y></Label>
+					<PublicFlag>true</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>false</ShowLabel>
+					<DrawMode>SHAPE_DRAW_2D3D</DrawMode>
+					<Z>0</Z>
+					<Rotation>0.0</Rotation>	
+				</Attractor>
+				<Attractor>
+					<Id>1717263158215</Id>
+					<Name><![CDATA[attractor130]]></Name>
+					<X>150</X><Y>45.833333333333336</Y>
+					<Label><X>10</X><Y>0</Y></Label>
+					<PublicFlag>true</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>false</ShowLabel>
+					<DrawMode>SHAPE_DRAW_2D3D</DrawMode>
+					<Z>0</Z>
+					<Rotation>0.0</Rotation>	
+				</Attractor>
+				<Attractor>
+					<Id>1717263158217</Id>
+					<Name><![CDATA[attractor200]]></Name>
+					<X>200</X><Y>45.833333333333336</Y>
+					<Label><X>10</X><Y>0</Y></Label>
+					<PublicFlag>true</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>false</ShowLabel>
+					<DrawMode>SHAPE_DRAW_2D3D</DrawMode>
+					<Z>0</Z>
+					<Rotation>0.0</Rotation>	
+				</Attractor>
+				<Attractor>
+					<Id>1717263158219</Id>
+					<Name><![CDATA[attractor201]]></Name>
+					<X>250</X><Y>45.833333333333336</Y>
+					<Label><X>10</X><Y>0</Y></Label>
+					<PublicFlag>true</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>false</ShowLabel>
+					<DrawMode>SHAPE_DRAW_2D3D</DrawMode>
+					<Z>0</Z>
+					<Rotation>0.0</Rotation>	
+				</Attractor>
+				<Attractor>
+					<Id>1717263158221</Id>
+					<Name><![CDATA[attractor210]]></Name>
+					<X>300</X><Y>45.833333333333336</Y>
+					<Label><X>10</X><Y>0</Y></Label>
+					<PublicFlag>true</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>false</ShowLabel>
+					<DrawMode>SHAPE_DRAW_2D3D</DrawMode>
+					<Z>0</Z>
+					<Rotation>0.0</Rotation>	
+				</Attractor>
+				<Attractor>
+					<Id>1717263158223</Id>
 					<Name><![CDATA[attractor240]]></Name>
-					<X>42.30769230769231</X><Y>65.455</Y>
+					<X>350</X><Y>45.833333333333336</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>true</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -8461,9 +8561,9 @@ S_avg_ill_time.add(s.get_ill_time(), time());]]></Body>
 					<Rotation>0.0</Rotation>	
 				</Attractor>
 				<Attractor>
-					<Id>1717153971210</Id>
+					<Id>1717263158225</Id>
 					<Name><![CDATA[attractor241]]></Name>
-					<X>84.61538461538461</X><Y>65.455</Y>
+					<X>400</X><Y>45.833333333333336</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>true</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -8473,9 +8573,9 @@ S_avg_ill_time.add(s.get_ill_time(), time());]]></Body>
 					<Rotation>0.0</Rotation>	
 				</Attractor>
 				<Attractor>
-					<Id>1717153971212</Id>
+					<Id>1717263158227</Id>
 					<Name><![CDATA[attractor242]]></Name>
-					<X>126.92307692307692</X><Y>65.455</Y>
+					<X>450</X><Y>45.833333333333336</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>true</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -8485,9 +8585,9 @@ S_avg_ill_time.add(s.get_ill_time(), time());]]></Body>
 					<Rotation>0.0</Rotation>	
 				</Attractor>
 				<Attractor>
-					<Id>1717153971214</Id>
+					<Id>1717263158229</Id>
 					<Name><![CDATA[attractor243]]></Name>
-					<X>169.23076923076923</X><Y>65.455</Y>
+					<X>500</X><Y>45.833333333333336</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>true</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -8497,9 +8597,9 @@ S_avg_ill_time.add(s.get_ill_time(), time());]]></Body>
 					<Rotation>0.0</Rotation>	
 				</Attractor>
 				<Attractor>
-					<Id>1717153971224</Id>
+					<Id>1717263158231</Id>
 					<Name><![CDATA[attractor244]]></Name>
-					<X>211.53846153846155</X><Y>65.455</Y>
+					<X>550</X><Y>45.833333333333336</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>true</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -8509,9 +8609,9 @@ S_avg_ill_time.add(s.get_ill_time(), time());]]></Body>
 					<Rotation>0.0</Rotation>	
 				</Attractor>
 				<Attractor>
-					<Id>1717153971226</Id>
+					<Id>1717263158233</Id>
 					<Name><![CDATA[attractor245]]></Name>
-					<X>253.84615384615387</X><Y>65.455</Y>
+					<X>50</X><Y>91.66666666666667</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>true</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -8521,9 +8621,9 @@ S_avg_ill_time.add(s.get_ill_time(), time());]]></Body>
 					<Rotation>0.0</Rotation>	
 				</Attractor>
 				<Attractor>
-					<Id>1717153971228</Id>
+					<Id>1717263158235</Id>
 					<Name><![CDATA[attractor246]]></Name>
-					<X>296.1538461538462</X><Y>65.455</Y>
+					<X>100</X><Y>91.66666666666667</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>true</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -8533,9 +8633,9 @@ S_avg_ill_time.add(s.get_ill_time(), time());]]></Body>
 					<Rotation>0.0</Rotation>	
 				</Attractor>
 				<Attractor>
-					<Id>1717153971230</Id>
+					<Id>1717263158237</Id>
 					<Name><![CDATA[attractor247]]></Name>
-					<X>338.4615384615385</X><Y>65.455</Y>
+					<X>150</X><Y>91.66666666666667</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>true</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -8545,9 +8645,9 @@ S_avg_ill_time.add(s.get_ill_time(), time());]]></Body>
 					<Rotation>0.0</Rotation>	
 				</Attractor>
 				<Attractor>
-					<Id>1717153971232</Id>
+					<Id>1717263158239</Id>
 					<Name><![CDATA[attractor248]]></Name>
-					<X>380.76923076923083</X><Y>65.455</Y>
+					<X>200</X><Y>91.66666666666667</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>true</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -8557,9 +8657,9 @@ S_avg_ill_time.add(s.get_ill_time(), time());]]></Body>
 					<Rotation>0.0</Rotation>	
 				</Attractor>
 				<Attractor>
-					<Id>1717153971234</Id>
+					<Id>1717263158241</Id>
 					<Name><![CDATA[attractor249]]></Name>
-					<X>423.07692307692315</X><Y>65.455</Y>
+					<X>250</X><Y>91.66666666666667</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>true</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -8569,9 +8669,9 @@ S_avg_ill_time.add(s.get_ill_time(), time());]]></Body>
 					<Rotation>0.0</Rotation>	
 				</Attractor>
 				<Attractor>
-					<Id>1717153971236</Id>
+					<Id>1717263158243</Id>
 					<Name><![CDATA[attractor250]]></Name>
-					<X>465.3846153846155</X><Y>65.455</Y>
+					<X>300</X><Y>91.66666666666667</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>true</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -8581,9 +8681,9 @@ S_avg_ill_time.add(s.get_ill_time(), time());]]></Body>
 					<Rotation>0.0</Rotation>	
 				</Attractor>
 				<Attractor>
-					<Id>1717153971238</Id>
+					<Id>1717263158245</Id>
 					<Name><![CDATA[attractor251]]></Name>
-					<X>507.6923076923078</X><Y>65.455</Y>
+					<X>350</X><Y>91.66666666666667</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>true</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -8593,9 +8693,9 @@ S_avg_ill_time.add(s.get_ill_time(), time());]]></Body>
 					<Rotation>0.0</Rotation>	
 				</Attractor>
 				<Attractor>
-					<Id>1717153971240</Id>
+					<Id>1717263158247</Id>
 					<Name><![CDATA[attractor252]]></Name>
-					<X>42.30769230769231</X><Y>110.909</Y>
+					<X>400</X><Y>91.66666666666667</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>true</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -8605,9 +8705,9 @@ S_avg_ill_time.add(s.get_ill_time(), time());]]></Body>
 					<Rotation>0.0</Rotation>	
 				</Attractor>
 				<Attractor>
-					<Id>1717153971242</Id>
+					<Id>1717263158249</Id>
 					<Name><![CDATA[attractor253]]></Name>
-					<X>84.61538461538461</X><Y>110.909</Y>
+					<X>450</X><Y>91.66666666666667</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>true</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -8617,9 +8717,9 @@ S_avg_ill_time.add(s.get_ill_time(), time());]]></Body>
 					<Rotation>0.0</Rotation>	
 				</Attractor>
 				<Attractor>
-					<Id>1717153971244</Id>
+					<Id>1717263158251</Id>
 					<Name><![CDATA[attractor254]]></Name>
-					<X>126.92307692307692</X><Y>110.909</Y>
+					<X>500</X><Y>91.66666666666667</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>true</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -8629,9 +8729,9 @@ S_avg_ill_time.add(s.get_ill_time(), time());]]></Body>
 					<Rotation>0.0</Rotation>	
 				</Attractor>
 				<Attractor>
-					<Id>1717153971246</Id>
+					<Id>1717263158253</Id>
 					<Name><![CDATA[attractor255]]></Name>
-					<X>169.23076923076923</X><Y>110.909</Y>
+					<X>550</X><Y>91.66666666666667</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>true</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -8641,9 +8741,9 @@ S_avg_ill_time.add(s.get_ill_time(), time());]]></Body>
 					<Rotation>0.0</Rotation>	
 				</Attractor>
 				<Attractor>
-					<Id>1717153971248</Id>
+					<Id>1717263158255</Id>
 					<Name><![CDATA[attractor256]]></Name>
-					<X>211.53846153846155</X><Y>110.909</Y>
+					<X>50</X><Y>137.5</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>true</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -8653,9 +8753,9 @@ S_avg_ill_time.add(s.get_ill_time(), time());]]></Body>
 					<Rotation>0.0</Rotation>	
 				</Attractor>
 				<Attractor>
-					<Id>1717153971250</Id>
+					<Id>1717263158257</Id>
 					<Name><![CDATA[attractor257]]></Name>
-					<X>253.84615384615387</X><Y>110.909</Y>
+					<X>100</X><Y>137.5</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>true</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -8665,9 +8765,9 @@ S_avg_ill_time.add(s.get_ill_time(), time());]]></Body>
 					<Rotation>0.0</Rotation>	
 				</Attractor>
 				<Attractor>
-					<Id>1717153971252</Id>
+					<Id>1717263158259</Id>
 					<Name><![CDATA[attractor258]]></Name>
-					<X>296.1538461538462</X><Y>110.909</Y>
+					<X>150</X><Y>137.5</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>true</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -8677,9 +8777,9 @@ S_avg_ill_time.add(s.get_ill_time(), time());]]></Body>
 					<Rotation>0.0</Rotation>	
 				</Attractor>
 				<Attractor>
-					<Id>1717153971254</Id>
+					<Id>1717263158261</Id>
 					<Name><![CDATA[attractor259]]></Name>
-					<X>338.4615384615385</X><Y>110.909</Y>
+					<X>200</X><Y>137.5</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>true</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -8689,9 +8789,9 @@ S_avg_ill_time.add(s.get_ill_time(), time());]]></Body>
 					<Rotation>0.0</Rotation>	
 				</Attractor>
 				<Attractor>
-					<Id>1717153971256</Id>
+					<Id>1717263158263</Id>
 					<Name><![CDATA[attractor260]]></Name>
-					<X>380.76923076923083</X><Y>110.909</Y>
+					<X>250</X><Y>137.5</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>true</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -8701,9 +8801,9 @@ S_avg_ill_time.add(s.get_ill_time(), time());]]></Body>
 					<Rotation>0.0</Rotation>	
 				</Attractor>
 				<Attractor>
-					<Id>1717153971258</Id>
+					<Id>1717263158265</Id>
 					<Name><![CDATA[attractor261]]></Name>
-					<X>423.07692307692315</X><Y>110.909</Y>
+					<X>300</X><Y>137.5</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>true</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -8713,9 +8813,9 @@ S_avg_ill_time.add(s.get_ill_time(), time());]]></Body>
 					<Rotation>0.0</Rotation>	
 				</Attractor>
 				<Attractor>
-					<Id>1717153971260</Id>
+					<Id>1717263158267</Id>
 					<Name><![CDATA[attractor262]]></Name>
-					<X>465.3846153846155</X><Y>110.909</Y>
+					<X>350</X><Y>137.5</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>true</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -8725,9 +8825,9 @@ S_avg_ill_time.add(s.get_ill_time(), time());]]></Body>
 					<Rotation>0.0</Rotation>	
 				</Attractor>
 				<Attractor>
-					<Id>1717153971262</Id>
+					<Id>1717263158269</Id>
 					<Name><![CDATA[attractor263]]></Name>
-					<X>507.6923076923078</X><Y>110.909</Y>
+					<X>400</X><Y>137.5</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>true</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -8737,9 +8837,9 @@ S_avg_ill_time.add(s.get_ill_time(), time());]]></Body>
 					<Rotation>0.0</Rotation>	
 				</Attractor>
 				<Attractor>
-					<Id>1717153971264</Id>
+					<Id>1717263158271</Id>
 					<Name><![CDATA[attractor264]]></Name>
-					<X>42.30769230769231</X><Y>156.364</Y>
+					<X>450</X><Y>137.5</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>true</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -8749,9 +8849,9 @@ S_avg_ill_time.add(s.get_ill_time(), time());]]></Body>
 					<Rotation>0.0</Rotation>	
 				</Attractor>
 				<Attractor>
-					<Id>1717153971266</Id>
+					<Id>1717263158273</Id>
 					<Name><![CDATA[attractor265]]></Name>
-					<X>84.61538461538461</X><Y>156.364</Y>
+					<X>500</X><Y>137.5</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>true</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -8761,9 +8861,9 @@ S_avg_ill_time.add(s.get_ill_time(), time());]]></Body>
 					<Rotation>0.0</Rotation>	
 				</Attractor>
 				<Attractor>
-					<Id>1717153971268</Id>
+					<Id>1717263158275</Id>
 					<Name><![CDATA[attractor266]]></Name>
-					<X>126.92307692307692</X><Y>156.364</Y>
+					<X>550</X><Y>137.5</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>true</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -8773,9 +8873,9 @@ S_avg_ill_time.add(s.get_ill_time(), time());]]></Body>
 					<Rotation>0.0</Rotation>	
 				</Attractor>
 				<Attractor>
-					<Id>1717153971270</Id>
+					<Id>1717263158277</Id>
 					<Name><![CDATA[attractor267]]></Name>
-					<X>169.23076923076923</X><Y>156.364</Y>
+					<X>50</X><Y>183.33333333333334</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>true</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -8785,9 +8885,9 @@ S_avg_ill_time.add(s.get_ill_time(), time());]]></Body>
 					<Rotation>0.0</Rotation>	
 				</Attractor>
 				<Attractor>
-					<Id>1717153971272</Id>
+					<Id>1717263158279</Id>
 					<Name><![CDATA[attractor268]]></Name>
-					<X>211.53846153846155</X><Y>156.364</Y>
+					<X>100</X><Y>183.33333333333334</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>true</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -8797,9 +8897,9 @@ S_avg_ill_time.add(s.get_ill_time(), time());]]></Body>
 					<Rotation>0.0</Rotation>	
 				</Attractor>
 				<Attractor>
-					<Id>1717153971274</Id>
+					<Id>1717263158281</Id>
 					<Name><![CDATA[attractor269]]></Name>
-					<X>253.84615384615387</X><Y>156.364</Y>
+					<X>150</X><Y>183.33333333333334</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>true</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -8809,9 +8909,9 @@ S_avg_ill_time.add(s.get_ill_time(), time());]]></Body>
 					<Rotation>0.0</Rotation>	
 				</Attractor>
 				<Attractor>
-					<Id>1717153971276</Id>
+					<Id>1717263158283</Id>
 					<Name><![CDATA[attractor270]]></Name>
-					<X>296.1538461538462</X><Y>156.364</Y>
+					<X>200</X><Y>183.33333333333334</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>true</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -8821,9 +8921,9 @@ S_avg_ill_time.add(s.get_ill_time(), time());]]></Body>
 					<Rotation>0.0</Rotation>	
 				</Attractor>
 				<Attractor>
-					<Id>1717153971278</Id>
+					<Id>1717263158285</Id>
 					<Name><![CDATA[attractor271]]></Name>
-					<X>338.4615384615385</X><Y>156.364</Y>
+					<X>250</X><Y>183.33333333333334</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>true</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -8833,9 +8933,9 @@ S_avg_ill_time.add(s.get_ill_time(), time());]]></Body>
 					<Rotation>0.0</Rotation>	
 				</Attractor>
 				<Attractor>
-					<Id>1717153971280</Id>
+					<Id>1717263158287</Id>
 					<Name><![CDATA[attractor272]]></Name>
-					<X>380.76923076923083</X><Y>156.364</Y>
+					<X>300</X><Y>183.33333333333334</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>true</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -8845,9 +8945,9 @@ S_avg_ill_time.add(s.get_ill_time(), time());]]></Body>
 					<Rotation>0.0</Rotation>	
 				</Attractor>
 				<Attractor>
-					<Id>1717153971282</Id>
+					<Id>1717263158289</Id>
 					<Name><![CDATA[attractor273]]></Name>
-					<X>423.07692307692315</X><Y>156.364</Y>
+					<X>350</X><Y>183.33333333333334</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>true</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -8857,9 +8957,9 @@ S_avg_ill_time.add(s.get_ill_time(), time());]]></Body>
 					<Rotation>0.0</Rotation>	
 				</Attractor>
 				<Attractor>
-					<Id>1717153971284</Id>
+					<Id>1717263158291</Id>
 					<Name><![CDATA[attractor274]]></Name>
-					<X>465.3846153846155</X><Y>156.364</Y>
+					<X>400</X><Y>183.33333333333334</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>true</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -8869,9 +8969,9 @@ S_avg_ill_time.add(s.get_ill_time(), time());]]></Body>
 					<Rotation>0.0</Rotation>	
 				</Attractor>
 				<Attractor>
-					<Id>1717153971286</Id>
+					<Id>1717263158293</Id>
 					<Name><![CDATA[attractor275]]></Name>
-					<X>507.6923076923078</X><Y>156.364</Y>
+					<X>450</X><Y>183.33333333333334</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>true</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -8881,9 +8981,9 @@ S_avg_ill_time.add(s.get_ill_time(), time());]]></Body>
 					<Rotation>0.0</Rotation>	
 				</Attractor>
 				<Attractor>
-					<Id>1717153971288</Id>
+					<Id>1717263158295</Id>
 					<Name><![CDATA[attractor276]]></Name>
-					<X>42.30769230769231</X><Y>201.818</Y>
+					<X>500</X><Y>183.33333333333334</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>true</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -8893,9 +8993,9 @@ S_avg_ill_time.add(s.get_ill_time(), time());]]></Body>
 					<Rotation>0.0</Rotation>	
 				</Attractor>
 				<Attractor>
-					<Id>1717153971290</Id>
+					<Id>1717263158297</Id>
 					<Name><![CDATA[attractor277]]></Name>
-					<X>84.61538461538461</X><Y>201.818</Y>
+					<X>550</X><Y>183.33333333333334</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>true</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -8905,9 +9005,9 @@ S_avg_ill_time.add(s.get_ill_time(), time());]]></Body>
 					<Rotation>0.0</Rotation>	
 				</Attractor>
 				<Attractor>
-					<Id>1717153971292</Id>
+					<Id>1717263158299</Id>
 					<Name><![CDATA[attractor278]]></Name>
-					<X>126.92307692307692</X><Y>201.818</Y>
+					<X>50</X><Y>229.16666666666669</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>true</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -8917,9 +9017,9 @@ S_avg_ill_time.add(s.get_ill_time(), time());]]></Body>
 					<Rotation>0.0</Rotation>	
 				</Attractor>
 				<Attractor>
-					<Id>1717153971294</Id>
+					<Id>1717263158301</Id>
 					<Name><![CDATA[attractor279]]></Name>
-					<X>169.23076923076923</X><Y>201.818</Y>
+					<X>100</X><Y>229.16666666666669</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>true</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -8929,9 +9029,9 @@ S_avg_ill_time.add(s.get_ill_time(), time());]]></Body>
 					<Rotation>0.0</Rotation>	
 				</Attractor>
 				<Attractor>
-					<Id>1717153971296</Id>
+					<Id>1717263158303</Id>
 					<Name><![CDATA[attractor280]]></Name>
-					<X>211.53846153846155</X><Y>201.818</Y>
+					<X>150</X><Y>229.16666666666669</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>true</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -8941,9 +9041,9 @@ S_avg_ill_time.add(s.get_ill_time(), time());]]></Body>
 					<Rotation>0.0</Rotation>	
 				</Attractor>
 				<Attractor>
-					<Id>1717153971298</Id>
+					<Id>1717263158305</Id>
 					<Name><![CDATA[attractor281]]></Name>
-					<X>253.84615384615387</X><Y>201.818</Y>
+					<X>200</X><Y>229.16666666666669</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>true</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -8953,9 +9053,9 @@ S_avg_ill_time.add(s.get_ill_time(), time());]]></Body>
 					<Rotation>0.0</Rotation>	
 				</Attractor>
 				<Attractor>
-					<Id>1717153971300</Id>
+					<Id>1717263158307</Id>
 					<Name><![CDATA[attractor282]]></Name>
-					<X>296.1538461538462</X><Y>201.818</Y>
+					<X>250</X><Y>229.16666666666669</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>true</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -8965,9 +9065,9 @@ S_avg_ill_time.add(s.get_ill_time(), time());]]></Body>
 					<Rotation>0.0</Rotation>	
 				</Attractor>
 				<Attractor>
-					<Id>1717153971302</Id>
+					<Id>1717263158309</Id>
 					<Name><![CDATA[attractor283]]></Name>
-					<X>338.4615384615385</X><Y>201.818</Y>
+					<X>300</X><Y>229.16666666666669</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>true</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -8977,9 +9077,9 @@ S_avg_ill_time.add(s.get_ill_time(), time());]]></Body>
 					<Rotation>0.0</Rotation>	
 				</Attractor>
 				<Attractor>
-					<Id>1717153971304</Id>
+					<Id>1717263158311</Id>
 					<Name><![CDATA[attractor284]]></Name>
-					<X>380.76923076923083</X><Y>201.818</Y>
+					<X>350</X><Y>229.16666666666669</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>true</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -8989,9 +9089,9 @@ S_avg_ill_time.add(s.get_ill_time(), time());]]></Body>
 					<Rotation>0.0</Rotation>	
 				</Attractor>
 				<Attractor>
-					<Id>1717153971306</Id>
+					<Id>1717263158313</Id>
 					<Name><![CDATA[attractor285]]></Name>
-					<X>423.07692307692315</X><Y>201.818</Y>
+					<X>400</X><Y>229.16666666666669</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>true</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -9001,9 +9101,9 @@ S_avg_ill_time.add(s.get_ill_time(), time());]]></Body>
 					<Rotation>0.0</Rotation>	
 				</Attractor>
 				<Attractor>
-					<Id>1717153971308</Id>
+					<Id>1717263158315</Id>
 					<Name><![CDATA[attractor286]]></Name>
-					<X>465.3846153846155</X><Y>201.818</Y>
+					<X>450</X><Y>229.16666666666669</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>true</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -9013,9 +9113,9 @@ S_avg_ill_time.add(s.get_ill_time(), time());]]></Body>
 					<Rotation>0.0</Rotation>	
 				</Attractor>
 				<Attractor>
-					<Id>1717153971310</Id>
+					<Id>1717263158317</Id>
 					<Name><![CDATA[attractor287]]></Name>
-					<X>507.6923076923078</X><Y>201.818</Y>
+					<X>500</X><Y>229.16666666666669</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>true</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -9025,9 +9125,9 @@ S_avg_ill_time.add(s.get_ill_time(), time());]]></Body>
 					<Rotation>0.0</Rotation>	
 				</Attractor>
 				<Attractor>
-					<Id>1717153971312</Id>
+					<Id>1717263158319</Id>
 					<Name><![CDATA[attractor288]]></Name>
-					<X>42.30769230769231</X><Y>247.273</Y>
+					<X>550</X><Y>229.16666666666669</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>true</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -9037,9 +9137,9 @@ S_avg_ill_time.add(s.get_ill_time(), time());]]></Body>
 					<Rotation>0.0</Rotation>	
 				</Attractor>
 				<Attractor>
-					<Id>1717153971314</Id>
+					<Id>1717263158321</Id>
 					<Name><![CDATA[attractor289]]></Name>
-					<X>84.61538461538461</X><Y>247.273</Y>
+					<X>50</X><Y>275</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>true</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -9049,9 +9149,9 @@ S_avg_ill_time.add(s.get_ill_time(), time());]]></Body>
 					<Rotation>0.0</Rotation>	
 				</Attractor>
 				<Attractor>
-					<Id>1717153971316</Id>
+					<Id>1717263158323</Id>
 					<Name><![CDATA[attractor290]]></Name>
-					<X>126.92307692307692</X><Y>247.273</Y>
+					<X>100</X><Y>275</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>true</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -9061,9 +9161,9 @@ S_avg_ill_time.add(s.get_ill_time(), time());]]></Body>
 					<Rotation>0.0</Rotation>	
 				</Attractor>
 				<Attractor>
-					<Id>1717153971318</Id>
+					<Id>1717263158325</Id>
 					<Name><![CDATA[attractor291]]></Name>
-					<X>169.23076923076923</X><Y>247.273</Y>
+					<X>150</X><Y>275</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>true</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -9073,9 +9173,9 @@ S_avg_ill_time.add(s.get_ill_time(), time());]]></Body>
 					<Rotation>0.0</Rotation>	
 				</Attractor>
 				<Attractor>
-					<Id>1717153971320</Id>
+					<Id>1717263158327</Id>
 					<Name><![CDATA[attractor292]]></Name>
-					<X>211.53846153846155</X><Y>247.273</Y>
+					<X>200</X><Y>275</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>true</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -9085,9 +9185,9 @@ S_avg_ill_time.add(s.get_ill_time(), time());]]></Body>
 					<Rotation>0.0</Rotation>	
 				</Attractor>
 				<Attractor>
-					<Id>1717153971322</Id>
+					<Id>1717263158329</Id>
 					<Name><![CDATA[attractor293]]></Name>
-					<X>253.84615384615387</X><Y>247.273</Y>
+					<X>250</X><Y>275</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>true</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -9097,9 +9197,9 @@ S_avg_ill_time.add(s.get_ill_time(), time());]]></Body>
 					<Rotation>0.0</Rotation>	
 				</Attractor>
 				<Attractor>
-					<Id>1717153971324</Id>
+					<Id>1717263158331</Id>
 					<Name><![CDATA[attractor294]]></Name>
-					<X>296.1538461538462</X><Y>247.273</Y>
+					<X>300</X><Y>275</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>true</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -9109,9 +9209,9 @@ S_avg_ill_time.add(s.get_ill_time(), time());]]></Body>
 					<Rotation>0.0</Rotation>	
 				</Attractor>
 				<Attractor>
-					<Id>1717153971326</Id>
+					<Id>1717263158333</Id>
 					<Name><![CDATA[attractor295]]></Name>
-					<X>338.4615384615385</X><Y>247.273</Y>
+					<X>350</X><Y>275</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>true</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -9121,9 +9221,9 @@ S_avg_ill_time.add(s.get_ill_time(), time());]]></Body>
 					<Rotation>0.0</Rotation>	
 				</Attractor>
 				<Attractor>
-					<Id>1717153971328</Id>
+					<Id>1717263158335</Id>
 					<Name><![CDATA[attractor296]]></Name>
-					<X>380.76923076923083</X><Y>247.273</Y>
+					<X>400</X><Y>275</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>true</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -9133,9 +9233,9 @@ S_avg_ill_time.add(s.get_ill_time(), time());]]></Body>
 					<Rotation>0.0</Rotation>	
 				</Attractor>
 				<Attractor>
-					<Id>1717153971330</Id>
+					<Id>1717263158337</Id>
 					<Name><![CDATA[attractor297]]></Name>
-					<X>423.07692307692315</X><Y>247.273</Y>
+					<X>450</X><Y>275</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>true</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -9145,9 +9245,9 @@ S_avg_ill_time.add(s.get_ill_time(), time());]]></Body>
 					<Rotation>0.0</Rotation>	
 				</Attractor>
 				<Attractor>
-					<Id>1717153971332</Id>
+					<Id>1717263158339</Id>
 					<Name><![CDATA[attractor298]]></Name>
-					<X>465.3846153846155</X><Y>247.273</Y>
+					<X>500</X><Y>275</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>true</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -9157,9 +9257,9 @@ S_avg_ill_time.add(s.get_ill_time(), time());]]></Body>
 					<Rotation>0.0</Rotation>	
 				</Attractor>
 				<Attractor>
-					<Id>1717153971334</Id>
+					<Id>1717263158341</Id>
 					<Name><![CDATA[attractor299]]></Name>
-					<X>507.6923076923078</X><Y>247.273</Y>
+					<X>550</X><Y>275</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>true</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -9169,9 +9269,9 @@ S_avg_ill_time.add(s.get_ill_time(), time());]]></Body>
 					<Rotation>0.0</Rotation>	
 				</Attractor>
 				<Attractor>
-					<Id>1717153971336</Id>
+					<Id>1717263158343</Id>
 					<Name><![CDATA[attractor300]]></Name>
-					<X>42.30769230769231</X><Y>292.727</Y>
+					<X>50</X><Y>320.8333333333333</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>true</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -9181,9 +9281,9 @@ S_avg_ill_time.add(s.get_ill_time(), time());]]></Body>
 					<Rotation>0.0</Rotation>	
 				</Attractor>
 				<Attractor>
-					<Id>1717153971338</Id>
+					<Id>1717263158345</Id>
 					<Name><![CDATA[attractor301]]></Name>
-					<X>84.61538461538461</X><Y>292.727</Y>
+					<X>100</X><Y>320.8333333333333</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>true</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -9193,9 +9293,9 @@ S_avg_ill_time.add(s.get_ill_time(), time());]]></Body>
 					<Rotation>0.0</Rotation>	
 				</Attractor>
 				<Attractor>
-					<Id>1717153971340</Id>
+					<Id>1717263158347</Id>
 					<Name><![CDATA[attractor302]]></Name>
-					<X>126.92307692307692</X><Y>292.727</Y>
+					<X>150</X><Y>320.8333333333333</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>true</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -9205,9 +9305,9 @@ S_avg_ill_time.add(s.get_ill_time(), time());]]></Body>
 					<Rotation>0.0</Rotation>	
 				</Attractor>
 				<Attractor>
-					<Id>1717153971342</Id>
+					<Id>1717263158349</Id>
 					<Name><![CDATA[attractor303]]></Name>
-					<X>169.23076923076923</X><Y>292.727</Y>
+					<X>200</X><Y>320.8333333333333</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>true</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -9217,9 +9317,9 @@ S_avg_ill_time.add(s.get_ill_time(), time());]]></Body>
 					<Rotation>0.0</Rotation>	
 				</Attractor>
 				<Attractor>
-					<Id>1717153971344</Id>
+					<Id>1717263158351</Id>
 					<Name><![CDATA[attractor304]]></Name>
-					<X>211.53846153846155</X><Y>292.727</Y>
+					<X>250</X><Y>320.8333333333333</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>true</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -9229,9 +9329,9 @@ S_avg_ill_time.add(s.get_ill_time(), time());]]></Body>
 					<Rotation>0.0</Rotation>	
 				</Attractor>
 				<Attractor>
-					<Id>1717153971346</Id>
+					<Id>1717263158353</Id>
 					<Name><![CDATA[attractor305]]></Name>
-					<X>253.84615384615387</X><Y>292.727</Y>
+					<X>300</X><Y>320.8333333333333</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>true</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -9241,9 +9341,9 @@ S_avg_ill_time.add(s.get_ill_time(), time());]]></Body>
 					<Rotation>0.0</Rotation>	
 				</Attractor>
 				<Attractor>
-					<Id>1717153971348</Id>
+					<Id>1717263158355</Id>
 					<Name><![CDATA[attractor306]]></Name>
-					<X>296.1538461538462</X><Y>292.727</Y>
+					<X>350</X><Y>320.8333333333333</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>true</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -9253,9 +9353,9 @@ S_avg_ill_time.add(s.get_ill_time(), time());]]></Body>
 					<Rotation>0.0</Rotation>	
 				</Attractor>
 				<Attractor>
-					<Id>1717153971350</Id>
+					<Id>1717263158357</Id>
 					<Name><![CDATA[attractor307]]></Name>
-					<X>338.4615384615385</X><Y>292.727</Y>
+					<X>400</X><Y>320.8333333333333</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>true</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -9265,9 +9365,9 @@ S_avg_ill_time.add(s.get_ill_time(), time());]]></Body>
 					<Rotation>0.0</Rotation>	
 				</Attractor>
 				<Attractor>
-					<Id>1717153971352</Id>
+					<Id>1717263158359</Id>
 					<Name><![CDATA[attractor308]]></Name>
-					<X>380.76923076923083</X><Y>292.727</Y>
+					<X>450</X><Y>320.8333333333333</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>true</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -9277,9 +9377,9 @@ S_avg_ill_time.add(s.get_ill_time(), time());]]></Body>
 					<Rotation>0.0</Rotation>	
 				</Attractor>
 				<Attractor>
-					<Id>1717153971354</Id>
+					<Id>1717263158361</Id>
 					<Name><![CDATA[attractor309]]></Name>
-					<X>423.07692307692315</X><Y>292.727</Y>
+					<X>500</X><Y>320.8333333333333</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>true</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -9289,9 +9389,9 @@ S_avg_ill_time.add(s.get_ill_time(), time());]]></Body>
 					<Rotation>0.0</Rotation>	
 				</Attractor>
 				<Attractor>
-					<Id>1717153971356</Id>
+					<Id>1717263158363</Id>
 					<Name><![CDATA[attractor310]]></Name>
-					<X>465.3846153846155</X><Y>292.727</Y>
+					<X>550</X><Y>320.8333333333333</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>true</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -9301,9 +9401,9 @@ S_avg_ill_time.add(s.get_ill_time(), time());]]></Body>
 					<Rotation>0.0</Rotation>	
 				</Attractor>
 				<Attractor>
-					<Id>1717153971358</Id>
+					<Id>1717263158365</Id>
 					<Name><![CDATA[attractor311]]></Name>
-					<X>507.6923076923078</X><Y>292.727</Y>
+					<X>50</X><Y>366.66666666666663</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>true</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -9313,9 +9413,9 @@ S_avg_ill_time.add(s.get_ill_time(), time());]]></Body>
 					<Rotation>0.0</Rotation>	
 				</Attractor>
 				<Attractor>
-					<Id>1717153971360</Id>
+					<Id>1717263158367</Id>
 					<Name><![CDATA[attractor312]]></Name>
-					<X>42.30769230769231</X><Y>338.182</Y>
+					<X>100</X><Y>366.66666666666663</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>true</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -9325,9 +9425,9 @@ S_avg_ill_time.add(s.get_ill_time(), time());]]></Body>
 					<Rotation>0.0</Rotation>	
 				</Attractor>
 				<Attractor>
-					<Id>1717153971362</Id>
+					<Id>1717263158369</Id>
 					<Name><![CDATA[attractor313]]></Name>
-					<X>84.61538461538461</X><Y>338.182</Y>
+					<X>150</X><Y>366.66666666666663</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>true</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -9337,9 +9437,9 @@ S_avg_ill_time.add(s.get_ill_time(), time());]]></Body>
 					<Rotation>0.0</Rotation>	
 				</Attractor>
 				<Attractor>
-					<Id>1717153971364</Id>
+					<Id>1717263158371</Id>
 					<Name><![CDATA[attractor314]]></Name>
-					<X>126.92307692307692</X><Y>338.182</Y>
+					<X>200</X><Y>366.66666666666663</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>true</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -9349,9 +9449,9 @@ S_avg_ill_time.add(s.get_ill_time(), time());]]></Body>
 					<Rotation>0.0</Rotation>	
 				</Attractor>
 				<Attractor>
-					<Id>1717153971366</Id>
+					<Id>1717263158373</Id>
 					<Name><![CDATA[attractor315]]></Name>
-					<X>169.23076923076923</X><Y>338.182</Y>
+					<X>250</X><Y>366.66666666666663</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>true</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -9361,9 +9461,9 @@ S_avg_ill_time.add(s.get_ill_time(), time());]]></Body>
 					<Rotation>0.0</Rotation>	
 				</Attractor>
 				<Attractor>
-					<Id>1717153971368</Id>
+					<Id>1717263158375</Id>
 					<Name><![CDATA[attractor316]]></Name>
-					<X>211.53846153846155</X><Y>338.182</Y>
+					<X>300</X><Y>366.66666666666663</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>true</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -9373,9 +9473,9 @@ S_avg_ill_time.add(s.get_ill_time(), time());]]></Body>
 					<Rotation>0.0</Rotation>	
 				</Attractor>
 				<Attractor>
-					<Id>1717153971370</Id>
+					<Id>1717263158377</Id>
 					<Name><![CDATA[attractor317]]></Name>
-					<X>253.84615384615387</X><Y>338.182</Y>
+					<X>350</X><Y>366.66666666666663</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>true</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -9385,9 +9485,9 @@ S_avg_ill_time.add(s.get_ill_time(), time());]]></Body>
 					<Rotation>0.0</Rotation>	
 				</Attractor>
 				<Attractor>
-					<Id>1717153971372</Id>
+					<Id>1717263158379</Id>
 					<Name><![CDATA[attractor318]]></Name>
-					<X>296.1538461538462</X><Y>338.182</Y>
+					<X>400</X><Y>366.66666666666663</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>true</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -9397,9 +9497,9 @@ S_avg_ill_time.add(s.get_ill_time(), time());]]></Body>
 					<Rotation>0.0</Rotation>	
 				</Attractor>
 				<Attractor>
-					<Id>1717153971374</Id>
+					<Id>1717263158381</Id>
 					<Name><![CDATA[attractor319]]></Name>
-					<X>338.4615384615385</X><Y>338.182</Y>
+					<X>450</X><Y>366.66666666666663</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>true</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -9409,9 +9509,9 @@ S_avg_ill_time.add(s.get_ill_time(), time());]]></Body>
 					<Rotation>0.0</Rotation>	
 				</Attractor>
 				<Attractor>
-					<Id>1717153971376</Id>
+					<Id>1717263158383</Id>
 					<Name><![CDATA[attractor320]]></Name>
-					<X>380.76923076923083</X><Y>338.182</Y>
+					<X>500</X><Y>366.66666666666663</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>true</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -9421,9 +9521,9 @@ S_avg_ill_time.add(s.get_ill_time(), time());]]></Body>
 					<Rotation>0.0</Rotation>	
 				</Attractor>
 				<Attractor>
-					<Id>1717153971378</Id>
+					<Id>1717263158385</Id>
 					<Name><![CDATA[attractor321]]></Name>
-					<X>423.07692307692315</X><Y>338.182</Y>
+					<X>550</X><Y>366.66666666666663</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>true</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -9433,9 +9533,9 @@ S_avg_ill_time.add(s.get_ill_time(), time());]]></Body>
 					<Rotation>0.0</Rotation>	
 				</Attractor>
 				<Attractor>
-					<Id>1717153971380</Id>
+					<Id>1717263158387</Id>
 					<Name><![CDATA[attractor322]]></Name>
-					<X>465.3846153846155</X><Y>338.182</Y>
+					<X>50</X><Y>412.49999999999994</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>true</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -9445,9 +9545,9 @@ S_avg_ill_time.add(s.get_ill_time(), time());]]></Body>
 					<Rotation>0.0</Rotation>	
 				</Attractor>
 				<Attractor>
-					<Id>1717153971382</Id>
+					<Id>1717263158389</Id>
 					<Name><![CDATA[attractor323]]></Name>
-					<X>507.6923076923078</X><Y>338.182</Y>
+					<X>100</X><Y>412.49999999999994</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>true</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -9457,9 +9557,9 @@ S_avg_ill_time.add(s.get_ill_time(), time());]]></Body>
 					<Rotation>0.0</Rotation>	
 				</Attractor>
 				<Attractor>
-					<Id>1717153971384</Id>
+					<Id>1717263158391</Id>
 					<Name><![CDATA[attractor324]]></Name>
-					<X>42.30769230769231</X><Y>383.636</Y>
+					<X>150</X><Y>412.49999999999994</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>true</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -9469,9 +9569,9 @@ S_avg_ill_time.add(s.get_ill_time(), time());]]></Body>
 					<Rotation>0.0</Rotation>	
 				</Attractor>
 				<Attractor>
-					<Id>1717153971386</Id>
+					<Id>1717263158393</Id>
 					<Name><![CDATA[attractor325]]></Name>
-					<X>84.61538461538461</X><Y>383.636</Y>
+					<X>200</X><Y>412.49999999999994</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>true</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -9481,9 +9581,9 @@ S_avg_ill_time.add(s.get_ill_time(), time());]]></Body>
 					<Rotation>0.0</Rotation>	
 				</Attractor>
 				<Attractor>
-					<Id>1717153971388</Id>
+					<Id>1717263158395</Id>
 					<Name><![CDATA[attractor326]]></Name>
-					<X>126.92307692307692</X><Y>383.636</Y>
+					<X>250</X><Y>412.49999999999994</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>true</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -9493,9 +9593,9 @@ S_avg_ill_time.add(s.get_ill_time(), time());]]></Body>
 					<Rotation>0.0</Rotation>	
 				</Attractor>
 				<Attractor>
-					<Id>1717153971390</Id>
+					<Id>1717263158397</Id>
 					<Name><![CDATA[attractor327]]></Name>
-					<X>169.23076923076923</X><Y>383.636</Y>
+					<X>300</X><Y>412.49999999999994</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>true</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -9505,9 +9605,9 @@ S_avg_ill_time.add(s.get_ill_time(), time());]]></Body>
 					<Rotation>0.0</Rotation>	
 				</Attractor>
 				<Attractor>
-					<Id>1717153971392</Id>
+					<Id>1717263158399</Id>
 					<Name><![CDATA[attractor328]]></Name>
-					<X>211.53846153846155</X><Y>383.636</Y>
+					<X>350</X><Y>412.49999999999994</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>true</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -9517,9 +9617,9 @@ S_avg_ill_time.add(s.get_ill_time(), time());]]></Body>
 					<Rotation>0.0</Rotation>	
 				</Attractor>
 				<Attractor>
-					<Id>1717153971394</Id>
+					<Id>1717263158401</Id>
 					<Name><![CDATA[attractor329]]></Name>
-					<X>253.84615384615387</X><Y>383.636</Y>
+					<X>400</X><Y>412.49999999999994</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>true</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -9529,9 +9629,9 @@ S_avg_ill_time.add(s.get_ill_time(), time());]]></Body>
 					<Rotation>0.0</Rotation>	
 				</Attractor>
 				<Attractor>
-					<Id>1717153971396</Id>
+					<Id>1717263158403</Id>
 					<Name><![CDATA[attractor330]]></Name>
-					<X>296.1538461538462</X><Y>383.636</Y>
+					<X>450</X><Y>412.49999999999994</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>true</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -9541,9 +9641,9 @@ S_avg_ill_time.add(s.get_ill_time(), time());]]></Body>
 					<Rotation>0.0</Rotation>	
 				</Attractor>
 				<Attractor>
-					<Id>1717153971398</Id>
+					<Id>1717263158405</Id>
 					<Name><![CDATA[attractor331]]></Name>
-					<X>338.4615384615385</X><Y>383.636</Y>
+					<X>500</X><Y>412.49999999999994</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>true</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -9553,9 +9653,9 @@ S_avg_ill_time.add(s.get_ill_time(), time());]]></Body>
 					<Rotation>0.0</Rotation>	
 				</Attractor>
 				<Attractor>
-					<Id>1717153971400</Id>
+					<Id>1717263158407</Id>
 					<Name><![CDATA[attractor332]]></Name>
-					<X>380.76923076923083</X><Y>383.636</Y>
+					<X>550</X><Y>412.49999999999994</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>true</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -9565,9 +9665,9 @@ S_avg_ill_time.add(s.get_ill_time(), time());]]></Body>
 					<Rotation>0.0</Rotation>	
 				</Attractor>
 				<Attractor>
-					<Id>1717153971402</Id>
+					<Id>1717263158409</Id>
 					<Name><![CDATA[attractor333]]></Name>
-					<X>423.07692307692315</X><Y>383.636</Y>
+					<X>50</X><Y>458.33333333333326</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>true</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -9577,9 +9677,9 @@ S_avg_ill_time.add(s.get_ill_time(), time());]]></Body>
 					<Rotation>0.0</Rotation>	
 				</Attractor>
 				<Attractor>
-					<Id>1717153971404</Id>
+					<Id>1717263158411</Id>
 					<Name><![CDATA[attractor334]]></Name>
-					<X>465.3846153846155</X><Y>383.636</Y>
+					<X>100</X><Y>458.33333333333326</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>true</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -9589,9 +9689,9 @@ S_avg_ill_time.add(s.get_ill_time(), time());]]></Body>
 					<Rotation>0.0</Rotation>	
 				</Attractor>
 				<Attractor>
-					<Id>1717153971406</Id>
+					<Id>1717263158413</Id>
 					<Name><![CDATA[attractor335]]></Name>
-					<X>507.6923076923078</X><Y>383.636</Y>
+					<X>150</X><Y>458.33333333333326</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>true</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -9601,9 +9701,9 @@ S_avg_ill_time.add(s.get_ill_time(), time());]]></Body>
 					<Rotation>0.0</Rotation>	
 				</Attractor>
 				<Attractor>
-					<Id>1717153971408</Id>
+					<Id>1717263158415</Id>
 					<Name><![CDATA[attractor336]]></Name>
-					<X>42.30769230769231</X><Y>429.091</Y>
+					<X>200</X><Y>458.33333333333326</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>true</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -9613,9 +9713,9 @@ S_avg_ill_time.add(s.get_ill_time(), time());]]></Body>
 					<Rotation>0.0</Rotation>	
 				</Attractor>
 				<Attractor>
-					<Id>1717153971410</Id>
+					<Id>1717263158417</Id>
 					<Name><![CDATA[attractor337]]></Name>
-					<X>84.61538461538461</X><Y>429.091</Y>
+					<X>250</X><Y>458.33333333333326</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>true</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -9625,9 +9725,9 @@ S_avg_ill_time.add(s.get_ill_time(), time());]]></Body>
 					<Rotation>0.0</Rotation>	
 				</Attractor>
 				<Attractor>
-					<Id>1717153971412</Id>
+					<Id>1717263158419</Id>
 					<Name><![CDATA[attractor338]]></Name>
-					<X>126.92307692307692</X><Y>429.091</Y>
+					<X>300</X><Y>458.33333333333326</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>true</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -9637,9 +9737,9 @@ S_avg_ill_time.add(s.get_ill_time(), time());]]></Body>
 					<Rotation>0.0</Rotation>	
 				</Attractor>
 				<Attractor>
-					<Id>1717153971414</Id>
+					<Id>1717263158421</Id>
 					<Name><![CDATA[attractor339]]></Name>
-					<X>169.23076923076923</X><Y>429.091</Y>
+					<X>350</X><Y>458.33333333333326</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>true</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -9649,9 +9749,9 @@ S_avg_ill_time.add(s.get_ill_time(), time());]]></Body>
 					<Rotation>0.0</Rotation>	
 				</Attractor>
 				<Attractor>
-					<Id>1717153971416</Id>
+					<Id>1717263158423</Id>
 					<Name><![CDATA[attractor340]]></Name>
-					<X>211.53846153846155</X><Y>429.091</Y>
+					<X>400</X><Y>458.33333333333326</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>true</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -9661,9 +9761,9 @@ S_avg_ill_time.add(s.get_ill_time(), time());]]></Body>
 					<Rotation>0.0</Rotation>	
 				</Attractor>
 				<Attractor>
-					<Id>1717153971418</Id>
+					<Id>1717263158425</Id>
 					<Name><![CDATA[attractor341]]></Name>
-					<X>253.84615384615387</X><Y>429.091</Y>
+					<X>450</X><Y>458.33333333333326</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>true</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -9673,9 +9773,9 @@ S_avg_ill_time.add(s.get_ill_time(), time());]]></Body>
 					<Rotation>0.0</Rotation>	
 				</Attractor>
 				<Attractor>
-					<Id>1717153971420</Id>
+					<Id>1717263158427</Id>
 					<Name><![CDATA[attractor342]]></Name>
-					<X>296.1538461538462</X><Y>429.091</Y>
+					<X>500</X><Y>458.33333333333326</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>true</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -9685,9 +9785,9 @@ S_avg_ill_time.add(s.get_ill_time(), time());]]></Body>
 					<Rotation>0.0</Rotation>	
 				</Attractor>
 				<Attractor>
-					<Id>1717153971422</Id>
+					<Id>1717263158429</Id>
 					<Name><![CDATA[attractor343]]></Name>
-					<X>338.4615384615385</X><Y>429.091</Y>
+					<X>550</X><Y>458.33333333333326</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>true</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -9697,9 +9797,9 @@ S_avg_ill_time.add(s.get_ill_time(), time());]]></Body>
 					<Rotation>0.0</Rotation>	
 				</Attractor>
 				<Attractor>
-					<Id>1717153971424</Id>
+					<Id>1717263158431</Id>
 					<Name><![CDATA[attractor344]]></Name>
-					<X>380.76923076923083</X><Y>429.091</Y>
+					<X>50</X><Y>504.1666666666666</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>true</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -9709,9 +9809,9 @@ S_avg_ill_time.add(s.get_ill_time(), time());]]></Body>
 					<Rotation>0.0</Rotation>	
 				</Attractor>
 				<Attractor>
-					<Id>1717153971426</Id>
+					<Id>1717263158433</Id>
 					<Name><![CDATA[attractor345]]></Name>
-					<X>423.07692307692315</X><Y>429.091</Y>
+					<X>100</X><Y>504.1666666666666</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>true</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -9721,9 +9821,9 @@ S_avg_ill_time.add(s.get_ill_time(), time());]]></Body>
 					<Rotation>0.0</Rotation>	
 				</Attractor>
 				<Attractor>
-					<Id>1717153971428</Id>
+					<Id>1717263158435</Id>
 					<Name><![CDATA[attractor346]]></Name>
-					<X>465.3846153846155</X><Y>429.091</Y>
+					<X>150</X><Y>504.1666666666666</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>true</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -9733,9 +9833,9 @@ S_avg_ill_time.add(s.get_ill_time(), time());]]></Body>
 					<Rotation>0.0</Rotation>	
 				</Attractor>
 				<Attractor>
-					<Id>1717153971430</Id>
+					<Id>1717263158437</Id>
 					<Name><![CDATA[attractor347]]></Name>
-					<X>507.6923076923078</X><Y>429.091</Y>
+					<X>200</X><Y>504.1666666666666</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>true</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -9745,9 +9845,9 @@ S_avg_ill_time.add(s.get_ill_time(), time());]]></Body>
 					<Rotation>0.0</Rotation>	
 				</Attractor>
 				<Attractor>
-					<Id>1717153971432</Id>
+					<Id>1717263158439</Id>
 					<Name><![CDATA[attractor348]]></Name>
-					<X>42.30769230769231</X><Y>474.545</Y>
+					<X>250</X><Y>504.1666666666666</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>true</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -9757,9 +9857,9 @@ S_avg_ill_time.add(s.get_ill_time(), time());]]></Body>
 					<Rotation>0.0</Rotation>	
 				</Attractor>
 				<Attractor>
-					<Id>1717153971434</Id>
+					<Id>1717263158441</Id>
 					<Name><![CDATA[attractor349]]></Name>
-					<X>84.61538461538461</X><Y>474.545</Y>
+					<X>300</X><Y>504.1666666666666</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>true</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -9769,9 +9869,9 @@ S_avg_ill_time.add(s.get_ill_time(), time());]]></Body>
 					<Rotation>0.0</Rotation>	
 				</Attractor>
 				<Attractor>
-					<Id>1717153971436</Id>
+					<Id>1717263158443</Id>
 					<Name><![CDATA[attractor350]]></Name>
-					<X>126.92307692307692</X><Y>474.545</Y>
+					<X>350</X><Y>504.1666666666666</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>true</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -9781,9 +9881,9 @@ S_avg_ill_time.add(s.get_ill_time(), time());]]></Body>
 					<Rotation>0.0</Rotation>	
 				</Attractor>
 				<Attractor>
-					<Id>1717153971438</Id>
+					<Id>1717263158445</Id>
 					<Name><![CDATA[attractor351]]></Name>
-					<X>169.23076923076923</X><Y>474.545</Y>
+					<X>400</X><Y>504.1666666666666</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>true</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -9793,9 +9893,9 @@ S_avg_ill_time.add(s.get_ill_time(), time());]]></Body>
 					<Rotation>0.0</Rotation>	
 				</Attractor>
 				<Attractor>
-					<Id>1717153971440</Id>
+					<Id>1717263158447</Id>
 					<Name><![CDATA[attractor352]]></Name>
-					<X>211.53846153846155</X><Y>474.545</Y>
+					<X>450</X><Y>504.1666666666666</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>true</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -9805,81 +9905,9 @@ S_avg_ill_time.add(s.get_ill_time(), time());]]></Body>
 					<Rotation>0.0</Rotation>	
 				</Attractor>
 				<Attractor>
-					<Id>1717153971442</Id>
+					<Id>1717263158449</Id>
 					<Name><![CDATA[attractor353]]></Name>
-					<X>253.84615384615387</X><Y>474.545</Y>
-					<Label><X>10</X><Y>0</Y></Label>
-					<PublicFlag>true</PublicFlag>
-					<PresentationFlag>true</PresentationFlag>
-					<ShowLabel>false</ShowLabel>
-					<DrawMode>SHAPE_DRAW_2D3D</DrawMode>
-					<Z>0</Z>
-					<Rotation>0.0</Rotation>	
-				</Attractor>
-				<Attractor>
-					<Id>1717153971444</Id>
-					<Name><![CDATA[attractor354]]></Name>
-					<X>296.1538461538462</X><Y>474.545</Y>
-					<Label><X>10</X><Y>0</Y></Label>
-					<PublicFlag>true</PublicFlag>
-					<PresentationFlag>true</PresentationFlag>
-					<ShowLabel>false</ShowLabel>
-					<DrawMode>SHAPE_DRAW_2D3D</DrawMode>
-					<Z>0</Z>
-					<Rotation>0.0</Rotation>	
-				</Attractor>
-				<Attractor>
-					<Id>1717153971446</Id>
-					<Name><![CDATA[attractor355]]></Name>
-					<X>338.4615384615385</X><Y>474.545</Y>
-					<Label><X>10</X><Y>0</Y></Label>
-					<PublicFlag>true</PublicFlag>
-					<PresentationFlag>true</PresentationFlag>
-					<ShowLabel>false</ShowLabel>
-					<DrawMode>SHAPE_DRAW_2D3D</DrawMode>
-					<Z>0</Z>
-					<Rotation>0.0</Rotation>	
-				</Attractor>
-				<Attractor>
-					<Id>1717153971448</Id>
-					<Name><![CDATA[attractor356]]></Name>
-					<X>380.76923076923083</X><Y>474.545</Y>
-					<Label><X>10</X><Y>0</Y></Label>
-					<PublicFlag>true</PublicFlag>
-					<PresentationFlag>true</PresentationFlag>
-					<ShowLabel>false</ShowLabel>
-					<DrawMode>SHAPE_DRAW_2D3D</DrawMode>
-					<Z>0</Z>
-					<Rotation>0.0</Rotation>	
-				</Attractor>
-				<Attractor>
-					<Id>1717153971450</Id>
-					<Name><![CDATA[attractor357]]></Name>
-					<X>423.07692307692315</X><Y>474.545</Y>
-					<Label><X>10</X><Y>0</Y></Label>
-					<PublicFlag>true</PublicFlag>
-					<PresentationFlag>true</PresentationFlag>
-					<ShowLabel>false</ShowLabel>
-					<DrawMode>SHAPE_DRAW_2D3D</DrawMode>
-					<Z>0</Z>
-					<Rotation>0.0</Rotation>	
-				</Attractor>
-				<Attractor>
-					<Id>1717153971452</Id>
-					<Name><![CDATA[attractor358]]></Name>
-					<X>465.3846153846155</X><Y>474.545</Y>
-					<Label><X>10</X><Y>0</Y></Label>
-					<PublicFlag>true</PublicFlag>
-					<PresentationFlag>true</PresentationFlag>
-					<ShowLabel>false</ShowLabel>
-					<DrawMode>SHAPE_DRAW_2D3D</DrawMode>
-					<Z>0</Z>
-					<Rotation>0.0</Rotation>	
-				</Attractor>
-				<Attractor>
-					<Id>1717153971454</Id>
-					<Name><![CDATA[attractor359]]></Name>
-					<X>507.6923076923078</X><Y>474.545</Y>
+					<X>500</X><Y>504.1666666666666</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>true</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -9906,8 +9934,8 @@ S_avg_ill_time.add(s.get_ill_time(), time());]]></Body>
 						<SlopeType>angle</SlopeType>	
 					</Slope>
 
-					<Width>550</Width>
-					<Height>500</Height>
+					<Width>600</Width>
+					<Height>550</Height>
 					<Rotation>0.0</Rotation>
 				</RectangleNode>
 			</Presentation>
@@ -9930,13 +9958,13 @@ S_avg_ill_time.add(s.get_ill_time(), time());]]></Body>
 				<Figure3D>
 					<Id>1717243254511</Id>
 					<Name><![CDATA[table_2]]></Name>
-					<X>1258.692</X><Y>67.364</Y>
+					<X>1348.692</X><Y>57.364</Y>
 					<Label><X>0</X><Y>-10</Y></Label>
 					<PublicFlag>true</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
 					<ShowLabel>false</ShowLabel>
 					<DrawMode>SHAPE_DRAW_2D3D</DrawMode>
-					<X>1258.692</X><Y>67.364</Y><Z>0</Z>
+					<X>1348.692</X><Y>57.364</Y><Z>0</Z>
 					<Label><X>0</X><Y>-10</Y></Label>
 					<ResourceReference>
 						<PackageName><![CDATA[cw_varus]]></PackageName>
@@ -9963,13 +9991,13 @@ S_avg_ill_time.add(s.get_ill_time(), time());]]></Body>
 				<Figure3D>
 					<Id>1717243275551</Id>
 					<Name><![CDATA[table_3]]></Name>
-					<X>1258.692</X><Y>107.364</Y>
+					<X>1348.692</X><Y>97.364</Y>
 					<Label><X>0</X><Y>-10</Y></Label>
 					<PublicFlag>true</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
 					<ShowLabel>false</ShowLabel>
 					<DrawMode>SHAPE_DRAW_2D3D</DrawMode>
-					<X>1258.692</X><Y>107.364</Y><Z>0</Z>
+					<X>1348.692</X><Y>97.364</Y><Z>0</Z>
 					<Label><X>0</X><Y>-10</Y></Label>
 					<ResourceReference>
 						<PackageName><![CDATA[cw_varus]]></PackageName>
@@ -9996,13 +10024,13 @@ S_avg_ill_time.add(s.get_ill_time(), time());]]></Body>
 				<Figure3D>
 					<Id>1717243279529</Id>
 					<Name><![CDATA[table_4]]></Name>
-					<X>1258.692</X><Y>147.364</Y>
+					<X>1348.692</X><Y>137.364</Y>
 					<Label><X>0</X><Y>-10</Y></Label>
 					<PublicFlag>true</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
 					<ShowLabel>false</ShowLabel>
 					<DrawMode>SHAPE_DRAW_2D3D</DrawMode>
-					<X>1258.692</X><Y>147.364</Y><Z>0</Z>
+					<X>1348.692</X><Y>137.364</Y><Z>0</Z>
 					<Label><X>0</X><Y>-10</Y></Label>
 					<ResourceReference>
 						<PackageName><![CDATA[cw_varus]]></PackageName>
@@ -10029,13 +10057,13 @@ S_avg_ill_time.add(s.get_ill_time(), time());]]></Body>
 				<Figure3D>
 					<Id>1717243282829</Id>
 					<Name><![CDATA[table_5]]></Name>
-					<X>1258.692</X><Y>187.364</Y>
+					<X>1348.692</X><Y>177.364</Y>
 					<Label><X>0</X><Y>-10</Y></Label>
 					<PublicFlag>true</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
 					<ShowLabel>false</ShowLabel>
 					<DrawMode>SHAPE_DRAW_2D3D</DrawMode>
-					<X>1258.692</X><Y>187.364</Y><Z>0</Z>
+					<X>1348.692</X><Y>177.364</Y><Z>0</Z>
 					<Label><X>0</X><Y>-10</Y></Label>
 					<ResourceReference>
 						<PackageName><![CDATA[cw_varus]]></PackageName>
@@ -10062,13 +10090,13 @@ S_avg_ill_time.add(s.get_ill_time(), time());]]></Body>
 				<Figure3D>
 					<Id>1717243285596</Id>
 					<Name><![CDATA[table_6]]></Name>
-					<X>1258.692</X><Y>227.364</Y>
+					<X>1348.692</X><Y>217.364</Y>
 					<Label><X>0</X><Y>-10</Y></Label>
 					<PublicFlag>true</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
 					<ShowLabel>false</ShowLabel>
 					<DrawMode>SHAPE_DRAW_2D3D</DrawMode>
-					<X>1258.692</X><Y>227.364</Y><Z>0</Z>
+					<X>1348.692</X><Y>217.364</Y><Z>0</Z>
 					<Label><X>0</X><Y>-10</Y></Label>
 					<ResourceReference>
 						<PackageName><![CDATA[cw_varus]]></PackageName>
@@ -10095,13 +10123,13 @@ S_avg_ill_time.add(s.get_ill_time(), time());]]></Body>
 				<Figure3D>
 					<Id>1717243288501</Id>
 					<Name><![CDATA[table_7]]></Name>
-					<X>1258.692</X><Y>267.364</Y>
+					<X>1348.692</X><Y>257.364</Y>
 					<Label><X>0</X><Y>-10</Y></Label>
 					<PublicFlag>true</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
 					<ShowLabel>false</ShowLabel>
 					<DrawMode>SHAPE_DRAW_2D3D</DrawMode>
-					<X>1258.692</X><Y>267.364</Y><Z>0</Z>
+					<X>1348.692</X><Y>257.364</Y><Z>0</Z>
 					<Label><X>0</X><Y>-10</Y></Label>
 					<ResourceReference>
 						<PackageName><![CDATA[cw_varus]]></PackageName>
@@ -10128,13 +10156,13 @@ S_avg_ill_time.add(s.get_ill_time(), time());]]></Body>
 				<Figure3D>
 					<Id>1717243291314</Id>
 					<Name><![CDATA[table_8]]></Name>
-					<X>1258.692</X><Y>307.364</Y>
+					<X>1348.692</X><Y>297.364</Y>
 					<Label><X>0</X><Y>-10</Y></Label>
 					<PublicFlag>true</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
 					<ShowLabel>false</ShowLabel>
 					<DrawMode>SHAPE_DRAW_2D3D</DrawMode>
-					<X>1258.692</X><Y>307.364</Y><Z>0</Z>
+					<X>1348.692</X><Y>297.364</Y><Z>0</Z>
 					<Label><X>0</X><Y>-10</Y></Label>
 					<ResourceReference>
 						<PackageName><![CDATA[cw_varus]]></PackageName>
@@ -10161,13 +10189,13 @@ S_avg_ill_time.add(s.get_ill_time(), time());]]></Body>
 				<Figure3D>
 					<Id>1717243729509</Id>
 					<Name><![CDATA[table_9]]></Name>
-					<X>1316.077</X><Y>71.364</Y>
+					<X>1406.077</X><Y>61.364</Y>
 					<Label><X>0</X><Y>-10</Y></Label>
 					<PublicFlag>true</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
 					<ShowLabel>false</ShowLabel>
 					<DrawMode>SHAPE_DRAW_2D3D</DrawMode>
-					<X>1316.077</X><Y>71.364</Y><Z>0</Z>
+					<X>1406.077</X><Y>61.364</Y><Z>0</Z>
 					<Label><X>0</X><Y>-10</Y></Label>
 					<ResourceReference>
 						<PackageName><![CDATA[cw_varus]]></PackageName>
@@ -10194,13 +10222,13 @@ S_avg_ill_time.add(s.get_ill_time(), time());]]></Body>
 				<Figure3D>
 					<Id>1717243729515</Id>
 					<Name><![CDATA[table_10]]></Name>
-					<X>1316.077</X><Y>111.364</Y>
+					<X>1406.077</X><Y>101.364</Y>
 					<Label><X>0</X><Y>-10</Y></Label>
 					<PublicFlag>true</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
 					<ShowLabel>false</ShowLabel>
 					<DrawMode>SHAPE_DRAW_2D3D</DrawMode>
-					<X>1316.077</X><Y>111.364</Y><Z>0</Z>
+					<X>1406.077</X><Y>101.364</Y><Z>0</Z>
 					<Label><X>0</X><Y>-10</Y></Label>
 					<ResourceReference>
 						<PackageName><![CDATA[cw_varus]]></PackageName>
@@ -10227,13 +10255,13 @@ S_avg_ill_time.add(s.get_ill_time(), time());]]></Body>
 				<Figure3D>
 					<Id>1717243729517</Id>
 					<Name><![CDATA[table_11]]></Name>
-					<X>1316.077</X><Y>151.364</Y>
+					<X>1406.077</X><Y>141.364</Y>
 					<Label><X>0</X><Y>-10</Y></Label>
 					<PublicFlag>true</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
 					<ShowLabel>false</ShowLabel>
 					<DrawMode>SHAPE_DRAW_2D3D</DrawMode>
-					<X>1316.077</X><Y>151.364</Y><Z>0</Z>
+					<X>1406.077</X><Y>141.364</Y><Z>0</Z>
 					<Label><X>0</X><Y>-10</Y></Label>
 					<ResourceReference>
 						<PackageName><![CDATA[cw_varus]]></PackageName>
@@ -10260,13 +10288,13 @@ S_avg_ill_time.add(s.get_ill_time(), time());]]></Body>
 				<Figure3D>
 					<Id>1717243729519</Id>
 					<Name><![CDATA[table_12]]></Name>
-					<X>1316.077</X><Y>191.364</Y>
+					<X>1406.077</X><Y>181.364</Y>
 					<Label><X>0</X><Y>-10</Y></Label>
 					<PublicFlag>true</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
 					<ShowLabel>false</ShowLabel>
 					<DrawMode>SHAPE_DRAW_2D3D</DrawMode>
-					<X>1316.077</X><Y>191.364</Y><Z>0</Z>
+					<X>1406.077</X><Y>181.364</Y><Z>0</Z>
 					<Label><X>0</X><Y>-10</Y></Label>
 					<ResourceReference>
 						<PackageName><![CDATA[cw_varus]]></PackageName>
@@ -10293,13 +10321,13 @@ S_avg_ill_time.add(s.get_ill_time(), time());]]></Body>
 				<Figure3D>
 					<Id>1717243729521</Id>
 					<Name><![CDATA[table_13]]></Name>
-					<X>1316.077</X><Y>231.364</Y>
+					<X>1406.077</X><Y>221.364</Y>
 					<Label><X>0</X><Y>-10</Y></Label>
 					<PublicFlag>true</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
 					<ShowLabel>false</ShowLabel>
 					<DrawMode>SHAPE_DRAW_2D3D</DrawMode>
-					<X>1316.077</X><Y>231.364</Y><Z>0</Z>
+					<X>1406.077</X><Y>221.364</Y><Z>0</Z>
 					<Label><X>0</X><Y>-10</Y></Label>
 					<ResourceReference>
 						<PackageName><![CDATA[cw_varus]]></PackageName>
@@ -10326,13 +10354,13 @@ S_avg_ill_time.add(s.get_ill_time(), time());]]></Body>
 				<Figure3D>
 					<Id>1717243729531</Id>
 					<Name><![CDATA[table_14]]></Name>
-					<X>1316.077</X><Y>271.364</Y>
+					<X>1406.077</X><Y>261.364</Y>
 					<Label><X>0</X><Y>-10</Y></Label>
 					<PublicFlag>true</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
 					<ShowLabel>false</ShowLabel>
 					<DrawMode>SHAPE_DRAW_2D3D</DrawMode>
-					<X>1316.077</X><Y>271.364</Y><Z>0</Z>
+					<X>1406.077</X><Y>261.364</Y><Z>0</Z>
 					<Label><X>0</X><Y>-10</Y></Label>
 					<ResourceReference>
 						<PackageName><![CDATA[cw_varus]]></PackageName>
@@ -10359,13 +10387,13 @@ S_avg_ill_time.add(s.get_ill_time(), time());]]></Body>
 				<Figure3D>
 					<Id>1717243729533</Id>
 					<Name><![CDATA[table_15]]></Name>
-					<X>1316.077</X><Y>311.364</Y>
+					<X>1406.077</X><Y>301.364</Y>
 					<Label><X>0</X><Y>-10</Y></Label>
 					<PublicFlag>true</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
 					<ShowLabel>false</ShowLabel>
 					<DrawMode>SHAPE_DRAW_2D3D</DrawMode>
-					<X>1316.077</X><Y>311.364</Y><Z>0</Z>
+					<X>1406.077</X><Y>301.364</Y><Z>0</Z>
 					<Label><X>0</X><Y>-10</Y></Label>
 					<ResourceReference>
 						<PackageName><![CDATA[cw_varus]]></PackageName>
@@ -10392,13 +10420,13 @@ S_avg_ill_time.add(s.get_ill_time(), time());]]></Body>
 				<Figure3D>
 					<Id>1717243947382</Id>
 					<Name><![CDATA[table_16]]></Name>
-					<X>1380.5</X><Y>71</Y>
+					<X>1470.5</X><Y>61</Y>
 					<Label><X>0</X><Y>-10</Y></Label>
 					<PublicFlag>true</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
 					<ShowLabel>false</ShowLabel>
 					<DrawMode>SHAPE_DRAW_2D3D</DrawMode>
-					<X>1380.5</X><Y>71</Y><Z>0</Z>
+					<X>1470.5</X><Y>61</Y><Z>0</Z>
 					<Label><X>0</X><Y>-10</Y></Label>
 					<ResourceReference>
 						<PackageName><![CDATA[cw_varus]]></PackageName>
@@ -10425,13 +10453,13 @@ S_avg_ill_time.add(s.get_ill_time(), time());]]></Body>
 				<Figure3D>
 					<Id>1717243947386</Id>
 					<Name><![CDATA[table_17]]></Name>
-					<X>1380.5</X><Y>111</Y>
+					<X>1470.5</X><Y>101</Y>
 					<Label><X>0</X><Y>-10</Y></Label>
 					<PublicFlag>true</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
 					<ShowLabel>false</ShowLabel>
 					<DrawMode>SHAPE_DRAW_2D3D</DrawMode>
-					<X>1380.5</X><Y>111</Y><Z>0</Z>
+					<X>1470.5</X><Y>101</Y><Z>0</Z>
 					<Label><X>0</X><Y>-10</Y></Label>
 					<ResourceReference>
 						<PackageName><![CDATA[cw_varus]]></PackageName>
@@ -10458,13 +10486,13 @@ S_avg_ill_time.add(s.get_ill_time(), time());]]></Body>
 				<Figure3D>
 					<Id>1717243947388</Id>
 					<Name><![CDATA[table_18]]></Name>
-					<X>1380.5</X><Y>151</Y>
+					<X>1470.5</X><Y>141</Y>
 					<Label><X>0</X><Y>-10</Y></Label>
 					<PublicFlag>true</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
 					<ShowLabel>false</ShowLabel>
 					<DrawMode>SHAPE_DRAW_2D3D</DrawMode>
-					<X>1380.5</X><Y>151</Y><Z>0</Z>
+					<X>1470.5</X><Y>141</Y><Z>0</Z>
 					<Label><X>0</X><Y>-10</Y></Label>
 					<ResourceReference>
 						<PackageName><![CDATA[cw_varus]]></PackageName>
@@ -10491,13 +10519,13 @@ S_avg_ill_time.add(s.get_ill_time(), time());]]></Body>
 				<Figure3D>
 					<Id>1717243947390</Id>
 					<Name><![CDATA[table_19]]></Name>
-					<X>1380.5</X><Y>191</Y>
+					<X>1470.5</X><Y>181</Y>
 					<Label><X>0</X><Y>-10</Y></Label>
 					<PublicFlag>true</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
 					<ShowLabel>false</ShowLabel>
 					<DrawMode>SHAPE_DRAW_2D3D</DrawMode>
-					<X>1380.5</X><Y>191</Y><Z>0</Z>
+					<X>1470.5</X><Y>181</Y><Z>0</Z>
 					<Label><X>0</X><Y>-10</Y></Label>
 					<ResourceReference>
 						<PackageName><![CDATA[cw_varus]]></PackageName>
@@ -10524,13 +10552,13 @@ S_avg_ill_time.add(s.get_ill_time(), time());]]></Body>
 				<Figure3D>
 					<Id>1717243947392</Id>
 					<Name><![CDATA[table_20]]></Name>
-					<X>1380.5</X><Y>231</Y>
+					<X>1470.5</X><Y>221</Y>
 					<Label><X>0</X><Y>-10</Y></Label>
 					<PublicFlag>true</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
 					<ShowLabel>false</ShowLabel>
 					<DrawMode>SHAPE_DRAW_2D3D</DrawMode>
-					<X>1380.5</X><Y>231</Y><Z>0</Z>
+					<X>1470.5</X><Y>221</Y><Z>0</Z>
 					<Label><X>0</X><Y>-10</Y></Label>
 					<ResourceReference>
 						<PackageName><![CDATA[cw_varus]]></PackageName>
@@ -10557,13 +10585,13 @@ S_avg_ill_time.add(s.get_ill_time(), time());]]></Body>
 				<Figure3D>
 					<Id>1717243947394</Id>
 					<Name><![CDATA[table_21]]></Name>
-					<X>1380.5</X><Y>271</Y>
+					<X>1470.5</X><Y>261</Y>
 					<Label><X>0</X><Y>-10</Y></Label>
 					<PublicFlag>true</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
 					<ShowLabel>false</ShowLabel>
 					<DrawMode>SHAPE_DRAW_2D3D</DrawMode>
-					<X>1380.5</X><Y>271</Y><Z>0</Z>
+					<X>1470.5</X><Y>261</Y><Z>0</Z>
 					<Label><X>0</X><Y>-10</Y></Label>
 					<ResourceReference>
 						<PackageName><![CDATA[cw_varus]]></PackageName>
@@ -10590,13 +10618,13 @@ S_avg_ill_time.add(s.get_ill_time(), time());]]></Body>
 				<Figure3D>
 					<Id>1717243947396</Id>
 					<Name><![CDATA[table_22]]></Name>
-					<X>1380.5</X><Y>311</Y>
+					<X>1470.5</X><Y>301</Y>
 					<Label><X>0</X><Y>-10</Y></Label>
 					<PublicFlag>true</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
 					<ShowLabel>false</ShowLabel>
 					<DrawMode>SHAPE_DRAW_2D3D</DrawMode>
-					<X>1380.5</X><Y>311</Y><Z>0</Z>
+					<X>1470.5</X><Y>301</Y><Z>0</Z>
 					<Label><X>0</X><Y>-10</Y></Label>
 					<ResourceReference>
 						<PackageName><![CDATA[cw_varus]]></PackageName>
@@ -10623,13 +10651,13 @@ S_avg_ill_time.add(s.get_ill_time(), time());]]></Body>
 				<Figure3D>
 					<Id>1717244075835</Id>
 					<Name><![CDATA[table_23]]></Name>
-					<X>1441</X><Y>71</Y>
+					<X>1531</X><Y>61</Y>
 					<Label><X>0</X><Y>-10</Y></Label>
 					<PublicFlag>true</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
 					<ShowLabel>false</ShowLabel>
 					<DrawMode>SHAPE_DRAW_2D3D</DrawMode>
-					<X>1441</X><Y>71</Y><Z>0</Z>
+					<X>1531</X><Y>61</Y><Z>0</Z>
 					<Label><X>0</X><Y>-10</Y></Label>
 					<ResourceReference>
 						<PackageName><![CDATA[cw_varus]]></PackageName>
@@ -10656,13 +10684,13 @@ S_avg_ill_time.add(s.get_ill_time(), time());]]></Body>
 				<Figure3D>
 					<Id>1717244075838</Id>
 					<Name><![CDATA[table_24]]></Name>
-					<X>1441</X><Y>111</Y>
+					<X>1531</X><Y>101</Y>
 					<Label><X>0</X><Y>-10</Y></Label>
 					<PublicFlag>true</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
 					<ShowLabel>false</ShowLabel>
 					<DrawMode>SHAPE_DRAW_2D3D</DrawMode>
-					<X>1441</X><Y>111</Y><Z>0</Z>
+					<X>1531</X><Y>101</Y><Z>0</Z>
 					<Label><X>0</X><Y>-10</Y></Label>
 					<ResourceReference>
 						<PackageName><![CDATA[cw_varus]]></PackageName>
@@ -10689,13 +10717,13 @@ S_avg_ill_time.add(s.get_ill_time(), time());]]></Body>
 				<Figure3D>
 					<Id>1717244075840</Id>
 					<Name><![CDATA[table_25]]></Name>
-					<X>1441</X><Y>151</Y>
+					<X>1531</X><Y>141</Y>
 					<Label><X>0</X><Y>-10</Y></Label>
 					<PublicFlag>true</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
 					<ShowLabel>false</ShowLabel>
 					<DrawMode>SHAPE_DRAW_2D3D</DrawMode>
-					<X>1441</X><Y>151</Y><Z>0</Z>
+					<X>1531</X><Y>141</Y><Z>0</Z>
 					<Label><X>0</X><Y>-10</Y></Label>
 					<ResourceReference>
 						<PackageName><![CDATA[cw_varus]]></PackageName>
@@ -10722,13 +10750,13 @@ S_avg_ill_time.add(s.get_ill_time(), time());]]></Body>
 				<Figure3D>
 					<Id>1717244075842</Id>
 					<Name><![CDATA[table_26]]></Name>
-					<X>1441</X><Y>191</Y>
+					<X>1531</X><Y>181</Y>
 					<Label><X>0</X><Y>-10</Y></Label>
 					<PublicFlag>true</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
 					<ShowLabel>false</ShowLabel>
 					<DrawMode>SHAPE_DRAW_2D3D</DrawMode>
-					<X>1441</X><Y>191</Y><Z>0</Z>
+					<X>1531</X><Y>181</Y><Z>0</Z>
 					<Label><X>0</X><Y>-10</Y></Label>
 					<ResourceReference>
 						<PackageName><![CDATA[cw_varus]]></PackageName>
@@ -10755,13 +10783,13 @@ S_avg_ill_time.add(s.get_ill_time(), time());]]></Body>
 				<Figure3D>
 					<Id>1717244075844</Id>
 					<Name><![CDATA[table_27]]></Name>
-					<X>1441</X><Y>231</Y>
+					<X>1531</X><Y>221</Y>
 					<Label><X>0</X><Y>-10</Y></Label>
 					<PublicFlag>true</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
 					<ShowLabel>false</ShowLabel>
 					<DrawMode>SHAPE_DRAW_2D3D</DrawMode>
-					<X>1441</X><Y>231</Y><Z>0</Z>
+					<X>1531</X><Y>221</Y><Z>0</Z>
 					<Label><X>0</X><Y>-10</Y></Label>
 					<ResourceReference>
 						<PackageName><![CDATA[cw_varus]]></PackageName>
@@ -10788,13 +10816,13 @@ S_avg_ill_time.add(s.get_ill_time(), time());]]></Body>
 				<Figure3D>
 					<Id>1717244075846</Id>
 					<Name><![CDATA[table_28]]></Name>
-					<X>1441</X><Y>271</Y>
+					<X>1531</X><Y>261</Y>
 					<Label><X>0</X><Y>-10</Y></Label>
 					<PublicFlag>true</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
 					<ShowLabel>false</ShowLabel>
 					<DrawMode>SHAPE_DRAW_2D3D</DrawMode>
-					<X>1441</X><Y>271</Y><Z>0</Z>
+					<X>1531</X><Y>261</Y><Z>0</Z>
 					<Label><X>0</X><Y>-10</Y></Label>
 					<ResourceReference>
 						<PackageName><![CDATA[cw_varus]]></PackageName>
@@ -10821,13 +10849,13 @@ S_avg_ill_time.add(s.get_ill_time(), time());]]></Body>
 				<Figure3D>
 					<Id>1717244075848</Id>
 					<Name><![CDATA[table_29]]></Name>
-					<X>1441</X><Y>311</Y>
+					<X>1531</X><Y>301</Y>
 					<Label><X>0</X><Y>-10</Y></Label>
 					<PublicFlag>true</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
 					<ShowLabel>false</ShowLabel>
 					<DrawMode>SHAPE_DRAW_2D3D</DrawMode>
-					<X>1441</X><Y>311</Y><Z>0</Z>
+					<X>1531</X><Y>301</Y><Z>0</Z>
 					<Label><X>0</X><Y>-10</Y></Label>
 					<ResourceReference>
 						<PackageName><![CDATA[cw_varus]]></PackageName>
@@ -10854,13 +10882,13 @@ S_avg_ill_time.add(s.get_ill_time(), time());]]></Body>
 				<Figure3D>
 					<Id>1717244129646</Id>
 					<Name><![CDATA[table_30]]></Name>
-					<X>1501</X><Y>71</Y>
+					<X>1591</X><Y>61</Y>
 					<Label><X>0</X><Y>-10</Y></Label>
 					<PublicFlag>true</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
 					<ShowLabel>false</ShowLabel>
 					<DrawMode>SHAPE_DRAW_2D3D</DrawMode>
-					<X>1501</X><Y>71</Y><Z>0</Z>
+					<X>1591</X><Y>61</Y><Z>0</Z>
 					<Label><X>0</X><Y>-10</Y></Label>
 					<ResourceReference>
 						<PackageName><![CDATA[cw_varus]]></PackageName>
@@ -10887,13 +10915,13 @@ S_avg_ill_time.add(s.get_ill_time(), time());]]></Body>
 				<Figure3D>
 					<Id>1717244129652</Id>
 					<Name><![CDATA[table_31]]></Name>
-					<X>1501</X><Y>111</Y>
+					<X>1591</X><Y>101</Y>
 					<Label><X>0</X><Y>-10</Y></Label>
 					<PublicFlag>true</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
 					<ShowLabel>false</ShowLabel>
 					<DrawMode>SHAPE_DRAW_2D3D</DrawMode>
-					<X>1501</X><Y>111</Y><Z>0</Z>
+					<X>1591</X><Y>101</Y><Z>0</Z>
 					<Label><X>0</X><Y>-10</Y></Label>
 					<ResourceReference>
 						<PackageName><![CDATA[cw_varus]]></PackageName>
@@ -10920,13 +10948,13 @@ S_avg_ill_time.add(s.get_ill_time(), time());]]></Body>
 				<Figure3D>
 					<Id>1717244129654</Id>
 					<Name><![CDATA[table_32]]></Name>
-					<X>1501</X><Y>151</Y>
+					<X>1591</X><Y>141</Y>
 					<Label><X>0</X><Y>-10</Y></Label>
 					<PublicFlag>true</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
 					<ShowLabel>false</ShowLabel>
 					<DrawMode>SHAPE_DRAW_2D3D</DrawMode>
-					<X>1501</X><Y>151</Y><Z>0</Z>
+					<X>1591</X><Y>141</Y><Z>0</Z>
 					<Label><X>0</X><Y>-10</Y></Label>
 					<ResourceReference>
 						<PackageName><![CDATA[cw_varus]]></PackageName>
@@ -10953,13 +10981,13 @@ S_avg_ill_time.add(s.get_ill_time(), time());]]></Body>
 				<Figure3D>
 					<Id>1717244129656</Id>
 					<Name><![CDATA[table_33]]></Name>
-					<X>1501</X><Y>191</Y>
+					<X>1591</X><Y>181</Y>
 					<Label><X>0</X><Y>-10</Y></Label>
 					<PublicFlag>true</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
 					<ShowLabel>false</ShowLabel>
 					<DrawMode>SHAPE_DRAW_2D3D</DrawMode>
-					<X>1501</X><Y>191</Y><Z>0</Z>
+					<X>1591</X><Y>181</Y><Z>0</Z>
 					<Label><X>0</X><Y>-10</Y></Label>
 					<ResourceReference>
 						<PackageName><![CDATA[cw_varus]]></PackageName>
@@ -10986,13 +11014,13 @@ S_avg_ill_time.add(s.get_ill_time(), time());]]></Body>
 				<Figure3D>
 					<Id>1717244129659</Id>
 					<Name><![CDATA[table_34]]></Name>
-					<X>1501</X><Y>231</Y>
+					<X>1591</X><Y>221</Y>
 					<Label><X>0</X><Y>-10</Y></Label>
 					<PublicFlag>true</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
 					<ShowLabel>false</ShowLabel>
 					<DrawMode>SHAPE_DRAW_2D3D</DrawMode>
-					<X>1501</X><Y>231</Y><Z>0</Z>
+					<X>1591</X><Y>221</Y><Z>0</Z>
 					<Label><X>0</X><Y>-10</Y></Label>
 					<ResourceReference>
 						<PackageName><![CDATA[cw_varus]]></PackageName>
@@ -11019,13 +11047,13 @@ S_avg_ill_time.add(s.get_ill_time(), time());]]></Body>
 				<Figure3D>
 					<Id>1717244129661</Id>
 					<Name><![CDATA[table_35]]></Name>
-					<X>1501</X><Y>271</Y>
+					<X>1591</X><Y>261</Y>
 					<Label><X>0</X><Y>-10</Y></Label>
 					<PublicFlag>true</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
 					<ShowLabel>false</ShowLabel>
 					<DrawMode>SHAPE_DRAW_2D3D</DrawMode>
-					<X>1501</X><Y>271</Y><Z>0</Z>
+					<X>1591</X><Y>261</Y><Z>0</Z>
 					<Label><X>0</X><Y>-10</Y></Label>
 					<ResourceReference>
 						<PackageName><![CDATA[cw_varus]]></PackageName>
@@ -11052,13 +11080,13 @@ S_avg_ill_time.add(s.get_ill_time(), time());]]></Body>
 				<Figure3D>
 					<Id>1717244129663</Id>
 					<Name><![CDATA[table_36]]></Name>
-					<X>1501</X><Y>311</Y>
+					<X>1591</X><Y>301</Y>
 					<Label><X>0</X><Y>-10</Y></Label>
 					<PublicFlag>true</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
 					<ShowLabel>false</ShowLabel>
 					<DrawMode>SHAPE_DRAW_2D3D</DrawMode>
-					<X>1501</X><Y>311</Y><Z>0</Z>
+					<X>1591</X><Y>301</Y><Z>0</Z>
 					<Label><X>0</X><Y>-10</Y></Label>
 					<ResourceReference>
 						<PackageName><![CDATA[cw_varus]]></PackageName>
@@ -11085,13 +11113,13 @@ S_avg_ill_time.add(s.get_ill_time(), time());]]></Body>
 				<Figure3D>
 					<Id>1717244191179</Id>
 					<Name><![CDATA[table_37]]></Name>
-					<X>1555.5</X><Y>71</Y>
+					<X>1645.5</X><Y>61</Y>
 					<Label><X>0</X><Y>-10</Y></Label>
 					<PublicFlag>true</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
 					<ShowLabel>false</ShowLabel>
 					<DrawMode>SHAPE_DRAW_2D3D</DrawMode>
-					<X>1555.5</X><Y>71</Y><Z>0</Z>
+					<X>1645.5</X><Y>61</Y><Z>0</Z>
 					<Label><X>0</X><Y>-10</Y></Label>
 					<ResourceReference>
 						<PackageName><![CDATA[cw_varus]]></PackageName>
@@ -11118,13 +11146,13 @@ S_avg_ill_time.add(s.get_ill_time(), time());]]></Body>
 				<Figure3D>
 					<Id>1717244191182</Id>
 					<Name><![CDATA[table_38]]></Name>
-					<X>1555.5</X><Y>111</Y>
+					<X>1645.5</X><Y>101</Y>
 					<Label><X>0</X><Y>-10</Y></Label>
 					<PublicFlag>true</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
 					<ShowLabel>false</ShowLabel>
 					<DrawMode>SHAPE_DRAW_2D3D</DrawMode>
-					<X>1555.5</X><Y>111</Y><Z>0</Z>
+					<X>1645.5</X><Y>101</Y><Z>0</Z>
 					<Label><X>0</X><Y>-10</Y></Label>
 					<ResourceReference>
 						<PackageName><![CDATA[cw_varus]]></PackageName>
@@ -11151,13 +11179,13 @@ S_avg_ill_time.add(s.get_ill_time(), time());]]></Body>
 				<Figure3D>
 					<Id>1717244191184</Id>
 					<Name><![CDATA[table_39]]></Name>
-					<X>1555.5</X><Y>151</Y>
+					<X>1645.5</X><Y>141</Y>
 					<Label><X>0</X><Y>-10</Y></Label>
 					<PublicFlag>true</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
 					<ShowLabel>false</ShowLabel>
 					<DrawMode>SHAPE_DRAW_2D3D</DrawMode>
-					<X>1555.5</X><Y>151</Y><Z>0</Z>
+					<X>1645.5</X><Y>141</Y><Z>0</Z>
 					<Label><X>0</X><Y>-10</Y></Label>
 					<ResourceReference>
 						<PackageName><![CDATA[cw_varus]]></PackageName>
@@ -11184,13 +11212,13 @@ S_avg_ill_time.add(s.get_ill_time(), time());]]></Body>
 				<Figure3D>
 					<Id>1717244191186</Id>
 					<Name><![CDATA[table_40]]></Name>
-					<X>1555.5</X><Y>191</Y>
+					<X>1645.5</X><Y>181</Y>
 					<Label><X>0</X><Y>-10</Y></Label>
 					<PublicFlag>true</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
 					<ShowLabel>false</ShowLabel>
 					<DrawMode>SHAPE_DRAW_2D3D</DrawMode>
-					<X>1555.5</X><Y>191</Y><Z>0</Z>
+					<X>1645.5</X><Y>181</Y><Z>0</Z>
 					<Label><X>0</X><Y>-10</Y></Label>
 					<ResourceReference>
 						<PackageName><![CDATA[cw_varus]]></PackageName>
@@ -11217,13 +11245,13 @@ S_avg_ill_time.add(s.get_ill_time(), time());]]></Body>
 				<Figure3D>
 					<Id>1717244191188</Id>
 					<Name><![CDATA[table_41]]></Name>
-					<X>1555.5</X><Y>231</Y>
+					<X>1645.5</X><Y>221</Y>
 					<Label><X>0</X><Y>-10</Y></Label>
 					<PublicFlag>true</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
 					<ShowLabel>false</ShowLabel>
 					<DrawMode>SHAPE_DRAW_2D3D</DrawMode>
-					<X>1555.5</X><Y>231</Y><Z>0</Z>
+					<X>1645.5</X><Y>221</Y><Z>0</Z>
 					<Label><X>0</X><Y>-10</Y></Label>
 					<ResourceReference>
 						<PackageName><![CDATA[cw_varus]]></PackageName>
@@ -11250,13 +11278,13 @@ S_avg_ill_time.add(s.get_ill_time(), time());]]></Body>
 				<Figure3D>
 					<Id>1717244191190</Id>
 					<Name><![CDATA[table_42]]></Name>
-					<X>1555.5</X><Y>271</Y>
+					<X>1645.5</X><Y>261</Y>
 					<Label><X>0</X><Y>-10</Y></Label>
 					<PublicFlag>true</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
 					<ShowLabel>false</ShowLabel>
 					<DrawMode>SHAPE_DRAW_2D3D</DrawMode>
-					<X>1555.5</X><Y>271</Y><Z>0</Z>
+					<X>1645.5</X><Y>261</Y><Z>0</Z>
 					<Label><X>0</X><Y>-10</Y></Label>
 					<ResourceReference>
 						<PackageName><![CDATA[cw_varus]]></PackageName>
@@ -11283,13 +11311,13 @@ S_avg_ill_time.add(s.get_ill_time(), time());]]></Body>
 				<Figure3D>
 					<Id>1717244191192</Id>
 					<Name><![CDATA[table_43]]></Name>
-					<X>1555.5</X><Y>311</Y>
+					<X>1645.5</X><Y>301</Y>
 					<Label><X>0</X><Y>-10</Y></Label>
 					<PublicFlag>true</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
 					<ShowLabel>false</ShowLabel>
 					<DrawMode>SHAPE_DRAW_2D3D</DrawMode>
-					<X>1555.5</X><Y>311</Y><Z>0</Z>
+					<X>1645.5</X><Y>301</Y><Z>0</Z>
 					<Label><X>0</X><Y>-10</Y></Label>
 					<ResourceReference>
 						<PackageName><![CDATA[cw_varus]]></PackageName>
@@ -11538,6 +11566,73 @@ S_avg_ill_time.add(s.get_ill_time(), time());]]></Body>
 						<Title><![CDATA[Выздоровело сегодня]]></Title>							
 					</HistogramDataExpression>
     			</Histogram>
+    			<TimePlot>
+					<Id>1717262748225</Id>
+					<Name><![CDATA[plot1]]></Name>
+					<X>950</X><Y>1720</Y>
+					<Label><X>0</X><Y>-10</Y></Label>
+					<PublicFlag>true</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>false</ShowLabel>
+					<DrawMode>SHAPE_DRAW_2D3D</DrawMode>
+					<AutoUpdate>true</AutoUpdate>
+					<OccurrenceAtTime>true</OccurrenceAtTime>
+					<OccurrenceDate>1717315200000</OccurrenceDate>
+					<OccurrenceTime Class="CodeUnitValue">
+						<Code><![CDATA[0]]></Code>
+						<Unit Class="TimeUnits"><![CDATA[HOUR]]></Unit>
+					</OccurrenceTime>
+					<RecurrenceCode Class="CodeUnitValue">
+						<Code><![CDATA[1]]></Code>
+						<Unit Class="TimeUnits"><![CDATA[HOUR]]></Unit>
+					</RecurrenceCode>
+					<EmbeddedIcon>false</EmbeddedIcon>
+					<Width>260</Width>
+					<Height>210</Height>
+					<BackgroundColor/>
+					<BorderColor/>
+					<ChartArea>
+						<XOffset>50</XOffset>
+						<YOffset>30</YOffset>
+						<Width>180</Width>
+						<Height>120</Height>
+						<BackgroundColor>-1</BackgroundColor>
+						<BorderColor>-16777216</BorderColor>
+						<GridColor>-12566464</GridColor>
+					</ChartArea>
+					<Legend>
+						<Place>SOUTH</Place>
+						<TextColor>-16777216</TextColor>
+						<Size>30</Size>
+					</Legend>
+					<Labels>
+						<HorLabelsPosition>DEFAULT</HorLabelsPosition>
+						<VerLabelsPosition>DEFAULT</VerLabelsPosition>
+						<TextColor>-12566464</TextColor>
+					</Labels>
+					<ShowLegend>true</ShowLegend>
+					<TimeWindowsMovementType>MOVEMENT_WITH_TIME</TimeWindowsMovementType>		
+					<TimeWindowUnits>MONTH</TimeWindowUnits>
+					<VerScaleFromExpression><![CDATA[0]]></VerScaleFromExpression>
+					<VerScaleToExpression><![CDATA[120]]></VerScaleToExpression>
+					<VerScaleType>FIXED</VerScaleType>
+					<DrawLine>true</DrawLine>
+					<Interpolation>LINEAR</Interpolation>
+					<DatasetExpression>  
+						<Title><![CDATA[Количество учеников на больничном]]></Title>
+					<Id>1717262750134</Id>
+					<Expression><![CDATA[my_dataset]]></Expression>
+					<Color>-65281</Color>
+					<Expression2><![CDATA[S_current_skippers]]></Expression2>
+					<Expression2Flag>true</Expression2Flag>
+						<PointStyle>NONE</PointStyle>
+						<LineWidth>1.0</LineWidth>
+					</DatasetExpression>
+					<SamplesToKeep>1000</SamplesToKeep>
+					<TimeWindowExpression><![CDATA[1]]></TimeWindowExpression>
+					<FillAreaUnderLine>false</FillAreaUnderLine>
+					<LabelFormat>MODEL_TIME_UNITS</LabelFormat>
+    			</TimePlot>
 			</Presentation>
 
 				</Level>
@@ -11858,7 +11953,7 @@ S_avg_ill_time.add(s.get_ill_time(), time());]]></Body>
 						<UnitType><![CDATA[NONE]]></UnitType>
 						<SdArray>false</SdArray>
 						<DefaultValue Class="CodeValue">
-							<Code><![CDATA[0.02]]></Code>
+							<Code><![CDATA[0.1]]></Code>
 						</DefaultValue>
 						<ParameterEditor>
 							<Id>1717079374211</Id>
