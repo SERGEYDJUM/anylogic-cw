@@ -108,6 +108,408 @@
 			<CurrentLevel>1716831282917</CurrentLevel>
 			<ConnectionsId>1716831282911</ConnectionsId>
 			<Variables>
+				<Variable Class="PlainVariable">
+					<Id>1717249164265</Id>
+					<Name><![CDATA[S_healthy_0]]></Name>
+					<X>1100</X><Y>1450</Y>
+					<Label><X>10</X><Y>0</Y></Label>
+					<PublicFlag>false</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>true</ShowLabel>
+					<Properties SaveInSnapshot="true" Constant="false" AccessType="public" StaticVariable="false">
+						<Type><![CDATA[int]]></Type>        
+						<InitialValue Class="CodeValue">
+							<Code><![CDATA[0]]></Code>
+						</InitialValue>
+					</Properties>
+				</Variable>
+				<Variable Class="PlainVariable">
+					<Id>1717249344898</Id>
+					<Name><![CDATA[S_healthy_1]]></Name>
+					<X>1100</X><Y>1500</Y>
+					<Label><X>10</X><Y>0</Y></Label>
+					<PublicFlag>false</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>true</ShowLabel>
+					<Properties SaveInSnapshot="true" Constant="false" AccessType="public" StaticVariable="false">
+						<Type><![CDATA[int]]></Type>        
+						<InitialValue Class="CodeValue">
+							<Code><![CDATA[0]]></Code>
+						</InitialValue>
+					</Properties>
+				</Variable>
+				<Variable Class="PlainVariable">
+					<Id>1717249346246</Id>
+					<Name><![CDATA[S_healthy_2]]></Name>
+					<X>1100</X><Y>1550</Y>
+					<Label><X>10</X><Y>0</Y></Label>
+					<PublicFlag>false</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>true</ShowLabel>
+					<Properties SaveInSnapshot="true" Constant="false" AccessType="public" StaticVariable="false">
+						<Type><![CDATA[int]]></Type>        
+						<InitialValue Class="CodeValue">
+							<Code><![CDATA[0]]></Code>
+						</InitialValue>
+					</Properties>
+				</Variable>
+				<Variable Class="PlainVariable">
+					<Id>1717249363841</Id>
+					<Name><![CDATA[S_healthy_3]]></Name>
+					<X>1100</X><Y>1600</Y>
+					<Label><X>10</X><Y>0</Y></Label>
+					<PublicFlag>false</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>true</ShowLabel>
+					<Properties SaveInSnapshot="true" Constant="false" AccessType="public" StaticVariable="false">
+						<Type><![CDATA[int]]></Type>        
+						<InitialValue Class="CodeValue">
+							<Code><![CDATA[0]]></Code>
+						</InitialValue>
+					</Properties>
+				</Variable>
+				<Variable Class="PlainVariable">
+					<Id>1717249373950</Id>
+					<Name><![CDATA[S_infected_0]]></Name>
+					<X>1200</X><Y>1450</Y>
+					<Label><X>10</X><Y>0</Y></Label>
+					<PublicFlag>false</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>true</ShowLabel>
+					<Properties SaveInSnapshot="true" Constant="false" AccessType="public" StaticVariable="false">
+						<Type><![CDATA[int]]></Type>        
+						<InitialValue Class="CodeValue">
+							<Code><![CDATA[0]]></Code>
+						</InitialValue>
+					</Properties>
+				</Variable>
+				<Variable Class="PlainVariable">
+					<Id>1717249389621</Id>
+					<Name><![CDATA[S_infected_1]]></Name>
+					<X>1200</X><Y>1500</Y>
+					<Label><X>10</X><Y>0</Y></Label>
+					<PublicFlag>false</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>true</ShowLabel>
+					<Properties SaveInSnapshot="true" Constant="false" AccessType="public" StaticVariable="false">
+						<Type><![CDATA[int]]></Type>        
+						<InitialValue Class="CodeValue">
+							<Code><![CDATA[0]]></Code>
+						</InitialValue>
+					</Properties>
+				</Variable>
+				<Variable Class="PlainVariable">
+					<Id>1717249392091</Id>
+					<Name><![CDATA[S_infected_2]]></Name>
+					<X>1200</X><Y>1550</Y>
+					<Label><X>10</X><Y>0</Y></Label>
+					<PublicFlag>false</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>true</ShowLabel>
+					<Properties SaveInSnapshot="true" Constant="false" AccessType="public" StaticVariable="false">
+						<Type><![CDATA[int]]></Type>        
+						<InitialValue Class="CodeValue">
+							<Code><![CDATA[0]]></Code>
+						</InitialValue>
+					</Properties>
+				</Variable>
+				<Variable Class="PlainVariable">
+					<Id>1717249394534</Id>
+					<Name><![CDATA[S_infected_3]]></Name>
+					<X>1200</X><Y>1600</Y>
+					<Label><X>10</X><Y>0</Y></Label>
+					<PublicFlag>false</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>true</ShowLabel>
+					<Properties SaveInSnapshot="true" Constant="false" AccessType="public" StaticVariable="false">
+						<Type><![CDATA[int]]></Type>        
+						<InitialValue Class="CodeValue">
+							<Code><![CDATA[0]]></Code>
+						</InitialValue>
+					</Properties>
+				</Variable>
+				<Variable Class="PlainVariable">
+					<Id>1717249461637</Id>
+					<Name><![CDATA[S_infectious_0]]></Name>
+					<X>1300</X><Y>1450</Y>
+					<Label><X>10</X><Y>0</Y></Label>
+					<PublicFlag>false</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>true</ShowLabel>
+					<Properties SaveInSnapshot="true" Constant="false" AccessType="public" StaticVariable="false">
+						<Type><![CDATA[int]]></Type>        
+						<InitialValue Class="CodeValue">
+							<Code><![CDATA[0]]></Code>
+						</InitialValue>
+					</Properties>
+				</Variable>
+				<Variable Class="PlainVariable">
+					<Id>1717249472675</Id>
+					<Name><![CDATA[S_infectious_1]]></Name>
+					<X>1300</X><Y>1500</Y>
+					<Label><X>10</X><Y>0</Y></Label>
+					<PublicFlag>false</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>true</ShowLabel>
+					<Properties SaveInSnapshot="true" Constant="false" AccessType="public" StaticVariable="false">
+						<Type><![CDATA[int]]></Type>        
+						<InitialValue Class="CodeValue">
+							<Code><![CDATA[0]]></Code>
+						</InitialValue>
+					</Properties>
+				</Variable>
+				<Variable Class="PlainVariable">
+					<Id>1717249475264</Id>
+					<Name><![CDATA[S_infectious_2]]></Name>
+					<X>1300</X><Y>1550</Y>
+					<Label><X>10</X><Y>0</Y></Label>
+					<PublicFlag>false</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>true</ShowLabel>
+					<Properties SaveInSnapshot="true" Constant="false" AccessType="public" StaticVariable="false">
+						<Type><![CDATA[int]]></Type>        
+						<InitialValue Class="CodeValue">
+							<Code><![CDATA[0]]></Code>
+						</InitialValue>
+					</Properties>
+				</Variable>
+				<Variable Class="PlainVariable">
+					<Id>1717249477770</Id>
+					<Name><![CDATA[S_infectious_3]]></Name>
+					<X>1300</X><Y>1600</Y>
+					<Label><X>10</X><Y>0</Y></Label>
+					<PublicFlag>false</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>true</ShowLabel>
+					<Properties SaveInSnapshot="true" Constant="false" AccessType="public" StaticVariable="false">
+						<Type><![CDATA[int]]></Type>        
+						<InitialValue Class="CodeValue">
+							<Code><![CDATA[0]]></Code>
+						</InitialValue>
+					</Properties>
+				</Variable>
+				<Variable Class="PlainVariable">
+					<Id>1717249689166</Id>
+					<Name><![CDATA[S_R0]]></Name>
+					<X>750</X><Y>1350</Y>
+					<Label><X>10</X><Y>0</Y></Label>
+					<PublicFlag>false</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>true</ShowLabel>
+					<Properties SaveInSnapshot="true" Constant="false" AccessType="public" StaticVariable="false">
+						<Type><![CDATA[double]]></Type>        
+						<InitialValue Class="CodeValue">
+							<Code><![CDATA[0]]></Code>
+						</InitialValue>
+					</Properties>
+				</Variable>
+				<Variable Class="PlainVariable">
+					<Id>1717250833575</Id>
+					<Name><![CDATA[S_infected_today]]></Name>
+					<X>750</X><Y>1400</Y>
+					<Label><X>10</X><Y>0</Y></Label>
+					<PublicFlag>false</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>true</ShowLabel>
+					<Properties SaveInSnapshot="true" Constant="false" AccessType="public" StaticVariable="false">
+						<Type><![CDATA[int]]></Type>        
+					</Properties>
+				</Variable>
+				<Variable Class="PlainVariable">
+					<Id>1717251076051</Id>
+					<Name><![CDATA[S_infected_today_0]]></Name>
+					<X>750</X><Y>1450</Y>
+					<Label><X>10</X><Y>0</Y></Label>
+					<PublicFlag>false</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>true</ShowLabel>
+					<Properties SaveInSnapshot="true" Constant="false" AccessType="public" StaticVariable="false">
+						<Type><![CDATA[int]]></Type>        
+						<InitialValue Class="CodeValue">
+							<Code><![CDATA[0]]></Code>
+						</InitialValue>
+					</Properties>
+				</Variable>
+				<Variable Class="PlainVariable">
+					<Id>1717251095293</Id>
+					<Name><![CDATA[S_infected_today_1]]></Name>
+					<X>750</X><Y>1500</Y>
+					<Label><X>10</X><Y>0</Y></Label>
+					<PublicFlag>false</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>true</ShowLabel>
+					<Properties SaveInSnapshot="true" Constant="false" AccessType="public" StaticVariable="false">
+						<Type><![CDATA[int]]></Type>        
+						<InitialValue Class="CodeValue">
+							<Code><![CDATA[0]]></Code>
+						</InitialValue>
+					</Properties>
+				</Variable>
+				<Variable Class="PlainVariable">
+					<Id>1717251110158</Id>
+					<Name><![CDATA[S_infected_today_2]]></Name>
+					<X>750</X><Y>1550</Y>
+					<Label><X>10</X><Y>0</Y></Label>
+					<PublicFlag>false</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>true</ShowLabel>
+					<Properties SaveInSnapshot="true" Constant="false" AccessType="public" StaticVariable="false">
+						<Type><![CDATA[int]]></Type>        
+						<InitialValue Class="CodeValue">
+							<Code><![CDATA[0]]></Code>
+						</InitialValue>
+					</Properties>
+				</Variable>
+				<Variable Class="PlainVariable">
+					<Id>1717251112543</Id>
+					<Name><![CDATA[S_infected_today_3]]></Name>
+					<X>750</X><Y>1600</Y>
+					<Label><X>10</X><Y>0</Y></Label>
+					<PublicFlag>false</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>true</ShowLabel>
+					<Properties SaveInSnapshot="true" Constant="false" AccessType="public" StaticVariable="false">
+						<Type><![CDATA[int]]></Type>        
+						<InitialValue Class="CodeValue">
+							<Code><![CDATA[0]]></Code>
+						</InitialValue>
+					</Properties>
+				</Variable>
+				<Variable Class="PlainVariable">
+					<Id>1717251359747</Id>
+					<Name><![CDATA[S_cured_today_0]]></Name>
+					<X>900</X><Y>1450</Y>
+					<Label><X>10</X><Y>0</Y></Label>
+					<PublicFlag>false</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>true</ShowLabel>
+					<Properties SaveInSnapshot="true" Constant="false" AccessType="public" StaticVariable="false">
+						<Type><![CDATA[int]]></Type>        
+						<InitialValue Class="CodeValue">
+							<Code><![CDATA[0]]></Code>
+						</InitialValue>
+					</Properties>
+				</Variable>
+				<Variable Class="PlainVariable">
+					<Id>1717251375376</Id>
+					<Name><![CDATA[S_cured_today_1]]></Name>
+					<X>900</X><Y>1500</Y>
+					<Label><X>10</X><Y>0</Y></Label>
+					<PublicFlag>false</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>true</ShowLabel>
+					<Properties SaveInSnapshot="true" Constant="false" AccessType="public" StaticVariable="false">
+						<Type><![CDATA[int]]></Type>        
+						<InitialValue Class="CodeValue">
+							<Code><![CDATA[0]]></Code>
+						</InitialValue>
+					</Properties>
+				</Variable>
+				<Variable Class="PlainVariable">
+					<Id>1717251379106</Id>
+					<Name><![CDATA[S_cured_today_2]]></Name>
+					<X>900</X><Y>1550</Y>
+					<Label><X>10</X><Y>0</Y></Label>
+					<PublicFlag>false</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>true</ShowLabel>
+					<Properties SaveInSnapshot="true" Constant="false" AccessType="public" StaticVariable="false">
+						<Type><![CDATA[int]]></Type>        
+						<InitialValue Class="CodeValue">
+							<Code><![CDATA[0]]></Code>
+						</InitialValue>
+					</Properties>
+				</Variable>
+				<Variable Class="PlainVariable">
+					<Id>1717251381388</Id>
+					<Name><![CDATA[S_cured_today_3]]></Name>
+					<X>900</X><Y>1600</Y>
+					<Label><X>10</X><Y>0</Y></Label>
+					<PublicFlag>false</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>true</ShowLabel>
+					<Properties SaveInSnapshot="true" Constant="false" AccessType="public" StaticVariable="false">
+						<Type><![CDATA[int]]></Type>        
+						<InitialValue Class="CodeValue">
+							<Code><![CDATA[0]]></Code>
+						</InitialValue>
+					</Properties>
+				</Variable>
+				<Variable Class="PlainVariable">
+					<Id>1717251385736</Id>
+					<Name><![CDATA[S_cured_today]]></Name>
+					<X>900</X><Y>1400</Y>
+					<Label><X>10</X><Y>0</Y></Label>
+					<PublicFlag>false</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>true</ShowLabel>
+					<Properties SaveInSnapshot="true" Constant="false" AccessType="public" StaticVariable="false">
+						<Type><![CDATA[int]]></Type>        
+					</Properties>
+				</Variable>
+				<Variable Class="PlainVariable">
+					<Id>1717251494181</Id>
+					<Name><![CDATA[S_healthy]]></Name>
+					<X>1100</X><Y>1400</Y>
+					<Label><X>10</X><Y>0</Y></Label>
+					<PublicFlag>false</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>true</ShowLabel>
+					<Properties SaveInSnapshot="true" Constant="false" AccessType="public" StaticVariable="false">
+						<Type><![CDATA[double]]></Type>        
+					</Properties>
+				</Variable>
+				<Variable Class="PlainVariable">
+					<Id>1717251497804</Id>
+					<Name><![CDATA[S_infectious]]></Name>
+					<X>1300</X><Y>1400</Y>
+					<Label><X>10</X><Y>0</Y></Label>
+					<PublicFlag>false</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>true</ShowLabel>
+					<Properties SaveInSnapshot="true" Constant="false" AccessType="public" StaticVariable="false">
+						<Type><![CDATA[double]]></Type>        
+					</Properties>
+				</Variable>
+				<Variable Class="PlainVariable">
+					<Id>1717251500381</Id>
+					<Name><![CDATA[S_infected]]></Name>
+					<X>1200</X><Y>1400</Y>
+					<Label><X>10</X><Y>0</Y></Label>
+					<PublicFlag>false</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>true</ShowLabel>
+					<Properties SaveInSnapshot="true" Constant="false" AccessType="public" StaticVariable="false">
+						<Type><![CDATA[double]]></Type>        
+					</Properties>
+				</Variable>
+				<Variable Class="PlainVariable">
+					<Id>1717254378308</Id>
+					<Name><![CDATA[S_skipped_classes]]></Name>
+					<X>750</X><Y>1300</Y>
+					<Label><X>10</X><Y>0</Y></Label>
+					<PublicFlag>false</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>true</ShowLabel>
+					<Properties SaveInSnapshot="true" Constant="false" AccessType="public" StaticVariable="false">
+						<Type><![CDATA[double]]></Type>        
+					</Properties>
+				</Variable>
+				<Variable Class="PlainVariable">
+					<Id>1717254773729</Id>
+					<Name><![CDATA[S_avg_infected_times]]></Name>
+					<X>750</X><Y>1250</Y>
+					<Label><X>10</X><Y>0</Y></Label>
+					<PublicFlag>false</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>true</ShowLabel>
+					<Properties SaveInSnapshot="true" Constant="false" AccessType="public" StaticVariable="false">
+						<Type><![CDATA[double]]></Type>        
+						<InitialValue Class="CodeValue">
+							<Code><![CDATA[0]]></Code>
+						</InitialValue>
+					</Properties>
+				</Variable>
 				<Variable Class="Parameter">
 					<Id>1717161189066</Id>
 					<Name><![CDATA[D_distance_threshold]]></Name>
@@ -206,7 +608,7 @@
 					</SourceEmbeddedObjectReference>
 					<SourceConnectableItemReference>
 						<PackageName><![CDATA[com.anylogic.libraries.processmodeling]]></PackageName>
-						<ClassName><![CDATA[SelectOutputIn]]></ClassName>
+						<ClassName><![CDATA[SelectOutput]]></ClassName>
 						<ItemName><![CDATA[in]]></ItemName>
 					</SourceConnectableItemReference>
 					<TargetEmbeddedObjectReference>
@@ -227,7 +629,7 @@
 				<Connector>
 					<Id>1717083030688</Id>
 					<Name><![CDATA[connector10]]></Name>
-					<X>455</X><Y>780</Y>
+					<X>380</X><Y>780</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>false</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -260,7 +662,7 @@
 				<Connector>
 					<Id>1717083404651</Id>
 					<Name><![CDATA[connector15]]></Name>
-					<X>640</X><Y>680</Y>
+					<X>580</X><Y>680</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>false</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -293,7 +695,7 @@
 				<Connector>
 					<Id>1717083404659</Id>
 					<Name><![CDATA[connector16]]></Name>
-					<X>560</X><Y>680</Y>
+					<X>500</X><Y>680</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>false</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -326,7 +728,7 @@
 				<Connector>
 					<Id>1717083472586</Id>
 					<Name><![CDATA[connector18]]></Name>
-					<X>565</X><Y>880</Y>
+					<X>505</X><Y>880</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>false</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -359,7 +761,7 @@
 				<Connector>
 					<Id>1717083577704</Id>
 					<Name><![CDATA[connector19]]></Name>
-					<X>645</X><Y>880</Y>
+					<X>585</X><Y>880</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>false</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -390,42 +792,9 @@
 					</Points>
 				</Connector>
 				<Connector>
-					<Id>1717083727625</Id>
-					<Name><![CDATA[connector22]]></Name>
-					<X>315</X><Y>880</Y>
-					<Label><X>10</X><Y>0</Y></Label>
-					<PublicFlag>false</PublicFlag>
-					<PresentationFlag>true</PresentationFlag>
-					<ShowLabel>false</ShowLabel>
-					<SourceEmbeddedObjectReference>
-						<PackageName><![CDATA[cw_varus]]></PackageName>
-						<ClassName><![CDATA[Main]]></ClassName>
-						<ItemName><![CDATA[mv_to_gym]]></ItemName>
-					</SourceEmbeddedObjectReference>
-					<SourceConnectableItemReference>
-						<PackageName><![CDATA[com.anylogic.libraries.processmodeling]]></PackageName>
-						<ClassName><![CDATA[MoveTo]]></ClassName>
-						<ItemName><![CDATA[in]]></ItemName>
-					</SourceConnectableItemReference>
-					<TargetEmbeddedObjectReference>
-						<PackageName><![CDATA[cw_varus]]></PackageName>
-						<ClassName><![CDATA[Main]]></ClassName>
-						<ItemName><![CDATA[to_pe]]></ItemName>
-					</TargetEmbeddedObjectReference>
-					<TargetConnectableItemReference>
-						<PackageName><![CDATA[com.anylogic.libraries.processmodeling]]></PackageName>
-						<ClassName><![CDATA[SelectOutputOut]]></ClassName>
-						<ItemName><![CDATA[out]]></ItemName>
-					</TargetConnectableItemReference>
-					<Points>
-						<Point><X>0</X><Y>0</Y></Point>
-						<Point><X>-45</X><Y>0</Y></Point>
-					</Points>
-				</Connector>
-				<Connector>
 					<Id>1717083923498</Id>
 					<Name><![CDATA[connector25]]></Name>
-					<X>525</X><Y>780</Y>
+					<X>465</X><Y>780</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>false</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -458,7 +827,7 @@
 				<Connector>
 					<Id>1717083923500</Id>
 					<Name><![CDATA[connector26]]></Name>
-					<X>605</X><Y>780</Y>
+					<X>545</X><Y>780</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>false</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -491,7 +860,7 @@
 				<Connector>
 					<Id>1717153535044</Id>
 					<Name><![CDATA[connector5]]></Name>
-					<X>355</X><Y>780</Y>
+					<X>275</X><Y>885</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>false</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -518,13 +887,15 @@
 					</TargetConnectableItemReference>
 					<Points>
 						<Point><X>0</X><Y>0</Y></Point>
-						<Point><X>40</X><Y>0</Y></Point>
+						<Point><X>25</X><Y>0</Y></Point>
+						<Point><X>25</X><Y>-105</Y></Point>
+						<Point><X>45</X><Y>-105</Y></Point>
 					</Points>
 				</Connector>
 				<Connector>
 					<Id>1717153541356</Id>
 					<Name><![CDATA[connector11]]></Name>
-					<X>355</X><Y>880</Y>
+					<X>275</X><Y>780</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>false</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -551,15 +922,15 @@
 					</TargetConnectableItemReference>
 					<Points>
 						<Point><X>0</X><Y>0</Y></Point>
-						<Point><X>30</X><Y>0</Y></Point>
-						<Point><X>30</X><Y>-100</Y></Point>
-						<Point><X>40</X><Y>-100</Y></Point>
+						<Point><X>25</X><Y>0</Y></Point>
+						<Point><X>35</X><Y>0</Y></Point>
+						<Point><X>45</X><Y>0</Y></Point>
 					</Points>
 				</Connector>
 				<Connector>
 					<Id>1717156217270</Id>
 					<Name><![CDATA[connector12]]></Name>
-					<X>685</X><Y>880</Y>
+					<X>625</X><Y>880</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>false</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -581,21 +952,21 @@
 					</TargetEmbeddedObjectReference>
 					<TargetConnectableItemReference>
 						<PackageName><![CDATA[com.anylogic.libraries.processmodeling]]></PackageName>
-						<ClassName><![CDATA[SelectOutputIn]]></ClassName>
+						<ClassName><![CDATA[SelectOutput]]></ClassName>
 						<ItemName><![CDATA[in]]></ItemName>
 					</TargetConnectableItemReference>
 					<Points>
 						<Point><X>0</X><Y>0</Y></Point>
-						<Point><X>30</X><Y>0</Y></Point>
-						<Point><X>30</X><Y>50</Y></Point>
-						<Point><X>-530</X><Y>50</Y></Point>
-						<Point><X>-530</X><Y>-100</Y></Point>
+						<Point><X>25</X><Y>0</Y></Point>
+						<Point><X>25</X><Y>50</Y></Point>
+						<Point><X>-470</X><Y>50</Y></Point>
+						<Point><X>-470</X><Y>-100</Y></Point>
 					</Points>
 				</Connector>
 				<Connector>
 					<Id>1717156250083</Id>
 					<Name><![CDATA[connector13]]></Name>
-					<X>680</X><Y>680</Y>
+					<X>620</X><Y>680</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>false</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -617,21 +988,21 @@
 					</TargetEmbeddedObjectReference>
 					<TargetConnectableItemReference>
 						<PackageName><![CDATA[com.anylogic.libraries.processmodeling]]></PackageName>
-						<ClassName><![CDATA[SelectOutputIn]]></ClassName>
+						<ClassName><![CDATA[SelectOutput]]></ClassName>
 						<ItemName><![CDATA[in]]></ItemName>
 					</TargetConnectableItemReference>
 					<Points>
 						<Point><X>0</X><Y>0</Y></Point>
-						<Point><X>35</X><Y>0</Y></Point>
-						<Point><X>35</X><Y>50</Y></Point>
-						<Point><X>-525</X><Y>50</Y></Point>
-						<Point><X>-525</X><Y>100</Y></Point>
+						<Point><X>30</X><Y>0</Y></Point>
+						<Point><X>30</X><Y>50</Y></Point>
+						<Point><X>-465</X><Y>50</Y></Point>
+						<Point><X>-465</X><Y>100</Y></Point>
 					</Points>
 				</Connector>
 				<Connector>
-					<Id>1717158485391</Id>
+					<Id>1717247727813</Id>
 					<Name><![CDATA[connector2]]></Name>
-					<X>270</X><Y>780</Y>
+					<X>175</X><Y>780</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>false</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -639,12 +1010,45 @@
 					<SourceEmbeddedObjectReference>
 						<PackageName><![CDATA[cw_varus]]></PackageName>
 						<ClassName><![CDATA[Main]]></ClassName>
-						<ItemName><![CDATA[to_class]]></ItemName>
+						<ItemName><![CDATA[pe_switch]]></ItemName>
 					</SourceEmbeddedObjectReference>
 					<SourceConnectableItemReference>
 						<PackageName><![CDATA[com.anylogic.libraries.processmodeling]]></PackageName>
-						<ClassName><![CDATA[SelectOutputOut]]></ClassName>
-						<ItemName><![CDATA[out]]></ItemName>
+						<ClassName><![CDATA[SelectOutput]]></ClassName>
+						<ItemName><![CDATA[outT]]></ItemName>
+					</SourceConnectableItemReference>
+					<TargetEmbeddedObjectReference>
+						<PackageName><![CDATA[cw_varus]]></PackageName>
+						<ClassName><![CDATA[Main]]></ClassName>
+						<ItemName><![CDATA[mv_to_gym]]></ItemName>
+					</TargetEmbeddedObjectReference>
+					<TargetConnectableItemReference>
+						<PackageName><![CDATA[com.anylogic.libraries.processmodeling]]></PackageName>
+						<ClassName><![CDATA[MoveTo]]></ClassName>
+						<ItemName><![CDATA[in]]></ItemName>
+					</TargetConnectableItemReference>
+					<Points>
+						<Point><X>0</X><Y>0</Y></Point>
+						<Point><X>60</X><Y>0</Y></Point>
+					</Points>
+				</Connector>
+				<Connector>
+					<Id>1717247732153</Id>
+					<Name><![CDATA[connector3]]></Name>
+					<X>165</X><Y>790</Y>
+					<Label><X>10</X><Y>0</Y></Label>
+					<PublicFlag>false</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>false</ShowLabel>
+					<SourceEmbeddedObjectReference>
+						<PackageName><![CDATA[cw_varus]]></PackageName>
+						<ClassName><![CDATA[Main]]></ClassName>
+						<ItemName><![CDATA[pe_switch]]></ItemName>
+					</SourceEmbeddedObjectReference>
+					<SourceConnectableItemReference>
+						<PackageName><![CDATA[com.anylogic.libraries.processmodeling]]></PackageName>
+						<ClassName><![CDATA[SelectOutput]]></ClassName>
+						<ItemName><![CDATA[outF]]></ItemName>
 					</SourceConnectableItemReference>
 					<TargetEmbeddedObjectReference>
 						<PackageName><![CDATA[cw_varus]]></PackageName>
@@ -658,7 +1062,8 @@
 					</TargetConnectableItemReference>
 					<Points>
 						<Point><X>0</X><Y>0</Y></Point>
-						<Point><X>45</X><Y>0</Y></Point>
+						<Point><X>0</X><Y>95</Y></Point>
+						<Point><X>70</X><Y>95</Y></Point>
 					</Points>
 				</Connector>
 			</Connectors>
@@ -680,8 +1085,8 @@
 							<Code><![CDATA[1]]></Code>
 							<Unit Class="RateUnits"><![CDATA[PER_HOUR]]></Unit>
 						</Rate>
-						<OccurrenceAtTime>true</OccurrenceAtTime>
-						<OccurrenceDate>1717228800000</OccurrenceDate>
+						<OccurrenceAtTime>false</OccurrenceAtTime>
+						<OccurrenceDate>1725264600000</OccurrenceDate>
 						<OccurrenceTime Class="CodeUnitValue">
 							<Code><![CDATA[20]]></Code>
 							<Unit Class="TimeUnits"><![CDATA[MINUTE]]></Unit>
@@ -752,8 +1157,8 @@
 							<Code><![CDATA[1]]></Code>
 							<Unit Class="RateUnits"><![CDATA[PER_HOUR]]></Unit>
 						</Rate>
-						<OccurrenceAtTime>true</OccurrenceAtTime>
-						<OccurrenceDate>1283329200000</OccurrenceDate>
+						<OccurrenceAtTime>false</OccurrenceAtTime>
+						<OccurrenceDate>1725265800000</OccurrenceDate>
 						<OccurrenceTime Class="CodeUnitValue">
 							<Code><![CDATA[20]]></Code>
 							<Unit Class="TimeUnits"><![CDATA[MINUTE]]></Unit>
@@ -768,6 +1173,8 @@
 	for (Student student : students) {
 		if (student.is_healthy_for_school()) {
 			enter.take(student);
+		} else {
+			student.all_skipped_classes += 1;
 		}
 	}
 }
@@ -790,8 +1197,8 @@
 							<Code><![CDATA[1]]></Code>
 							<Unit Class="RateUnits"><![CDATA[PER_HOUR]]></Unit>
 						</Rate>
-						<OccurrenceAtTime>true</OccurrenceAtTime>
-						<OccurrenceDate>1717228800000</OccurrenceDate>
+						<OccurrenceAtTime>false</OccurrenceAtTime>
+						<OccurrenceDate>1725264000000</OccurrenceDate>
 						<OccurrenceTime Class="CodeUnitValue">
 							<Code><![CDATA[10]]></Code>
 							<Unit Class="TimeUnits"><![CDATA[MINUTE]]></Unit>
@@ -814,6 +1221,132 @@
 		students(i).cr_grade += 1;
 	}
 }]]></Action>
+				</Event>
+				<Event>
+					<Id>1717244394886</Id>
+					<Name><![CDATA[calculate_stats]]></Name>
+					<X>750</X><Y>1060</Y>
+					<Label><X>10</X><Y>0</Y></Label>
+					<PublicFlag>false</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>true</ShowLabel>
+					<Properties TriggerType="timeout" Mode="cyclic">
+						<Timeout Class="CodeUnitValue">
+							<Code><![CDATA[1]]></Code>
+							<Unit Class="TimeUnits"><![CDATA[HOUR]]></Unit>
+						</Timeout>
+						<Rate Class="CodeUnitValue">
+							<Code><![CDATA[1]]></Code>
+							<Unit Class="RateUnits"><![CDATA[PER_HOUR]]></Unit>
+						</Rate>
+						<OccurrenceAtTime>false</OccurrenceAtTime>
+						<OccurrenceDate>1725267600000</OccurrenceDate>
+						<OccurrenceTime Class="CodeUnitValue">
+							<Code><![CDATA[1]]></Code>
+							<Unit Class="TimeUnits"><![CDATA[HOUR]]></Unit>
+						</OccurrenceTime>
+						<RecurrenceCode Class="CodeUnitValue">
+							<Code><![CDATA[1]]></Code>
+							<Unit Class="TimeUnits"><![CDATA[HOUR]]></Unit>
+						</RecurrenceCode>
+						<Condition><![CDATA[false]]></Condition>
+					</Properties>
+					<Action><![CDATA[if (working_days.getValue()) {
+	
+int[] healthy = {0, 0, 0, 0};
+int[] infectious = {0, 0, 0, 0};
+int[] infected = {0, 0, 0, 0};
+double R0 = 0;
+int R0_cnt = 0;
+double skipped_classes = 0;
+double avg_infected_cnt = 0;
+
+for (int i = 0; i < students.size(); i++) {
+	Student s = students(i);
+	if (!s.is_infected) {
+		healthy[s.cr_grade] += 1;
+		if (s.was_ill()) {
+			R0 += s.transmitted_count;
+			R0_cnt += 1;
+		}
+	} else {
+		infected[s.cr_grade] += 1;
+		if (s.is_infectious) {
+			infectious[s.cr_grade] += 1;
+		}
+	}
+	avg_infected_cnt += s.infected_cnt;
+	skipped_classes += s.all_skipped_classes;
+}
+
+S_skipped_classes = skipped_classes / 120;
+S_avg_infected_times = avg_infected_cnt / 120;
+
+S_R0 = R0 / max(R0_cnt, 1);
+S_R0_avg.add(S_R0, time());
+
+S_healthy_0 = healthy[0];
+S_healthy_1 = healthy[1];
+S_healthy_2 = healthy[2];
+S_healthy_3 = healthy[3];
+S_healthy = healthy[0] + healthy[1] +
+			healthy[2] + healthy[3];
+
+S_infected_0 = infected[0];
+S_infected_1 = infected[1];
+S_infected_2 = infected[2];
+S_infected_3 = infected[3];
+S_infected = infected[0] + infected[1] +
+			infected[2] + infected[3];
+
+S_infectious_0 = infectious[0];
+S_infectious_1 = infectious[1];
+S_infectious_2 = infectious[2];
+S_infectious_3 = infectious[3];
+S_infectious = infectious[0] + infectious[1] +
+			infectious[2] + infectious[3];
+}]]></Action>
+				</Event>
+				<Event>
+					<Id>1717252314114</Id>
+					<Name><![CDATA[stats_reset]]></Name>
+					<X>750</X><Y>1110</Y>
+					<Label><X>10</X><Y>0</Y></Label>
+					<PublicFlag>false</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>true</ShowLabel>
+					<Properties TriggerType="timeout" Mode="cyclic">
+						<Timeout Class="CodeUnitValue">
+							<Code><![CDATA[1]]></Code>
+							<Unit Class="TimeUnits"><![CDATA[HOUR]]></Unit>
+						</Timeout>
+						<Rate Class="CodeUnitValue">
+							<Code><![CDATA[1]]></Code>
+							<Unit Class="RateUnits"><![CDATA[PER_HOUR]]></Unit>
+						</Rate>
+						<OccurrenceAtTime>false</OccurrenceAtTime>
+						<OccurrenceDate>1717286400000</OccurrenceDate>
+						<OccurrenceTime Class="CodeUnitValue">
+							<Code><![CDATA[0]]></Code>
+							<Unit Class="TimeUnits"><![CDATA[HOUR]]></Unit>
+						</OccurrenceTime>
+						<RecurrenceCode Class="CodeUnitValue">
+							<Code><![CDATA[1]]></Code>
+							<Unit Class="TimeUnits"><![CDATA[DAY]]></Unit>
+						</RecurrenceCode>
+						<Condition><![CDATA[false]]></Condition>
+					</Properties>
+					<Action><![CDATA[S_infected_today = 0;
+S_cured_today = 0;
+
+S_infected_today_0 = 0;
+S_cured_today_0 = 0;
+S_infected_today_1 = 0;
+S_cured_today_1 = 0;
+S_infected_today_2 = 0;
+S_cured_today_2 = 0;
+S_infected_today_3 = 0;
+S_cured_today_3 = 0;]]></Action>
 				</Event>
 			</Events>
 			<Functions>
@@ -893,6 +1426,82 @@ if (bernoulli(factor) == 1) {
 	sender.infect(reciever);
 }]]></Body>
 				</Function>
+				<Function AccessType="default" StaticFunction="false">
+					<ReturnModificator>VOID</ReturnModificator>
+					<ReturnType><![CDATA[double]]></ReturnType>
+					<Id>1717250859751</Id>
+					<Name><![CDATA[S_delegate_infected]]></Name>
+					<X>900</X><Y>1060</Y>
+					<Label><X>10</X><Y>0</Y></Label>
+					<PublicFlag>false</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>true</ShowLabel>
+					<Parameter>
+						<Name><![CDATA[s]]></Name>
+						<Type><![CDATA[Student]]></Type>
+					</Parameter>
+					<Body><![CDATA[switch (s.cr_grade) {
+	case 0:
+		S_infected_today_0 += 1;
+		break;
+		
+	case 1:
+		S_infected_today_1 += 1;
+		break;
+		
+	case 2:
+		S_infected_today_2 += 1;
+		break;
+		
+	case 3:
+		S_infected_today_3 += 1;
+		break;
+		
+	default:
+		break;
+}
+
+S_infected_today += 1;]]></Body>
+				</Function>
+				<Function AccessType="default" StaticFunction="false">
+					<ReturnModificator>VOID</ReturnModificator>
+					<ReturnType><![CDATA[double]]></ReturnType>
+					<Id>1717251329945</Id>
+					<Name><![CDATA[S_delegate_cured]]></Name>
+					<X>900</X><Y>1110</Y>
+					<Label><X>10</X><Y>0</Y></Label>
+					<PublicFlag>false</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>true</ShowLabel>
+					<Parameter>
+						<Name><![CDATA[s]]></Name>
+						<Type><![CDATA[Student]]></Type>
+					</Parameter>
+					<Body><![CDATA[switch (s.cr_grade) {
+	case 0:
+		S_cured_today_0 += 1;
+		break;
+		
+	case 1:
+		S_cured_today_1 += 1;
+		break;
+		
+	case 2:
+		S_cured_today_2 += 1;
+		break;
+		
+	case 3:
+		S_cured_today_3 += 1;
+		break;
+		
+	default:
+		break;
+}
+
+S_cured_today += 1;
+
+S_avg_ill_time.add(s.get_ill_time(), time());]]></Body>
+				</Function>
 			</Functions>
 			<Schedules>
 				<Schedule>
@@ -957,13 +1566,59 @@ if (bernoulli(factor) == 1) {
 					<Exceptions>
 						<Exception>
 							<Annually>true</Annually>
-							<Start>1275350400000</Start>
-							<End>1283299200000</End>
+							<Start>1717200000000</Start>
+							<End>1725148800000</End>
 							<Value>false</Value>
 						</Exception>
 					</Exceptions>
 				</Schedule>
 			</Schedules>
+			<AnalysisData>
+    			<Statistics>
+					<Id>1717253387625</Id>
+					<Name><![CDATA[S_R0_avg]]></Name>
+					<X>900</X><Y>1350</Y>
+					<Label><X>15</X><Y>0</Y></Label>
+					<PublicFlag>false</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>true</ShowLabel>
+					<AutoUpdate>false</AutoUpdate>
+					<OccurrenceAtTime>true</OccurrenceAtTime>
+					<OccurrenceDate>1717315200000</OccurrenceDate>
+					<OccurrenceTime Class="CodeUnitValue">
+						<Code><![CDATA[0]]></Code>
+						<Unit Class="TimeUnits"><![CDATA[HOUR]]></Unit>
+					</OccurrenceTime>
+					<RecurrenceCode Class="CodeUnitValue">
+						<Code><![CDATA[1]]></Code>
+						<Unit Class="TimeUnits"><![CDATA[HOUR]]></Unit>
+					</RecurrenceCode>
+					<Discrete>false</Discrete>
+					<ValueCode><![CDATA[0]]></ValueCode>
+				</Statistics>
+    			<Statistics>
+					<Id>1717253798960</Id>
+					<Name><![CDATA[S_avg_ill_time]]></Name>
+					<X>900</X><Y>1300</Y>
+					<Label><X>15</X><Y>0</Y></Label>
+					<PublicFlag>false</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>true</ShowLabel>
+					<AutoUpdate>false</AutoUpdate>
+					<OccurrenceAtTime>true</OccurrenceAtTime>
+					<OccurrenceDate>1717315200000</OccurrenceDate>
+					<OccurrenceTime Class="CodeUnitValue">
+						<Code><![CDATA[0]]></Code>
+						<Unit Class="TimeUnits"><![CDATA[HOUR]]></Unit>
+					</OccurrenceTime>
+					<RecurrenceCode Class="CodeUnitValue">
+						<Code><![CDATA[1]]></Code>
+						<Unit Class="TimeUnits"><![CDATA[HOUR]]></Unit>
+					</RecurrenceCode>
+					<Discrete>false</Discrete>
+					<ValueCode><![CDATA[0]]></ValueCode>
+				</Statistics>
+			</AnalysisData>
 			<AgentLinks>
 				<AgentLink>
 					<Id>1716831282911</Id>
@@ -1284,7 +1939,7 @@ if (bernoulli(factor) == 1) {
 				<EmbeddedObject>
 					<Id>1717082340380</Id>
 					<Name><![CDATA[lesson]]></Name>
-					<X>395</X><Y>760</Y>
+					<X>320</X><Y>760</Y>
 					<Label><X>0</X><Y>-10</Y></Label>
 					<PublicFlag>false</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -1385,87 +2040,9 @@ if (bernoulli(factor) == 1) {
 					</QuantityColumn>
 				</EmbeddedObject>
 				<EmbeddedObject>
-					<Id>1717082569822</Id>
-					<Name><![CDATA[pe_switch]]></Name>
-					<X>155</X><Y>770</Y>
-					<Label><X>5</X><Y>40</Y></Label>
-					<PublicFlag>false</PublicFlag>
-					<PresentationFlag>true</PresentationFlag>
-					<ShowLabel>true</ShowLabel>
-					<ActiveObjectClass>
-						<PackageName><![CDATA[com.anylogic.libraries.processmodeling]]></PackageName>
-						<ClassName><![CDATA[SelectOutputIn]]></ClassName>
-					</ActiveObjectClass>
-					<GenericParameterSubstitute>
-						<GenericParameterSubstituteReference>
-							<PackageName><![CDATA[com.anylogic.libraries.processmodeling]]></PackageName>
-							<ClassName><![CDATA[SelectOutputIn]]></ClassName>
-							<ItemName><![CDATA[1412336243165]]></ItemName>
-						</GenericParameterSubstituteReference>
-					</GenericParameterSubstitute>
-					<Parameters>
-						<Parameter>
-							<Name><![CDATA[conditionIsProbabilistic]]></Name>
-							<Value Class="CodeValue">
-								<Code><![CDATA[false]]></Code>
-							</Value>
-						</Parameter>
-						<Parameter>
-							<Name><![CDATA[choice]]></Name>
-							<Value Class="CodeValue">
-								<Code><![CDATA[(agent.is_pe_next()) ? to_pe : to_class]]></Code>
-							</Value>
-						</Parameter>
-						<Parameter>
-							<Name><![CDATA[onEnter]]></Name>
-							<Value Class="CodeValue">
-								<Code><![CDATA[agent.attended_classes += 1;]]></Code>
-							</Value>
-						</Parameter>
-					</Parameters>
-					<ReplicationFlag>false</ReplicationFlag>
-					<Replication Class="CodeValue">
-						<Code><![CDATA[100]]></Code>
-					</Replication>
-					<CollectionType>ARRAY_LIST_BASED</CollectionType>
-					<InitialLocationType>AT_ANIMATION_POSITION</InitialLocationType>
-					<XCode Class="CodeValue">
-						<Code><![CDATA[0]]></Code>
-					</XCode>
-					<YCode Class="CodeValue">
-						<Code><![CDATA[0]]></Code>
-					</YCode>
-					<ZCode Class="CodeValue">
-						<Code><![CDATA[0]]></Code>
-					</ZCode>
-					<ColumnCode Class="CodeValue">
-						<Code><![CDATA[0]]></Code>
-					</ColumnCode>
-					<RowCode Class="CodeValue">
-						<Code><![CDATA[0]]></Code>
-					</RowCode>
-					<LatitudeCode Class="CodeValue">
-						<Code><![CDATA[0]]></Code>
-					</LatitudeCode>
-					<LongitudeCode Class="CodeValue">
-						<Code><![CDATA[0]]></Code>
-					</LongitudeCode>
-					<LocationNameCode Class="CodeValue">
-						<Code><![CDATA[""]]></Code>
-					</LocationNameCode>
-					<InitializationType>SPECIFIED_NUMBER</InitializationType>
-					<InitializationDatabaseTableQuery>
-						<TableReference>
-						</TableReference>
-					</InitializationDatabaseTableQuery>
-					<InitializationDatabaseType>ONE_AGENT_PER_DATABASE_RECORD</InitializationDatabaseType>
-					<QuantityColumn>
-					</QuantityColumn>
-				</EmbeddedObject>
-				<EmbeddedObject>
 					<Id>1717082918579</Id>
 					<Name><![CDATA[mv_to_class]]></Name>
-					<X>315</X><Y>760</Y>
+					<X>235</X><Y>865</Y>
 					<Label><X>-10</X><Y>-10</Y></Label>
 					<PublicFlag>false</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -1621,8 +2198,8 @@ if (bernoulli(factor) == 1) {
 				<EmbeddedObject>
 					<Id>1717083228928</Id>
 					<Name><![CDATA[break_switch]]></Name>
-					<X>455</X><Y>770</Y>
-					<Label><X>-20</X><Y>45</Y></Label>
+					<X>380</X><Y>770</Y>
+					<Label><X>-28</X><Y>40</Y></Label>
 					<PublicFlag>false</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
 					<ShowLabel>true</ShowLabel>
@@ -1696,7 +2273,7 @@ if (bernoulli(factor) == 1) {
 				<EmbeddedObject>
 					<Id>1717083270998</Id>
 					<Name><![CDATA[to_rest]]></Name>
-					<X>505</X><Y>670</Y>
+					<X>445</X><Y>670</Y>
 					<Label><X>-25</X><Y>-15</Y></Label>
 					<PublicFlag>false</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -1768,7 +2345,7 @@ if (bernoulli(factor) == 1) {
 				<EmbeddedObject>
 					<Id>1717083294469</Id>
 					<Name><![CDATA[sch_break]]></Name>
-					<X>640</X><Y>660</Y>
+					<X>580</X><Y>660</Y>
 					<Label><X>0</X><Y>-10</Y></Label>
 					<PublicFlag>false</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -1871,7 +2448,7 @@ if (bernoulli(factor) == 1) {
 				<EmbeddedObject>
 					<Id>1717083358026</Id>
 					<Name><![CDATA[to_lunch]]></Name>
-					<X>505</X><Y>870</Y>
+					<X>445</X><Y>870</Y>
 					<Label><X>-25</X><Y>-15</Y></Label>
 					<PublicFlag>false</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -1943,7 +2520,7 @@ if (bernoulli(factor) == 1) {
 				<EmbeddedObject>
 					<Id>1717083403090</Id>
 					<Name><![CDATA[mv_to_hall]]></Name>
-					<X>560</X><Y>660</Y>
+					<X>500</X><Y>660</Y>
 					<Label><X>-10</X><Y>-10</Y></Label>
 					<PublicFlag>false</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -2102,7 +2679,7 @@ if (bernoulli(factor) == 1) {
 				<EmbeddedObject>
 					<Id>1717083470356</Id>
 					<Name><![CDATA[mv_to_eat]]></Name>
-					<X>565</X><Y>860</Y>
+					<X>505</X><Y>860</Y>
 					<Label><X>-10</X><Y>-10</Y></Label>
 					<PublicFlag>false</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -2261,7 +2838,7 @@ if (bernoulli(factor) == 1) {
 				<EmbeddedObject>
 					<Id>1717083574753</Id>
 					<Name><![CDATA[lunch_break]]></Name>
-					<X>645</X><Y>860</Y>
+					<X>585</X><Y>860</Y>
 					<Label><X>-20</X><Y>-10</Y></Label>
 					<PublicFlag>false</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -2362,84 +2939,9 @@ if (bernoulli(factor) == 1) {
 					</QuantityColumn>
 				</EmbeddedObject>
 				<EmbeddedObject>
-					<Id>1717083666977</Id>
-					<Name><![CDATA[to_pe]]></Name>
-					<X>250</X><Y>870</Y>
-					<Label><X>-20</X><Y>-15</Y></Label>
-					<PublicFlag>false</PublicFlag>
-					<PresentationFlag>true</PresentationFlag>
-					<ShowLabel>true</ShowLabel>
-					<ActiveObjectClass>
-						<PackageName><![CDATA[com.anylogic.libraries.processmodeling]]></PackageName>
-						<ClassName><![CDATA[SelectOutputOut]]></ClassName>
-					</ActiveObjectClass>
-					<GenericParameterSubstitute>
-						<GenericParameterSubstituteReference>
-							<PackageName><![CDATA[com.anylogic.libraries.processmodeling]]></PackageName>
-							<ClassName><![CDATA[SelectOutputOut]]></ClassName>
-							<ItemName><![CDATA[1412336243166]]></ItemName>
-						</GenericParameterSubstituteReference>
-						<GenericParameterSubstituteValue Class="CodeValue">
-							<Code><![CDATA[Student]]></Code>
-						</GenericParameterSubstituteValue>
-					</GenericParameterSubstitute>
-					<Parameters>
-						<Parameter>
-							<Name><![CDATA[selectOutputIn]]></Name>
-							<Value Class="CodeValue">
-								<Code><![CDATA[pe_switch]]></Code>
-							</Value>
-						</Parameter>
-						<Parameter>
-							<Name><![CDATA[probability]]></Name>
-						</Parameter>
-						<Parameter>
-							<Name><![CDATA[onExit]]></Name>
-						</Parameter>
-					</Parameters>
-					<ReplicationFlag>false</ReplicationFlag>
-					<Replication Class="CodeValue">
-						<Code><![CDATA[100]]></Code>
-					</Replication>
-					<CollectionType>ARRAY_LIST_BASED</CollectionType>
-					<InitialLocationType>AT_ANIMATION_POSITION</InitialLocationType>
-					<XCode Class="CodeValue">
-						<Code><![CDATA[0]]></Code>
-					</XCode>
-					<YCode Class="CodeValue">
-						<Code><![CDATA[0]]></Code>
-					</YCode>
-					<ZCode Class="CodeValue">
-						<Code><![CDATA[0]]></Code>
-					</ZCode>
-					<ColumnCode Class="CodeValue">
-						<Code><![CDATA[0]]></Code>
-					</ColumnCode>
-					<RowCode Class="CodeValue">
-						<Code><![CDATA[0]]></Code>
-					</RowCode>
-					<LatitudeCode Class="CodeValue">
-						<Code><![CDATA[0]]></Code>
-					</LatitudeCode>
-					<LongitudeCode Class="CodeValue">
-						<Code><![CDATA[0]]></Code>
-					</LongitudeCode>
-					<LocationNameCode Class="CodeValue">
-						<Code><![CDATA[""]]></Code>
-					</LocationNameCode>
-					<InitializationType>SPECIFIED_NUMBER</InitializationType>
-					<InitializationDatabaseTableQuery>
-						<TableReference>
-						</TableReference>
-					</InitializationDatabaseTableQuery>
-					<InitializationDatabaseType>ONE_AGENT_PER_DATABASE_RECORD</InitializationDatabaseType>
-					<QuantityColumn>
-					</QuantityColumn>
-				</EmbeddedObject>
-				<EmbeddedObject>
 					<Id>1717083725750</Id>
 					<Name><![CDATA[mv_to_gym]]></Name>
-					<X>315</X><Y>860</Y>
+					<X>235</X><Y>760</Y>
 					<Label><X>-10</X><Y>-10</Y></Label>
 					<PublicFlag>false</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -2598,7 +3100,7 @@ if (bernoulli(factor) == 1) {
 				<EmbeddedObject>
 					<Id>1717083822780</Id>
 					<Name><![CDATA[to_leave]]></Name>
-					<X>505</X><Y>770</Y>
+					<X>445</X><Y>770</Y>
 					<Label><X>-10</X><Y>-20</Y></Label>
 					<PublicFlag>false</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -2670,7 +3172,7 @@ if (bernoulli(factor) == 1) {
 				<EmbeddedObject>
 					<Id>1717083842870</Id>
 					<Name><![CDATA[exit]]></Name>
-					<X>665</X><Y>770</Y>
+					<X>605</X><Y>770</Y>
 					<Label><X>-10</X><Y>-15</Y></Label>
 					<PublicFlag>false</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -2736,7 +3238,7 @@ if (bernoulli(factor) == 1) {
 				<EmbeddedObject>
 					<Id>1717083920617</Id>
 					<Name><![CDATA[mv_to_exit]]></Name>
-					<X>565</X><Y>760</Y>
+					<X>505</X><Y>760</Y>
 					<Label><X>-10</X><Y>-10</Y></Label>
 					<PublicFlag>false</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -2893,81 +3395,6 @@ if (bernoulli(factor) == 1) {
 					</QuantityColumn>
 				</EmbeddedObject>
 				<EmbeddedObject>
-					<Id>1717158483319</Id>
-					<Name><![CDATA[to_class]]></Name>
-					<X>250</X><Y>770</Y>
-					<Label><X>-20</X><Y>-15</Y></Label>
-					<PublicFlag>false</PublicFlag>
-					<PresentationFlag>true</PresentationFlag>
-					<ShowLabel>true</ShowLabel>
-					<ActiveObjectClass>
-						<PackageName><![CDATA[com.anylogic.libraries.processmodeling]]></PackageName>
-						<ClassName><![CDATA[SelectOutputOut]]></ClassName>
-					</ActiveObjectClass>
-					<GenericParameterSubstitute>
-						<GenericParameterSubstituteReference>
-							<PackageName><![CDATA[com.anylogic.libraries.processmodeling]]></PackageName>
-							<ClassName><![CDATA[SelectOutputOut]]></ClassName>
-							<ItemName><![CDATA[1412336243166]]></ItemName>
-						</GenericParameterSubstituteReference>
-						<GenericParameterSubstituteValue Class="CodeValue">
-							<Code><![CDATA[Student]]></Code>
-						</GenericParameterSubstituteValue>
-					</GenericParameterSubstitute>
-					<Parameters>
-						<Parameter>
-							<Name><![CDATA[selectOutputIn]]></Name>
-							<Value Class="CodeValue">
-								<Code><![CDATA[pe_switch]]></Code>
-							</Value>
-						</Parameter>
-						<Parameter>
-							<Name><![CDATA[probability]]></Name>
-						</Parameter>
-						<Parameter>
-							<Name><![CDATA[onExit]]></Name>
-						</Parameter>
-					</Parameters>
-					<ReplicationFlag>false</ReplicationFlag>
-					<Replication Class="CodeValue">
-						<Code><![CDATA[100]]></Code>
-					</Replication>
-					<CollectionType>ARRAY_LIST_BASED</CollectionType>
-					<InitialLocationType>AT_ANIMATION_POSITION</InitialLocationType>
-					<XCode Class="CodeValue">
-						<Code><![CDATA[0]]></Code>
-					</XCode>
-					<YCode Class="CodeValue">
-						<Code><![CDATA[0]]></Code>
-					</YCode>
-					<ZCode Class="CodeValue">
-						<Code><![CDATA[0]]></Code>
-					</ZCode>
-					<ColumnCode Class="CodeValue">
-						<Code><![CDATA[0]]></Code>
-					</ColumnCode>
-					<RowCode Class="CodeValue">
-						<Code><![CDATA[0]]></Code>
-					</RowCode>
-					<LatitudeCode Class="CodeValue">
-						<Code><![CDATA[0]]></Code>
-					</LatitudeCode>
-					<LongitudeCode Class="CodeValue">
-						<Code><![CDATA[0]]></Code>
-					</LongitudeCode>
-					<LocationNameCode Class="CodeValue">
-						<Code><![CDATA[""]]></Code>
-					</LocationNameCode>
-					<InitializationType>SPECIFIED_NUMBER</InitializationType>
-					<InitializationDatabaseTableQuery>
-						<TableReference>
-						</TableReference>
-					</InitializationDatabaseTableQuery>
-					<InitializationDatabaseType>ONE_AGENT_PER_DATABASE_RECORD</InitializationDatabaseType>
-					<QuantityColumn>
-					</QuantityColumn>
-				</EmbeddedObject>
-				<EmbeddedObject>
 					<Id>1717159079318</Id>
 					<Name><![CDATA[students]]></Name>
 					<X>55</X><Y>830</Y>
@@ -3011,9 +3438,99 @@ if (bernoulli(factor) == 1) {
 					<CollectionType>ARRAY_LIST_BASED</CollectionType>
 					<InEnvironment>true</InEnvironment>	
 					<InitialSpeedCode Class="CodeUnitValue">
-						<Code><![CDATA[1]]></Code>
+						<Code><![CDATA[2]]></Code>
 						<Unit Class="SpeedUnits"><![CDATA[MPS]]></Unit>
 					</InitialSpeedCode>
+					<InitialLocationType>AT_ANIMATION_POSITION</InitialLocationType>
+					<XCode Class="CodeValue">
+						<Code><![CDATA[0]]></Code>
+					</XCode>
+					<YCode Class="CodeValue">
+						<Code><![CDATA[0]]></Code>
+					</YCode>
+					<ZCode Class="CodeValue">
+						<Code><![CDATA[0]]></Code>
+					</ZCode>
+					<ColumnCode Class="CodeValue">
+						<Code><![CDATA[0]]></Code>
+					</ColumnCode>
+					<RowCode Class="CodeValue">
+						<Code><![CDATA[0]]></Code>
+					</RowCode>
+					<LatitudeCode Class="CodeValue">
+						<Code><![CDATA[0]]></Code>
+					</LatitudeCode>
+					<LongitudeCode Class="CodeValue">
+						<Code><![CDATA[0]]></Code>
+					</LongitudeCode>
+					<LocationNameCode Class="CodeValue">
+						<Code><![CDATA[""]]></Code>
+					</LocationNameCode>
+					<InitializationType>SPECIFIED_NUMBER</InitializationType>
+					<InitializationDatabaseTableQuery>
+						<TableReference>
+						</TableReference>
+					</InitializationDatabaseTableQuery>
+					<InitializationDatabaseType>ONE_AGENT_PER_DATABASE_RECORD</InitializationDatabaseType>
+					<QuantityColumn>
+					</QuantityColumn>
+				</EmbeddedObject>
+				<EmbeddedObject>
+					<Id>1717247623141</Id>
+					<Name><![CDATA[pe_switch]]></Name>
+					<X>145</X><Y>770</Y>
+					<Label><X>11</X><Y>-16</Y></Label>
+					<PublicFlag>false</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>true</ShowLabel>
+					<ActiveObjectClass>
+						<PackageName><![CDATA[com.anylogic.libraries.processmodeling]]></PackageName>
+						<ClassName><![CDATA[SelectOutput]]></ClassName>
+					</ActiveObjectClass>
+					<GenericParameterSubstitute>
+						<GenericParameterSubstituteReference>
+							<PackageName><![CDATA[com.anylogic.libraries.processmodeling]]></PackageName>
+							<ClassName><![CDATA[SelectOutput]]></ClassName>
+							<ItemName><![CDATA[1412336242931]]></ItemName>
+						</GenericParameterSubstituteReference>
+					</GenericParameterSubstitute>
+					<Parameters>
+						<Parameter>
+							<Name><![CDATA[conditionIsProbabilistic]]></Name>
+							<Value Class="CodeValue">
+								<Code><![CDATA[false]]></Code>
+							</Value>
+						</Parameter>
+						<Parameter>
+							<Name><![CDATA[condition]]></Name>
+							<Value Class="CodeValue">
+								<Code><![CDATA[agent.is_pe_next()]]></Code>
+							</Value>
+						</Parameter>
+						<Parameter>
+							<Name><![CDATA[probability]]></Name>
+						</Parameter>
+						<Parameter>
+							<Name><![CDATA[onAtEnter]]></Name>
+						</Parameter>
+						<Parameter>
+							<Name><![CDATA[onEnter]]></Name>
+							<Value Class="CodeValue">
+								<Code><![CDATA[agent.attended_classes += 1;]]></Code>
+							</Value>
+						</Parameter>
+						<Parameter>
+							<Name><![CDATA[onExitTrue]]></Name>
+						</Parameter>
+						<Parameter>
+							<Name><![CDATA[onExitFalse]]></Name>
+						</Parameter>
+					</Parameters>
+					<ReplicationFlag>false</ReplicationFlag>
+					<Replication Class="CodeValue">
+						<Code><![CDATA[100]]></Code>
+					</Replication>
+					<CollectionType>ARRAY_LIST_BASED</CollectionType>
 					<InitialLocationType>AT_ANIMATION_POSITION</InitialLocationType>
 					<XCode Class="CodeValue">
 						<Code><![CDATA[0]]></Code>
@@ -3078,7 +3595,7 @@ if (bernoulli(factor) == 1) {
 				<RectangleNode>
 					<Id>1717147140867</Id>
 					<Name><![CDATA[cr2]]></Name>
-					<X>780</X><Y>340</Y>
+					<X>780</X><Y>420</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>true</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -3648,7 +4165,7 @@ if (bernoulli(factor) == 1) {
 				<Path SourceId="1717147450417" TargetId="1717147140867">
 					<Id>1717147479616</Id>
 					<Name><![CDATA[path]]></Name>
-					<X>890</X><Y>310</Y>
+					<X>890</X><Y>390</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>true</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -3684,7 +4201,7 @@ if (bernoulli(factor) == 1) {
 				<RectangleNode>
 					<Id>1717147450417</Id>
 					<Name><![CDATA[hall]]></Name>
-					<X>780</X><Y>250</Y>
+					<X>650</X><Y>250</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>true</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -3883,14 +4400,14 @@ if (bernoulli(factor) == 1) {
 						<SlopeType>angle</SlopeType>	
 					</Slope>
 
-					<Width>330</Width>
-					<Height>60</Height>
+					<Width>460</Width>
+					<Height>140</Height>
 					<Rotation>0.0</Rotation>
 				</RectangleNode>
 				<RectangleNode>
 					<Id>1717147148669</Id>
 					<Name><![CDATA[cr3]]></Name>
-					<X>980</X><Y>340</Y>
+					<X>980</X><Y>420</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>true</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -4460,7 +4977,7 @@ if (bernoulli(factor) == 1) {
 				<Path SourceId="1717147450417" TargetId="1717147148669">
 					<Id>1717147497181</Id>
 					<Name><![CDATA[path1]]></Name>
-					<X>1080</X><Y>310</Y>
+					<X>1080</X><Y>390</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>true</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -5894,33 +6411,9 @@ if (bernoulli(factor) == 1) {
 
 			<Presentation>
 				<Attractor>
-					<Id>1717147338022</Id>
-					<Name><![CDATA[attractor120]]></Name>
-					<X>26.923076923076923</X><Y>27.272727272727273</Y>
-					<Label><X>10</X><Y>0</Y></Label>
-					<PublicFlag>true</PublicFlag>
-					<PresentationFlag>true</PresentationFlag>
-					<ShowLabel>false</ShowLabel>
-					<DrawMode>SHAPE_DRAW_2D3D</DrawMode>
-					<Z>0</Z>
-					<Rotation>0.0</Rotation>	
-				</Attractor>
-				<Attractor>
-					<Id>1717147338024</Id>
-					<Name><![CDATA[attractor121]]></Name>
-					<X>53.84615384615385</X><Y>27.272727272727273</Y>
-					<Label><X>10</X><Y>0</Y></Label>
-					<PublicFlag>true</PublicFlag>
-					<PresentationFlag>true</PresentationFlag>
-					<ShowLabel>false</ShowLabel>
-					<DrawMode>SHAPE_DRAW_2D3D</DrawMode>
-					<Z>0</Z>
-					<Rotation>0.0</Rotation>	
-				</Attractor>
-				<Attractor>
-					<Id>1717147338026</Id>
+					<Id>1717243592580</Id>
 					<Name><![CDATA[attractor122]]></Name>
-					<X>80.76923076923077</X><Y>27.272727272727273</Y>
+					<X>40</X><Y>30</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>true</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -5930,21 +6423,21 @@ if (bernoulli(factor) == 1) {
 					<Rotation>0.0</Rotation>	
 				</Attractor>
 				<Attractor>
-					<Id>1717147338028</Id>
+					<Id>1717243592582</Id>
 					<Name><![CDATA[attractor123]]></Name>
-					<X>107.6923076923077</X><Y>27.272727272727273</Y>
+					<X>75</X><Y>28.636000000000003</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>true</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
 					<ShowLabel>false</ShowLabel>
 					<DrawMode>SHAPE_DRAW_2D3D</DrawMode>
 					<Z>0</Z>
-					<Rotation>0.0</Rotation>	
+					<Rotation>180.0</Rotation>	
 				</Attractor>
 				<Attractor>
-					<Id>1717147338030</Id>
+					<Id>1717243592584</Id>
 					<Name><![CDATA[attractor124]]></Name>
-					<X>134.6153846153846</X><Y>27.272727272727273</Y>
+					<X>100</X><Y>25.455</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>true</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -5954,21 +6447,21 @@ if (bernoulli(factor) == 1) {
 					<Rotation>0.0</Rotation>	
 				</Attractor>
 				<Attractor>
-					<Id>1717147338032</Id>
+					<Id>1717243592586</Id>
 					<Name><![CDATA[attractor125]]></Name>
-					<X>161.53846153846155</X><Y>27.272727272727273</Y>
+					<X>130</X><Y>28.182000000000002</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>true</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
 					<ShowLabel>false</ShowLabel>
 					<DrawMode>SHAPE_DRAW_2D3D</DrawMode>
 					<Z>0</Z>
-					<Rotation>0.0</Rotation>	
+					<Rotation>180.0</Rotation>	
 				</Attractor>
 				<Attractor>
-					<Id>1717147338034</Id>
+					<Id>1717243592588</Id>
 					<Name><![CDATA[attractor126]]></Name>
-					<X>188.46153846153848</X><Y>27.272727272727273</Y>
+					<X>165</X><Y>27.273000000000003</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>true</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -5978,21 +6471,21 @@ if (bernoulli(factor) == 1) {
 					<Rotation>0.0</Rotation>	
 				</Attractor>
 				<Attractor>
-					<Id>1717147338036</Id>
+					<Id>1717243592590</Id>
 					<Name><![CDATA[attractor127]]></Name>
-					<X>215.38461538461542</X><Y>27.272727272727273</Y>
+					<X>195.82799999999997</X><Y>290.823</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>true</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
 					<ShowLabel>false</ShowLabel>
 					<DrawMode>SHAPE_DRAW_2D3D</DrawMode>
 					<Z>0</Z>
-					<Rotation>0.0</Rotation>	
+					<Rotation>175.0</Rotation>	
 				</Attractor>
 				<Attractor>
-					<Id>1717147338038</Id>
+					<Id>1717243592592</Id>
 					<Name><![CDATA[attractor128]]></Name>
-					<X>242.30769230769235</X><Y>27.272727272727273</Y>
+					<X>225</X><Y>27.273000000000003</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>true</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -6002,33 +6495,21 @@ if (bernoulli(factor) == 1) {
 					<Rotation>0.0</Rotation>	
 				</Attractor>
 				<Attractor>
-					<Id>1717147338040</Id>
+					<Id>1717243592594</Id>
 					<Name><![CDATA[attractor129]]></Name>
-					<X>269.2307692307693</X><Y>27.272727272727273</Y>
+					<X>255</X><Y>290</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>true</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
 					<ShowLabel>false</ShowLabel>
 					<DrawMode>SHAPE_DRAW_2D3D</DrawMode>
 					<Z>0</Z>
-					<Rotation>0.0</Rotation>	
+					<Rotation>185.0</Rotation>	
 				</Attractor>
 				<Attractor>
-					<Id>1717147338042</Id>
-					<Name><![CDATA[attractor130]]></Name>
-					<X>296.1538461538462</X><Y>27.272727272727273</Y>
-					<Label><X>10</X><Y>0</Y></Label>
-					<PublicFlag>true</PublicFlag>
-					<PresentationFlag>true</PresentationFlag>
-					<ShowLabel>false</ShowLabel>
-					<DrawMode>SHAPE_DRAW_2D3D</DrawMode>
-					<Z>0</Z>
-					<Rotation>0.0</Rotation>	
-				</Attractor>
-				<Attractor>
-					<Id>1717147338044</Id>
+					<Id>1717243592596</Id>
 					<Name><![CDATA[attractor131]]></Name>
-					<X>323.0769230769231</X><Y>27.272727272727273</Y>
+					<X>285</X><Y>27.726999999999997</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>true</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -6038,21 +6519,21 @@ if (bernoulli(factor) == 1) {
 					<Rotation>0.0</Rotation>	
 				</Attractor>
 				<Attractor>
-					<Id>1717147338046</Id>
+					<Id>1717243592598</Id>
 					<Name><![CDATA[attractor132]]></Name>
-					<X>26.923076923076923</X><Y>54.54545454545455</Y>
+					<X>315</X><Y>290</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>true</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
 					<ShowLabel>false</ShowLabel>
 					<DrawMode>SHAPE_DRAW_2D3D</DrawMode>
 					<Z>0</Z>
-					<Rotation>0.0</Rotation>	
+					<Rotation>185.0</Rotation>	
 				</Attractor>
 				<Attractor>
-					<Id>1717147338048</Id>
+					<Id>1717243592600</Id>
 					<Name><![CDATA[attractor133]]></Name>
-					<X>53.84615384615385</X><Y>54.54545454545455</Y>
+					<X>340</X><Y>25</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>true</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -6062,21 +6543,21 @@ if (bernoulli(factor) == 1) {
 					<Rotation>0.0</Rotation>	
 				</Attractor>
 				<Attractor>
-					<Id>1717147338050</Id>
+					<Id>1717243592602</Id>
 					<Name><![CDATA[attractor134]]></Name>
-					<X>80.76923076923077</X><Y>54.54545454545455</Y>
+					<X>369.56899999999996</X><Y>291.778</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>true</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
 					<ShowLabel>false</ShowLabel>
 					<DrawMode>SHAPE_DRAW_2D3D</DrawMode>
 					<Z>0</Z>
-					<Rotation>0.0</Rotation>	
+					<Rotation>179.0</Rotation>	
 				</Attractor>
 				<Attractor>
-					<Id>1717147338052</Id>
+					<Id>1717243592604</Id>
 					<Name><![CDATA[attractor135]]></Name>
-					<X>107.6923076923077</X><Y>54.54545454545455</Y>
+					<X>40</X><Y>59.09</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>true</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -6086,21 +6567,21 @@ if (bernoulli(factor) == 1) {
 					<Rotation>0.0</Rotation>	
 				</Attractor>
 				<Attractor>
-					<Id>1717147338054</Id>
+					<Id>1717243592606</Id>
 					<Name><![CDATA[attractor136]]></Name>
-					<X>134.6153846153846</X><Y>54.54545454545455</Y>
+					<X>75</X><Y>57.727000000000004</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>true</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
 					<ShowLabel>false</ShowLabel>
 					<DrawMode>SHAPE_DRAW_2D3D</DrawMode>
 					<Z>0</Z>
-					<Rotation>0.0</Rotation>	
+					<Rotation>180.0</Rotation>	
 				</Attractor>
 				<Attractor>
-					<Id>1717147338056</Id>
+					<Id>1717243592608</Id>
 					<Name><![CDATA[attractor137]]></Name>
-					<X>161.53846153846155</X><Y>54.54545454545455</Y>
+					<X>100</X><Y>54.545</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>true</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -6110,21 +6591,21 @@ if (bernoulli(factor) == 1) {
 					<Rotation>0.0</Rotation>	
 				</Attractor>
 				<Attractor>
-					<Id>1717147338058</Id>
+					<Id>1717243592610</Id>
 					<Name><![CDATA[attractor138]]></Name>
-					<X>188.46153846153848</X><Y>54.54545454545455</Y>
+					<X>130</X><Y>57.272000000000006</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>true</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
 					<ShowLabel>false</ShowLabel>
 					<DrawMode>SHAPE_DRAW_2D3D</DrawMode>
 					<Z>0</Z>
-					<Rotation>0.0</Rotation>	
+					<Rotation>180.0</Rotation>	
 				</Attractor>
 				<Attractor>
-					<Id>1717147338060</Id>
+					<Id>1717243592612</Id>
 					<Name><![CDATA[attractor139]]></Name>
-					<X>215.38461538461542</X><Y>54.54545454545455</Y>
+					<X>165</X><Y>56.364000000000004</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>true</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -6134,21 +6615,21 @@ if (bernoulli(factor) == 1) {
 					<Rotation>0.0</Rotation>	
 				</Attractor>
 				<Attractor>
-					<Id>1717147338062</Id>
+					<Id>1717243592614</Id>
 					<Name><![CDATA[attractor140]]></Name>
-					<X>242.30769230769235</X><Y>54.54545454545455</Y>
+					<X>195.7360000000001</X><Y>261.841</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>true</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
 					<ShowLabel>false</ShowLabel>
 					<DrawMode>SHAPE_DRAW_2D3D</DrawMode>
 					<Z>0</Z>
-					<Rotation>0.0</Rotation>	
+					<Rotation>175.0</Rotation>	
 				</Attractor>
 				<Attractor>
-					<Id>1717147338064</Id>
+					<Id>1717243592616</Id>
 					<Name><![CDATA[attractor141]]></Name>
-					<X>269.2307692307693</X><Y>54.54545454545455</Y>
+					<X>225</X><Y>56.364000000000004</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>true</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -6158,21 +6639,21 @@ if (bernoulli(factor) == 1) {
 					<Rotation>0.0</Rotation>	
 				</Attractor>
 				<Attractor>
-					<Id>1717147338066</Id>
+					<Id>1717243592618</Id>
 					<Name><![CDATA[attractor142]]></Name>
-					<X>296.1538461538462</X><Y>54.54545454545455</Y>
+					<X>255.04199999999992</X><Y>261.02</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>true</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
 					<ShowLabel>false</ShowLabel>
 					<DrawMode>SHAPE_DRAW_2D3D</DrawMode>
 					<Z>0</Z>
-					<Rotation>0.0</Rotation>	
+					<Rotation>185.0</Rotation>	
 				</Attractor>
 				<Attractor>
-					<Id>1717147338068</Id>
+					<Id>1717243592620</Id>
 					<Name><![CDATA[attractor143]]></Name>
-					<X>323.0769230769231</X><Y>54.54545454545455</Y>
+					<X>285</X><Y>56.818</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>true</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -6182,21 +6663,21 @@ if (bernoulli(factor) == 1) {
 					<Rotation>0.0</Rotation>	
 				</Attractor>
 				<Attractor>
-					<Id>1717147338070</Id>
+					<Id>1717243592622</Id>
 					<Name><![CDATA[attractor144]]></Name>
-					<X>26.923076923076923</X><Y>81.81818181818181</Y>
+					<X>315.183</X><Y>261.02</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>true</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
 					<ShowLabel>false</ShowLabel>
 					<DrawMode>SHAPE_DRAW_2D3D</DrawMode>
 					<Z>0</Z>
-					<Rotation>0.0</Rotation>	
+					<Rotation>185.0</Rotation>	
 				</Attractor>
 				<Attractor>
-					<Id>1717147338072</Id>
+					<Id>1717243592624</Id>
 					<Name><![CDATA[attractor145]]></Name>
-					<X>53.84615384615385</X><Y>81.81818181818181</Y>
+					<X>340</X><Y>54.090999999999994</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>true</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -6206,21 +6687,21 @@ if (bernoulli(factor) == 1) {
 					<Rotation>0.0</Rotation>	
 				</Attractor>
 				<Attractor>
-					<Id>1717147338074</Id>
+					<Id>1717243592626</Id>
 					<Name><![CDATA[attractor146]]></Name>
-					<X>80.76923076923077</X><Y>81.81818181818181</Y>
+					<X>369.0609999999999</X><Y>262.692</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>true</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
 					<ShowLabel>false</ShowLabel>
 					<DrawMode>SHAPE_DRAW_2D3D</DrawMode>
 					<Z>0</Z>
-					<Rotation>0.0</Rotation>	
+					<Rotation>179.0</Rotation>	
 				</Attractor>
 				<Attractor>
-					<Id>1717147338076</Id>
+					<Id>1717243592628</Id>
 					<Name><![CDATA[attractor147]]></Name>
-					<X>107.6923076923077</X><Y>81.81818181818181</Y>
+					<X>40</X><Y>88.181</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>true</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -6230,21 +6711,21 @@ if (bernoulli(factor) == 1) {
 					<Rotation>0.0</Rotation>	
 				</Attractor>
 				<Attractor>
-					<Id>1717147338078</Id>
+					<Id>1717243592630</Id>
 					<Name><![CDATA[attractor148]]></Name>
-					<X>134.6153846153846</X><Y>81.81818181818181</Y>
+					<X>75</X><Y>86.818</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>true</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
 					<ShowLabel>false</ShowLabel>
 					<DrawMode>SHAPE_DRAW_2D3D</DrawMode>
 					<Z>0</Z>
-					<Rotation>0.0</Rotation>	
+					<Rotation>180.0</Rotation>	
 				</Attractor>
 				<Attractor>
-					<Id>1717147338080</Id>
+					<Id>1717243592632</Id>
 					<Name><![CDATA[attractor149]]></Name>
-					<X>161.53846153846155</X><Y>81.81818181818181</Y>
+					<X>100</X><Y>83.636</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>true</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -6254,21 +6735,21 @@ if (bernoulli(factor) == 1) {
 					<Rotation>0.0</Rotation>	
 				</Attractor>
 				<Attractor>
-					<Id>1717147338082</Id>
+					<Id>1717243592634</Id>
 					<Name><![CDATA[attractor150]]></Name>
-					<X>188.46153846153848</X><Y>81.81818181818181</Y>
+					<X>130</X><Y>86.363</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>true</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
 					<ShowLabel>false</ShowLabel>
 					<DrawMode>SHAPE_DRAW_2D3D</DrawMode>
 					<Z>0</Z>
-					<Rotation>0.0</Rotation>	
+					<Rotation>180.0</Rotation>	
 				</Attractor>
 				<Attractor>
-					<Id>1717147338084</Id>
+					<Id>1717243592636</Id>
 					<Name><![CDATA[attractor151]]></Name>
-					<X>215.38461538461542</X><Y>81.81818181818181</Y>
+					<X>165</X><Y>85.455</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>true</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -6278,21 +6759,21 @@ if (bernoulli(factor) == 1) {
 					<Rotation>0.0</Rotation>	
 				</Attractor>
 				<Attractor>
-					<Id>1717147338086</Id>
+					<Id>1717243592638</Id>
 					<Name><![CDATA[attractor152]]></Name>
-					<X>242.30769230769235</X><Y>81.81818181818181</Y>
+					<X>195.644</X><Y>232.86</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>true</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
 					<ShowLabel>false</ShowLabel>
 					<DrawMode>SHAPE_DRAW_2D3D</DrawMode>
 					<Z>0</Z>
-					<Rotation>0.0</Rotation>	
+					<Rotation>175.0</Rotation>	
 				</Attractor>
 				<Attractor>
-					<Id>1717147338088</Id>
+					<Id>1717243592640</Id>
 					<Name><![CDATA[attractor153]]></Name>
-					<X>269.2307692307693</X><Y>81.81818181818181</Y>
+					<X>225</X><Y>85.455</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>true</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -6302,21 +6783,21 @@ if (bernoulli(factor) == 1) {
 					<Rotation>0.0</Rotation>	
 				</Attractor>
 				<Attractor>
-					<Id>1717147338090</Id>
+					<Id>1717243592642</Id>
 					<Name><![CDATA[attractor154]]></Name>
-					<X>296.1538461538462</X><Y>81.81818181818181</Y>
+					<X>255.08300000000008</X><Y>232.04000000000002</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>true</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
 					<ShowLabel>false</ShowLabel>
 					<DrawMode>SHAPE_DRAW_2D3D</DrawMode>
 					<Z>0</Z>
-					<Rotation>0.0</Rotation>	
+					<Rotation>185.0</Rotation>	
 				</Attractor>
 				<Attractor>
-					<Id>1717147338092</Id>
+					<Id>1717243592644</Id>
 					<Name><![CDATA[attractor155]]></Name>
-					<X>323.0769230769231</X><Y>81.81818181818181</Y>
+					<X>285</X><Y>85.909</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>true</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -6326,21 +6807,21 @@ if (bernoulli(factor) == 1) {
 					<Rotation>0.0</Rotation>	
 				</Attractor>
 				<Attractor>
-					<Id>1717147338094</Id>
+					<Id>1717243592646</Id>
 					<Name><![CDATA[attractor156]]></Name>
-					<X>26.923076923076923</X><Y>109.0909090909091</Y>
+					<X>315.366</X><Y>232.039</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>true</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
 					<ShowLabel>false</ShowLabel>
 					<DrawMode>SHAPE_DRAW_2D3D</DrawMode>
 					<Z>0</Z>
-					<Rotation>0.0</Rotation>	
+					<Rotation>185.0</Rotation>	
 				</Attractor>
 				<Attractor>
-					<Id>1717147338096</Id>
+					<Id>1717243592648</Id>
 					<Name><![CDATA[attractor157]]></Name>
-					<X>53.84615384615385</X><Y>109.0909090909091</Y>
+					<X>340</X><Y>83.182</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>true</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -6350,21 +6831,21 @@ if (bernoulli(factor) == 1) {
 					<Rotation>0.0</Rotation>	
 				</Attractor>
 				<Attractor>
-					<Id>1717147338098</Id>
+					<Id>1717243592650</Id>
 					<Name><![CDATA[attractor158]]></Name>
-					<X>80.76923076923077</X><Y>109.0909090909091</Y>
+					<X>368.5540000000001</X><Y>233.60500000000002</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>true</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
 					<ShowLabel>false</ShowLabel>
 					<DrawMode>SHAPE_DRAW_2D3D</DrawMode>
 					<Z>0</Z>
-					<Rotation>0.0</Rotation>	
+					<Rotation>179.0</Rotation>	
 				</Attractor>
 				<Attractor>
-					<Id>1717147338100</Id>
+					<Id>1717243592652</Id>
 					<Name><![CDATA[attractor159]]></Name>
-					<X>107.6923076923077</X><Y>109.0909090909091</Y>
+					<X>40</X><Y>117.27199999999999</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>true</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -6374,21 +6855,21 @@ if (bernoulli(factor) == 1) {
 					<Rotation>0.0</Rotation>	
 				</Attractor>
 				<Attractor>
-					<Id>1717147338102</Id>
+					<Id>1717243592654</Id>
 					<Name><![CDATA[attractor160]]></Name>
-					<X>134.6153846153846</X><Y>109.0909090909091</Y>
+					<X>75</X><Y>115.90899999999999</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>true</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
 					<ShowLabel>false</ShowLabel>
 					<DrawMode>SHAPE_DRAW_2D3D</DrawMode>
 					<Z>0</Z>
-					<Rotation>0.0</Rotation>	
+					<Rotation>180.0</Rotation>	
 				</Attractor>
 				<Attractor>
-					<Id>1717147338104</Id>
+					<Id>1717243592656</Id>
 					<Name><![CDATA[attractor161]]></Name>
-					<X>161.53846153846155</X><Y>109.0909090909091</Y>
+					<X>100</X><Y>112.727</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>true</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -6398,21 +6879,21 @@ if (bernoulli(factor) == 1) {
 					<Rotation>0.0</Rotation>	
 				</Attractor>
 				<Attractor>
-					<Id>1717147338106</Id>
+					<Id>1717243592658</Id>
 					<Name><![CDATA[attractor162]]></Name>
-					<X>188.46153846153848</X><Y>109.0909090909091</Y>
+					<X>130</X><Y>115.45400000000001</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>true</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
 					<ShowLabel>false</ShowLabel>
 					<DrawMode>SHAPE_DRAW_2D3D</DrawMode>
 					<Z>0</Z>
-					<Rotation>0.0</Rotation>	
+					<Rotation>180.0</Rotation>	
 				</Attractor>
 				<Attractor>
-					<Id>1717147338108</Id>
+					<Id>1717243592660</Id>
 					<Name><![CDATA[attractor163]]></Name>
-					<X>215.38461538461542</X><Y>109.0909090909091</Y>
+					<X>165</X><Y>114.54499999999999</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>true</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -6422,21 +6903,21 @@ if (bernoulli(factor) == 1) {
 					<Rotation>0.0</Rotation>	
 				</Attractor>
 				<Attractor>
-					<Id>1717147338110</Id>
+					<Id>1717243592662</Id>
 					<Name><![CDATA[attractor164]]></Name>
-					<X>242.30769230769235</X><Y>109.0909090909091</Y>
+					<X>195.5519999999999</X><Y>203.882</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>true</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
 					<ShowLabel>false</ShowLabel>
 					<DrawMode>SHAPE_DRAW_2D3D</DrawMode>
 					<Z>0</Z>
-					<Rotation>0.0</Rotation>	
+					<Rotation>175.0</Rotation>	
 				</Attractor>
 				<Attractor>
-					<Id>1717147338112</Id>
+					<Id>1717243592664</Id>
 					<Name><![CDATA[attractor165]]></Name>
-					<X>269.2307692307693</X><Y>109.0909090909091</Y>
+					<X>225</X><Y>114.54499999999999</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>true</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -6446,21 +6927,21 @@ if (bernoulli(factor) == 1) {
 					<Rotation>0.0</Rotation>	
 				</Attractor>
 				<Attractor>
-					<Id>1717147338114</Id>
+					<Id>1717243592666</Id>
 					<Name><![CDATA[attractor166]]></Name>
-					<X>296.1538461538462</X><Y>109.0909090909091</Y>
+					<X>255.125</X><Y>203.06</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>true</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
 					<ShowLabel>false</ShowLabel>
 					<DrawMode>SHAPE_DRAW_2D3D</DrawMode>
 					<Z>0</Z>
-					<Rotation>0.0</Rotation>	
+					<Rotation>185.0</Rotation>	
 				</Attractor>
 				<Attractor>
-					<Id>1717147338116</Id>
+					<Id>1717243592668</Id>
 					<Name><![CDATA[attractor167]]></Name>
-					<X>323.0769230769231</X><Y>109.0909090909091</Y>
+					<X>285</X><Y>115</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>true</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -6470,21 +6951,21 @@ if (bernoulli(factor) == 1) {
 					<Rotation>0.0</Rotation>	
 				</Attractor>
 				<Attractor>
-					<Id>1717147338118</Id>
+					<Id>1717243592670</Id>
 					<Name><![CDATA[attractor168]]></Name>
-					<X>26.923076923076923</X><Y>136.36363636363637</Y>
+					<X>315.54999999999995</X><Y>203.059</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>true</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
 					<ShowLabel>false</ShowLabel>
 					<DrawMode>SHAPE_DRAW_2D3D</DrawMode>
 					<Z>0</Z>
-					<Rotation>0.0</Rotation>	
+					<Rotation>185.0</Rotation>	
 				</Attractor>
 				<Attractor>
-					<Id>1717147338120</Id>
+					<Id>1717243592672</Id>
 					<Name><![CDATA[attractor169]]></Name>
-					<X>53.84615384615385</X><Y>136.36363636363637</Y>
+					<X>340</X><Y>112.273</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>true</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -6494,21 +6975,21 @@ if (bernoulli(factor) == 1) {
 					<Rotation>0.0</Rotation>	
 				</Attractor>
 				<Attractor>
-					<Id>1717147338122</Id>
+					<Id>1717243592674</Id>
 					<Name><![CDATA[attractor170]]></Name>
-					<X>80.76923076923077</X><Y>136.36363636363637</Y>
+					<X>368.04600000000005</X><Y>204.519</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>true</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
 					<ShowLabel>false</ShowLabel>
 					<DrawMode>SHAPE_DRAW_2D3D</DrawMode>
 					<Z>0</Z>
-					<Rotation>0.0</Rotation>	
+					<Rotation>179.0</Rotation>	
 				</Attractor>
 				<Attractor>
-					<Id>1717147338124</Id>
+					<Id>1717243592676</Id>
 					<Name><![CDATA[attractor171]]></Name>
-					<X>107.6923076923077</X><Y>136.36363636363637</Y>
+					<X>40</X><Y>146.363</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>true</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -6518,21 +6999,21 @@ if (bernoulli(factor) == 1) {
 					<Rotation>0.0</Rotation>	
 				</Attractor>
 				<Attractor>
-					<Id>1717147338126</Id>
+					<Id>1717243592678</Id>
 					<Name><![CDATA[attractor172]]></Name>
-					<X>134.6153846153846</X><Y>136.36363636363637</Y>
+					<X>75</X><Y>145</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>true</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
 					<ShowLabel>false</ShowLabel>
 					<DrawMode>SHAPE_DRAW_2D3D</DrawMode>
 					<Z>0</Z>
-					<Rotation>0.0</Rotation>	
+					<Rotation>180.0</Rotation>	
 				</Attractor>
 				<Attractor>
-					<Id>1717147338128</Id>
+					<Id>1717243592680</Id>
 					<Name><![CDATA[attractor173]]></Name>
-					<X>161.53846153846155</X><Y>136.36363636363637</Y>
+					<X>100</X><Y>141.818</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>true</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -6542,21 +7023,21 @@ if (bernoulli(factor) == 1) {
 					<Rotation>0.0</Rotation>	
 				</Attractor>
 				<Attractor>
-					<Id>1717147338130</Id>
+					<Id>1717243592682</Id>
 					<Name><![CDATA[attractor174]]></Name>
-					<X>188.46153846153848</X><Y>136.36363636363637</Y>
+					<X>130</X><Y>144.545</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>true</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
 					<ShowLabel>false</ShowLabel>
 					<DrawMode>SHAPE_DRAW_2D3D</DrawMode>
 					<Z>0</Z>
-					<Rotation>0.0</Rotation>	
+					<Rotation>180.0</Rotation>	
 				</Attractor>
 				<Attractor>
-					<Id>1717147338132</Id>
+					<Id>1717243592684</Id>
 					<Name><![CDATA[attractor175]]></Name>
-					<X>215.38461538461542</X><Y>136.36363636363637</Y>
+					<X>165</X><Y>143.636</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>true</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -6566,21 +7047,21 @@ if (bernoulli(factor) == 1) {
 					<Rotation>0.0</Rotation>	
 				</Attractor>
 				<Attractor>
-					<Id>1717147338134</Id>
+					<Id>1717243592686</Id>
 					<Name><![CDATA[attractor176]]></Name>
-					<X>242.30769230769235</X><Y>136.36363636363637</Y>
+					<X>195.46000000000004</X><Y>174.898</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>true</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
 					<ShowLabel>false</ShowLabel>
 					<DrawMode>SHAPE_DRAW_2D3D</DrawMode>
 					<Z>0</Z>
-					<Rotation>0.0</Rotation>	
+					<Rotation>175.0</Rotation>	
 				</Attractor>
 				<Attractor>
-					<Id>1717147338136</Id>
+					<Id>1717243592688</Id>
 					<Name><![CDATA[attractor177]]></Name>
-					<X>269.2307692307693</X><Y>136.36363636363637</Y>
+					<X>225</X><Y>143.636</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>true</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -6590,21 +7071,21 @@ if (bernoulli(factor) == 1) {
 					<Rotation>0.0</Rotation>	
 				</Attractor>
 				<Attractor>
-					<Id>1717147338138</Id>
+					<Id>1717243592690</Id>
 					<Name><![CDATA[attractor178]]></Name>
-					<X>296.1538461538462</X><Y>136.36363636363637</Y>
+					<X>255.16699999999992</X><Y>174.08</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>true</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
 					<ShowLabel>false</ShowLabel>
 					<DrawMode>SHAPE_DRAW_2D3D</DrawMode>
 					<Z>0</Z>
-					<Rotation>0.0</Rotation>	
+					<Rotation>185.0</Rotation>	
 				</Attractor>
 				<Attractor>
-					<Id>1717147338140</Id>
+					<Id>1717243592692</Id>
 					<Name><![CDATA[attractor179]]></Name>
-					<X>323.0769230769231</X><Y>136.36363636363637</Y>
+					<X>285</X><Y>144.091</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>true</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -6614,21 +7095,21 @@ if (bernoulli(factor) == 1) {
 					<Rotation>0.0</Rotation>	
 				</Attractor>
 				<Attractor>
-					<Id>1717147338142</Id>
+					<Id>1717243592694</Id>
 					<Name><![CDATA[attractor180]]></Name>
-					<X>26.923076923076923</X><Y>163.63636363636365</Y>
+					<X>315.73299999999995</X><Y>174.079</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>true</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
 					<ShowLabel>false</ShowLabel>
 					<DrawMode>SHAPE_DRAW_2D3D</DrawMode>
 					<Z>0</Z>
-					<Rotation>0.0</Rotation>	
+					<Rotation>185.0</Rotation>	
 				</Attractor>
 				<Attractor>
-					<Id>1717147338144</Id>
+					<Id>1717243592696</Id>
 					<Name><![CDATA[attractor181]]></Name>
-					<X>53.84615384615385</X><Y>163.63636363636365</Y>
+					<X>340</X><Y>141.364</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>true</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -6638,21 +7119,21 @@ if (bernoulli(factor) == 1) {
 					<Rotation>0.0</Rotation>	
 				</Attractor>
 				<Attractor>
-					<Id>1717147338146</Id>
+					<Id>1717243592698</Id>
 					<Name><![CDATA[attractor182]]></Name>
-					<X>80.76923076923077</X><Y>163.63636363636365</Y>
+					<X>367.538</X><Y>175.432</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>true</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
 					<ShowLabel>false</ShowLabel>
 					<DrawMode>SHAPE_DRAW_2D3D</DrawMode>
 					<Z>0</Z>
-					<Rotation>0.0</Rotation>	
+					<Rotation>179.0</Rotation>	
 				</Attractor>
 				<Attractor>
-					<Id>1717147338148</Id>
+					<Id>1717243592700</Id>
 					<Name><![CDATA[attractor183]]></Name>
-					<X>107.6923076923077</X><Y>163.63636363636365</Y>
+					<X>40</X><Y>175.454</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>true</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -6662,21 +7143,21 @@ if (bernoulli(factor) == 1) {
 					<Rotation>0.0</Rotation>	
 				</Attractor>
 				<Attractor>
-					<Id>1717147338150</Id>
+					<Id>1717243592702</Id>
 					<Name><![CDATA[attractor184]]></Name>
-					<X>134.6153846153846</X><Y>163.63636363636365</Y>
+					<X>75</X><Y>174.09</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>true</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
 					<ShowLabel>false</ShowLabel>
 					<DrawMode>SHAPE_DRAW_2D3D</DrawMode>
 					<Z>0</Z>
-					<Rotation>0.0</Rotation>	
+					<Rotation>180.0</Rotation>	
 				</Attractor>
 				<Attractor>
-					<Id>1717147338152</Id>
+					<Id>1717243592704</Id>
 					<Name><![CDATA[attractor185]]></Name>
-					<X>161.53846153846155</X><Y>163.63636363636365</Y>
+					<X>100</X><Y>170.909</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>true</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -6686,21 +7167,21 @@ if (bernoulli(factor) == 1) {
 					<Rotation>0.0</Rotation>	
 				</Attractor>
 				<Attractor>
-					<Id>1717147338154</Id>
+					<Id>1717243592706</Id>
 					<Name><![CDATA[attractor186]]></Name>
-					<X>188.46153846153848</X><Y>163.63636363636365</Y>
+					<X>130</X><Y>173.636</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>true</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
 					<ShowLabel>false</ShowLabel>
 					<DrawMode>SHAPE_DRAW_2D3D</DrawMode>
 					<Z>0</Z>
-					<Rotation>0.0</Rotation>	
+					<Rotation>180.0</Rotation>	
 				</Attractor>
 				<Attractor>
-					<Id>1717147338156</Id>
+					<Id>1717243592708</Id>
 					<Name><![CDATA[attractor187]]></Name>
-					<X>215.38461538461542</X><Y>163.63636363636365</Y>
+					<X>165</X><Y>172.727</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>true</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -6710,21 +7191,21 @@ if (bernoulli(factor) == 1) {
 					<Rotation>0.0</Rotation>	
 				</Attractor>
 				<Attractor>
-					<Id>1717147338158</Id>
+					<Id>1717243592710</Id>
 					<Name><![CDATA[attractor188]]></Name>
-					<X>242.30769230769235</X><Y>163.63636363636365</Y>
+					<X>195.36799999999994</X><Y>145.919</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>true</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
 					<ShowLabel>false</ShowLabel>
 					<DrawMode>SHAPE_DRAW_2D3D</DrawMode>
 					<Z>0</Z>
-					<Rotation>0.0</Rotation>	
+					<Rotation>175.0</Rotation>	
 				</Attractor>
 				<Attractor>
-					<Id>1717147338160</Id>
+					<Id>1717243592712</Id>
 					<Name><![CDATA[attractor189]]></Name>
-					<X>269.2307692307693</X><Y>163.63636363636365</Y>
+					<X>225</X><Y>172.727</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>true</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -6734,21 +7215,21 @@ if (bernoulli(factor) == 1) {
 					<Rotation>0.0</Rotation>	
 				</Attractor>
 				<Attractor>
-					<Id>1717147338162</Id>
+					<Id>1717243592714</Id>
 					<Name><![CDATA[attractor190]]></Name>
-					<X>296.1538461538462</X><Y>163.63636363636365</Y>
+					<X>255.20900000000006</X><Y>145.099</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>true</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
 					<ShowLabel>false</ShowLabel>
 					<DrawMode>SHAPE_DRAW_2D3D</DrawMode>
 					<Z>0</Z>
-					<Rotation>0.0</Rotation>	
+					<Rotation>185.0</Rotation>	
 				</Attractor>
 				<Attractor>
-					<Id>1717147338164</Id>
+					<Id>1717243592716</Id>
 					<Name><![CDATA[attractor191]]></Name>
-					<X>323.0769230769231</X><Y>163.63636363636365</Y>
+					<X>285</X><Y>173.182</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>true</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -6758,21 +7239,21 @@ if (bernoulli(factor) == 1) {
 					<Rotation>0.0</Rotation>	
 				</Attractor>
 				<Attractor>
-					<Id>1717147338166</Id>
+					<Id>1717243592718</Id>
 					<Name><![CDATA[attractor192]]></Name>
-					<X>26.923076923076923</X><Y>190.90909090909093</Y>
+					<X>315.91599999999994</X><Y>145.099</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>true</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
 					<ShowLabel>false</ShowLabel>
 					<DrawMode>SHAPE_DRAW_2D3D</DrawMode>
 					<Z>0</Z>
-					<Rotation>0.0</Rotation>	
+					<Rotation>185.0</Rotation>	
 				</Attractor>
 				<Attractor>
-					<Id>1717147338168</Id>
+					<Id>1717243592720</Id>
 					<Name><![CDATA[attractor193]]></Name>
-					<X>53.84615384615385</X><Y>190.90909090909093</Y>
+					<X>340</X><Y>170.455</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>true</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -6782,21 +7263,21 @@ if (bernoulli(factor) == 1) {
 					<Rotation>0.0</Rotation>	
 				</Attractor>
 				<Attractor>
-					<Id>1717147338170</Id>
+					<Id>1717243592722</Id>
 					<Name><![CDATA[attractor194]]></Name>
-					<X>80.76923076923077</X><Y>190.90909090909093</Y>
+					<X>367.03</X><Y>146.346</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>true</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
 					<ShowLabel>false</ShowLabel>
 					<DrawMode>SHAPE_DRAW_2D3D</DrawMode>
 					<Z>0</Z>
-					<Rotation>0.0</Rotation>	
+					<Rotation>179.0</Rotation>	
 				</Attractor>
 				<Attractor>
-					<Id>1717147338172</Id>
+					<Id>1717243592724</Id>
 					<Name><![CDATA[attractor195]]></Name>
-					<X>107.6923076923077</X><Y>190.90909090909093</Y>
+					<X>40</X><Y>204.545</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>true</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -6806,21 +7287,21 @@ if (bernoulli(factor) == 1) {
 					<Rotation>0.0</Rotation>	
 				</Attractor>
 				<Attractor>
-					<Id>1717147338174</Id>
+					<Id>1717243592726</Id>
 					<Name><![CDATA[attractor196]]></Name>
-					<X>134.6153846153846</X><Y>190.90909090909093</Y>
+					<X>75</X><Y>203.181</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>true</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
 					<ShowLabel>false</ShowLabel>
 					<DrawMode>SHAPE_DRAW_2D3D</DrawMode>
 					<Z>0</Z>
-					<Rotation>0.0</Rotation>	
+					<Rotation>180.0</Rotation>	
 				</Attractor>
 				<Attractor>
-					<Id>1717147338176</Id>
+					<Id>1717243592728</Id>
 					<Name><![CDATA[attractor197]]></Name>
-					<X>161.53846153846155</X><Y>190.90909090909093</Y>
+					<X>100</X><Y>200</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>true</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -6830,21 +7311,21 @@ if (bernoulli(factor) == 1) {
 					<Rotation>0.0</Rotation>	
 				</Attractor>
 				<Attractor>
-					<Id>1717147338178</Id>
+					<Id>1717243592730</Id>
 					<Name><![CDATA[attractor198]]></Name>
-					<X>188.46153846153848</X><Y>190.90909090909093</Y>
+					<X>130</X><Y>202.727</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>true</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
 					<ShowLabel>false</ShowLabel>
 					<DrawMode>SHAPE_DRAW_2D3D</DrawMode>
 					<Z>0</Z>
-					<Rotation>0.0</Rotation>	
+					<Rotation>180.0</Rotation>	
 				</Attractor>
 				<Attractor>
-					<Id>1717147338180</Id>
+					<Id>1717243592732</Id>
 					<Name><![CDATA[attractor199]]></Name>
-					<X>215.38461538461542</X><Y>190.90909090909093</Y>
+					<X>165</X><Y>201.818</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>true</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -6854,45 +7335,21 @@ if (bernoulli(factor) == 1) {
 					<Rotation>0.0</Rotation>	
 				</Attractor>
 				<Attractor>
-					<Id>1717147338182</Id>
-					<Name><![CDATA[attractor200]]></Name>
-					<X>242.30769230769235</X><Y>190.90909090909093</Y>
-					<Label><X>10</X><Y>0</Y></Label>
-					<PublicFlag>true</PublicFlag>
-					<PresentationFlag>true</PresentationFlag>
-					<ShowLabel>false</ShowLabel>
-					<DrawMode>SHAPE_DRAW_2D3D</DrawMode>
-					<Z>0</Z>
-					<Rotation>0.0</Rotation>	
-				</Attractor>
-				<Attractor>
-					<Id>1717147338184</Id>
-					<Name><![CDATA[attractor201]]></Name>
-					<X>269.2307692307693</X><Y>190.90909090909093</Y>
-					<Label><X>10</X><Y>0</Y></Label>
-					<PublicFlag>true</PublicFlag>
-					<PresentationFlag>true</PresentationFlag>
-					<ShowLabel>false</ShowLabel>
-					<DrawMode>SHAPE_DRAW_2D3D</DrawMode>
-					<Z>0</Z>
-					<Rotation>0.0</Rotation>	
-				</Attractor>
-				<Attractor>
-					<Id>1717147338186</Id>
+					<Id>1717243592734</Id>
 					<Name><![CDATA[attractor202]]></Name>
-					<X>296.1538461538462</X><Y>190.90909090909093</Y>
+					<X>195.27600000000007</X><Y>116.94</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>true</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
 					<ShowLabel>false</ShowLabel>
 					<DrawMode>SHAPE_DRAW_2D3D</DrawMode>
 					<Z>0</Z>
-					<Rotation>0.0</Rotation>	
+					<Rotation>175.0</Rotation>	
 				</Attractor>
 				<Attractor>
-					<Id>1717147338188</Id>
+					<Id>1717243592736</Id>
 					<Name><![CDATA[attractor203]]></Name>
-					<X>323.0769230769231</X><Y>190.90909090909093</Y>
+					<X>225</X><Y>201.818</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>true</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -6902,21 +7359,21 @@ if (bernoulli(factor) == 1) {
 					<Rotation>0.0</Rotation>	
 				</Attractor>
 				<Attractor>
-					<Id>1717147338190</Id>
+					<Id>1717243592738</Id>
 					<Name><![CDATA[attractor204]]></Name>
-					<X>26.923076923076923</X><Y>218.18181818181822</Y>
+					<X>255.25</X><Y>116.119</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>true</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
 					<ShowLabel>false</ShowLabel>
 					<DrawMode>SHAPE_DRAW_2D3D</DrawMode>
 					<Z>0</Z>
-					<Rotation>0.0</Rotation>	
+					<Rotation>185.0</Rotation>	
 				</Attractor>
 				<Attractor>
-					<Id>1717147338192</Id>
+					<Id>1717243592740</Id>
 					<Name><![CDATA[attractor205]]></Name>
-					<X>53.84615384615385</X><Y>218.18181818181822</Y>
+					<X>285</X><Y>202.273</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>true</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -6926,21 +7383,21 @@ if (bernoulli(factor) == 1) {
 					<Rotation>0.0</Rotation>	
 				</Attractor>
 				<Attractor>
-					<Id>1717147338194</Id>
+					<Id>1717243592742</Id>
 					<Name><![CDATA[attractor206]]></Name>
-					<X>80.76923076923077</X><Y>218.18181818181822</Y>
+					<X>316.0999999999999</X><Y>116.119</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>true</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
 					<ShowLabel>false</ShowLabel>
 					<DrawMode>SHAPE_DRAW_2D3D</DrawMode>
 					<Z>0</Z>
-					<Rotation>0.0</Rotation>	
+					<Rotation>185.0</Rotation>	
 				</Attractor>
 				<Attractor>
-					<Id>1717147338196</Id>
+					<Id>1717243592744</Id>
 					<Name><![CDATA[attractor207]]></Name>
-					<X>107.6923076923077</X><Y>218.18181818181822</Y>
+					<X>340</X><Y>199.545</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>true</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -6950,21 +7407,21 @@ if (bernoulli(factor) == 1) {
 					<Rotation>0.0</Rotation>	
 				</Attractor>
 				<Attractor>
-					<Id>1717147338198</Id>
+					<Id>1717243592746</Id>
 					<Name><![CDATA[attractor208]]></Name>
-					<X>134.6153846153846</X><Y>218.18181818181822</Y>
+					<X>366.5229999999999</X><Y>117.25899999999999</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>true</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
 					<ShowLabel>false</ShowLabel>
 					<DrawMode>SHAPE_DRAW_2D3D</DrawMode>
 					<Z>0</Z>
-					<Rotation>0.0</Rotation>	
+					<Rotation>179.0</Rotation>	
 				</Attractor>
 				<Attractor>
-					<Id>1717147338200</Id>
+					<Id>1717243592748</Id>
 					<Name><![CDATA[attractor209]]></Name>
-					<X>161.53846153846155</X><Y>218.18181818181822</Y>
+					<X>40</X><Y>233.63600000000002</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>true</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -6974,33 +7431,21 @@ if (bernoulli(factor) == 1) {
 					<Rotation>0.0</Rotation>	
 				</Attractor>
 				<Attractor>
-					<Id>1717147338202</Id>
-					<Name><![CDATA[attractor210]]></Name>
-					<X>188.46153846153848</X><Y>218.18181818181822</Y>
-					<Label><X>10</X><Y>0</Y></Label>
-					<PublicFlag>true</PublicFlag>
-					<PresentationFlag>true</PresentationFlag>
-					<ShowLabel>false</ShowLabel>
-					<DrawMode>SHAPE_DRAW_2D3D</DrawMode>
-					<Z>0</Z>
-					<Rotation>0.0</Rotation>	
-				</Attractor>
-				<Attractor>
-					<Id>1717147338204</Id>
+					<Id>1717243592750</Id>
 					<Name><![CDATA[attractor211]]></Name>
-					<X>215.38461538461542</X><Y>218.18181818181822</Y>
+					<X>75</X><Y>232.272</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>true</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
 					<ShowLabel>false</ShowLabel>
 					<DrawMode>SHAPE_DRAW_2D3D</DrawMode>
 					<Z>0</Z>
-					<Rotation>0.0</Rotation>	
+					<Rotation>180.0</Rotation>	
 				</Attractor>
 				<Attractor>
-					<Id>1717147338206</Id>
+					<Id>1717243592752</Id>
 					<Name><![CDATA[attractor212]]></Name>
-					<X>242.30769230769235</X><Y>218.18181818181822</Y>
+					<X>100</X><Y>229.091</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>true</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -7010,21 +7455,21 @@ if (bernoulli(factor) == 1) {
 					<Rotation>0.0</Rotation>	
 				</Attractor>
 				<Attractor>
-					<Id>1717147338208</Id>
+					<Id>1717243592754</Id>
 					<Name><![CDATA[attractor213]]></Name>
-					<X>269.2307692307693</X><Y>218.18181818181822</Y>
+					<X>130</X><Y>231.81799999999998</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>true</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
 					<ShowLabel>false</ShowLabel>
 					<DrawMode>SHAPE_DRAW_2D3D</DrawMode>
 					<Z>0</Z>
-					<Rotation>0.0</Rotation>	
+					<Rotation>180.0</Rotation>	
 				</Attractor>
 				<Attractor>
-					<Id>1717147338210</Id>
+					<Id>1717243592756</Id>
 					<Name><![CDATA[attractor214]]></Name>
-					<X>296.1538461538462</X><Y>218.18181818181822</Y>
+					<X>165</X><Y>230.909</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>true</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -7034,21 +7479,21 @@ if (bernoulli(factor) == 1) {
 					<Rotation>0.0</Rotation>	
 				</Attractor>
 				<Attractor>
-					<Id>1717147338212</Id>
+					<Id>1717243592758</Id>
 					<Name><![CDATA[attractor215]]></Name>
-					<X>323.0769230769231</X><Y>218.18181818181822</Y>
+					<X>195.18399999999997</X><Y>87.96</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>true</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
 					<ShowLabel>false</ShowLabel>
 					<DrawMode>SHAPE_DRAW_2D3D</DrawMode>
 					<Z>0</Z>
-					<Rotation>0.0</Rotation>	
+					<Rotation>175.0</Rotation>	
 				</Attractor>
 				<Attractor>
-					<Id>1717147338214</Id>
+					<Id>1717243592760</Id>
 					<Name><![CDATA[attractor216]]></Name>
-					<X>26.923076923076923</X><Y>245.4545454545455</Y>
+					<X>225</X><Y>230.909</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>true</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -7058,21 +7503,21 @@ if (bernoulli(factor) == 1) {
 					<Rotation>0.0</Rotation>	
 				</Attractor>
 				<Attractor>
-					<Id>1717147338216</Id>
+					<Id>1717243592762</Id>
 					<Name><![CDATA[attractor217]]></Name>
-					<X>53.84615384615385</X><Y>245.4545454545455</Y>
+					<X>255.29199999999992</X><Y>87.139</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>true</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
 					<ShowLabel>false</ShowLabel>
 					<DrawMode>SHAPE_DRAW_2D3D</DrawMode>
 					<Z>0</Z>
-					<Rotation>0.0</Rotation>	
+					<Rotation>185.0</Rotation>	
 				</Attractor>
 				<Attractor>
-					<Id>1717147338218</Id>
+					<Id>1717243592764</Id>
 					<Name><![CDATA[attractor218]]></Name>
-					<X>80.76923076923077</X><Y>245.4545454545455</Y>
+					<X>285</X><Y>231.36399999999998</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>true</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -7082,21 +7527,21 @@ if (bernoulli(factor) == 1) {
 					<Rotation>0.0</Rotation>	
 				</Attractor>
 				<Attractor>
-					<Id>1717147338220</Id>
+					<Id>1717243592766</Id>
 					<Name><![CDATA[attractor219]]></Name>
-					<X>107.6923076923077</X><Y>245.4545454545455</Y>
+					<X>316.2819999999999</X><Y>87.138</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>true</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
 					<ShowLabel>false</ShowLabel>
 					<DrawMode>SHAPE_DRAW_2D3D</DrawMode>
 					<Z>0</Z>
-					<Rotation>0.0</Rotation>	
+					<Rotation>185.0</Rotation>	
 				</Attractor>
 				<Attractor>
-					<Id>1717147338222</Id>
+					<Id>1717243592768</Id>
 					<Name><![CDATA[attractor220]]></Name>
-					<X>134.6153846153846</X><Y>245.4545454545455</Y>
+					<X>340</X><Y>228.63600000000002</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>true</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -7106,21 +7551,21 @@ if (bernoulli(factor) == 1) {
 					<Rotation>0.0</Rotation>	
 				</Attractor>
 				<Attractor>
-					<Id>1717147338224</Id>
+					<Id>1717243592770</Id>
 					<Name><![CDATA[attractor221]]></Name>
-					<X>161.53846153846155</X><Y>245.4545454545455</Y>
+					<X>366.0150000000001</X><Y>88.173</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>true</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
 					<ShowLabel>false</ShowLabel>
 					<DrawMode>SHAPE_DRAW_2D3D</DrawMode>
 					<Z>0</Z>
-					<Rotation>0.0</Rotation>	
+					<Rotation>179.0</Rotation>	
 				</Attractor>
 				<Attractor>
-					<Id>1717147338226</Id>
+					<Id>1717243592772</Id>
 					<Name><![CDATA[attractor222]]></Name>
-					<X>188.46153846153848</X><Y>245.4545454545455</Y>
+					<X>40</X><Y>262.727</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>true</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -7130,21 +7575,21 @@ if (bernoulli(factor) == 1) {
 					<Rotation>0.0</Rotation>	
 				</Attractor>
 				<Attractor>
-					<Id>1717147338228</Id>
+					<Id>1717243592774</Id>
 					<Name><![CDATA[attractor223]]></Name>
-					<X>215.38461538461542</X><Y>245.4545454545455</Y>
+					<X>75</X><Y>261.363</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>true</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
 					<ShowLabel>false</ShowLabel>
 					<DrawMode>SHAPE_DRAW_2D3D</DrawMode>
 					<Z>0</Z>
-					<Rotation>0.0</Rotation>	
+					<Rotation>180.0</Rotation>	
 				</Attractor>
 				<Attractor>
-					<Id>1717147338230</Id>
+					<Id>1717243592776</Id>
 					<Name><![CDATA[attractor224]]></Name>
-					<X>242.30769230769235</X><Y>245.4545454545455</Y>
+					<X>100</X><Y>258.182</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>true</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -7154,21 +7599,21 @@ if (bernoulli(factor) == 1) {
 					<Rotation>0.0</Rotation>	
 				</Attractor>
 				<Attractor>
-					<Id>1717147338232</Id>
+					<Id>1717243592778</Id>
 					<Name><![CDATA[attractor225]]></Name>
-					<X>269.2307692307693</X><Y>245.4545454545455</Y>
+					<X>130</X><Y>260.909</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>true</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
 					<ShowLabel>false</ShowLabel>
 					<DrawMode>SHAPE_DRAW_2D3D</DrawMode>
 					<Z>0</Z>
-					<Rotation>0.0</Rotation>	
+					<Rotation>180.0</Rotation>	
 				</Attractor>
 				<Attractor>
-					<Id>1717147338234</Id>
+					<Id>1717243592780</Id>
 					<Name><![CDATA[attractor226]]></Name>
-					<X>296.1538461538462</X><Y>245.4545454545455</Y>
+					<X>165</X><Y>260</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>true</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -7178,21 +7623,21 @@ if (bernoulli(factor) == 1) {
 					<Rotation>0.0</Rotation>	
 				</Attractor>
 				<Attractor>
-					<Id>1717147338236</Id>
+					<Id>1717243592782</Id>
 					<Name><![CDATA[attractor227]]></Name>
-					<X>323.0769230769231</X><Y>245.4545454545455</Y>
+					<X>195.0920000000001</X><Y>58.979</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>true</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
 					<ShowLabel>false</ShowLabel>
 					<DrawMode>SHAPE_DRAW_2D3D</DrawMode>
 					<Z>0</Z>
-					<Rotation>0.0</Rotation>	
+					<Rotation>175.0</Rotation>	
 				</Attractor>
 				<Attractor>
-					<Id>1717147338238</Id>
+					<Id>1717243592784</Id>
 					<Name><![CDATA[attractor228]]></Name>
-					<X>26.923076923076923</X><Y>272.72727272727275</Y>
+					<X>225</X><Y>260</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>true</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -7202,21 +7647,21 @@ if (bernoulli(factor) == 1) {
 					<Rotation>0.0</Rotation>	
 				</Attractor>
 				<Attractor>
-					<Id>1717147338240</Id>
+					<Id>1717243592786</Id>
 					<Name><![CDATA[attractor229]]></Name>
-					<X>53.84615384615385</X><Y>272.72727272727275</Y>
+					<X>255.33400000000006</X><Y>58.159000000000006</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>true</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
 					<ShowLabel>false</ShowLabel>
 					<DrawMode>SHAPE_DRAW_2D3D</DrawMode>
 					<Z>0</Z>
-					<Rotation>0.0</Rotation>	
+					<Rotation>185.0</Rotation>	
 				</Attractor>
 				<Attractor>
-					<Id>1717147338242</Id>
+					<Id>1717243592788</Id>
 					<Name><![CDATA[attractor230]]></Name>
-					<X>80.76923076923077</X><Y>272.72727272727275</Y>
+					<X>285</X><Y>260.455</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>true</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -7226,21 +7671,21 @@ if (bernoulli(factor) == 1) {
 					<Rotation>0.0</Rotation>	
 				</Attractor>
 				<Attractor>
-					<Id>1717147338244</Id>
+					<Id>1717243592790</Id>
 					<Name><![CDATA[attractor231]]></Name>
-					<X>107.6923076923077</X><Y>272.72727272727275</Y>
+					<X>316.4659999999999</X><Y>58.158</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>true</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
 					<ShowLabel>false</ShowLabel>
 					<DrawMode>SHAPE_DRAW_2D3D</DrawMode>
 					<Z>0</Z>
-					<Rotation>0.0</Rotation>	
+					<Rotation>185.0</Rotation>	
 				</Attractor>
 				<Attractor>
-					<Id>1717147338246</Id>
+					<Id>1717243592792</Id>
 					<Name><![CDATA[attractor232]]></Name>
-					<X>134.6153846153846</X><Y>272.72727272727275</Y>
+					<X>340</X><Y>257.727</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>true</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -7250,21 +7695,21 @@ if (bernoulli(factor) == 1) {
 					<Rotation>0.0</Rotation>	
 				</Attractor>
 				<Attractor>
-					<Id>1717147338248</Id>
+					<Id>1717243592794</Id>
 					<Name><![CDATA[attractor233]]></Name>
-					<X>161.53846153846155</X><Y>272.72727272727275</Y>
+					<X>365.50700000000006</X><Y>59.086</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>true</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
 					<ShowLabel>false</ShowLabel>
 					<DrawMode>SHAPE_DRAW_2D3D</DrawMode>
 					<Z>0</Z>
-					<Rotation>0.0</Rotation>	
+					<Rotation>179.0</Rotation>	
 				</Attractor>
 				<Attractor>
-					<Id>1717147338250</Id>
+					<Id>1717243592796</Id>
 					<Name><![CDATA[attractor234]]></Name>
-					<X>188.46153846153848</X><Y>272.72727272727275</Y>
+					<X>40</X><Y>291.818</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>true</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -7274,21 +7719,21 @@ if (bernoulli(factor) == 1) {
 					<Rotation>0.0</Rotation>	
 				</Attractor>
 				<Attractor>
-					<Id>1717147338252</Id>
+					<Id>1717243592798</Id>
 					<Name><![CDATA[attractor235]]></Name>
-					<X>215.38461538461542</X><Y>272.72727272727275</Y>
+					<X>75</X><Y>290.454</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>true</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
 					<ShowLabel>false</ShowLabel>
 					<DrawMode>SHAPE_DRAW_2D3D</DrawMode>
 					<Z>0</Z>
-					<Rotation>0.0</Rotation>	
+					<Rotation>180.0</Rotation>	
 				</Attractor>
 				<Attractor>
-					<Id>1717147338254</Id>
+					<Id>1717243592800</Id>
 					<Name><![CDATA[attractor236]]></Name>
-					<X>242.30769230769235</X><Y>272.72727272727275</Y>
+					<X>100</X><Y>287.273</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>true</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -7298,21 +7743,21 @@ if (bernoulli(factor) == 1) {
 					<Rotation>0.0</Rotation>	
 				</Attractor>
 				<Attractor>
-					<Id>1717147338256</Id>
+					<Id>1717243592802</Id>
 					<Name><![CDATA[attractor237]]></Name>
-					<X>269.2307692307693</X><Y>272.72727272727275</Y>
+					<X>130</X><Y>290</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>true</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
 					<ShowLabel>false</ShowLabel>
 					<DrawMode>SHAPE_DRAW_2D3D</DrawMode>
 					<Z>0</Z>
-					<Rotation>0.0</Rotation>	
+					<Rotation>180.0</Rotation>	
 				</Attractor>
 				<Attractor>
-					<Id>1717147338258</Id>
+					<Id>1717243592804</Id>
 					<Name><![CDATA[attractor238]]></Name>
-					<X>296.1538461538462</X><Y>272.72727272727275</Y>
+					<X>165</X><Y>289.091</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>true</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -7322,9 +7767,21 @@ if (bernoulli(factor) == 1) {
 					<Rotation>0.0</Rotation>	
 				</Attractor>
 				<Attractor>
-					<Id>1717147338260</Id>
+					<Id>1717243592806</Id>
 					<Name><![CDATA[attractor239]]></Name>
-					<X>323.0769230769231</X><Y>272.72727272727275</Y>
+					<X>195</X><Y>30</Y>
+					<Label><X>10</X><Y>0</Y></Label>
+					<PublicFlag>true</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>false</ShowLabel>
+					<DrawMode>SHAPE_DRAW_2D3D</DrawMode>
+					<Z>0</Z>
+					<Rotation>175.0</Rotation>	
+				</Attractor>
+				<Attractor>
+					<Id>1717243592808</Id>
+					<Name><![CDATA[attractor360]]></Name>
+					<X>225</X><Y>289.091</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>true</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -7332,6 +7789,66 @@ if (bernoulli(factor) == 1) {
 					<DrawMode>SHAPE_DRAW_2D3D</DrawMode>
 					<Z>0</Z>
 					<Rotation>0.0</Rotation>	
+				</Attractor>
+				<Attractor>
+					<Id>1717243592810</Id>
+					<Name><![CDATA[attractor361]]></Name>
+					<X>255.375</X><Y>29.179000000000002</Y>
+					<Label><X>10</X><Y>0</Y></Label>
+					<PublicFlag>true</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>false</ShowLabel>
+					<DrawMode>SHAPE_DRAW_2D3D</DrawMode>
+					<Z>0</Z>
+					<Rotation>185.0</Rotation>	
+				</Attractor>
+				<Attractor>
+					<Id>1717243592812</Id>
+					<Name><![CDATA[attractor362]]></Name>
+					<X>285</X><Y>289.545</Y>
+					<Label><X>10</X><Y>0</Y></Label>
+					<PublicFlag>true</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>false</ShowLabel>
+					<DrawMode>SHAPE_DRAW_2D3D</DrawMode>
+					<Z>0</Z>
+					<Rotation>0.0</Rotation>	
+				</Attractor>
+				<Attractor>
+					<Id>1717243592814</Id>
+					<Name><![CDATA[attractor363]]></Name>
+					<X>316.6489999999999</X><Y>29.177999999999997</Y>
+					<Label><X>10</X><Y>0</Y></Label>
+					<PublicFlag>true</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>false</ShowLabel>
+					<DrawMode>SHAPE_DRAW_2D3D</DrawMode>
+					<Z>0</Z>
+					<Rotation>185.0</Rotation>	
+				</Attractor>
+				<Attractor>
+					<Id>1717243592816</Id>
+					<Name><![CDATA[attractor364]]></Name>
+					<X>340</X><Y>286.818</Y>
+					<Label><X>10</X><Y>0</Y></Label>
+					<PublicFlag>true</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>false</ShowLabel>
+					<DrawMode>SHAPE_DRAW_2D3D</DrawMode>
+					<Z>0</Z>
+					<Rotation>0.0</Rotation>	
+				</Attractor>
+				<Attractor>
+					<Id>1717243592818</Id>
+					<Name><![CDATA[attractor365]]></Name>
+					<X>365</X><Y>30</Y>
+					<Label><X>10</X><Y>0</Y></Label>
+					<PublicFlag>true</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>false</ShowLabel>
+					<DrawMode>SHAPE_DRAW_2D3D</DrawMode>
+					<Z>0</Z>
+					<Rotation>179.0</Rotation>	
 				</Attractor>
 			</Presentation>
 
@@ -7351,8 +7868,8 @@ if (bernoulli(factor) == 1) {
 						<SlopeType>angle</SlopeType>	
 					</Slope>
 
-					<Width>350</Width>
-					<Height>300</Height>
+					<Width>420</Width>
+					<Height>320</Height>
 					<Rotation>0.0</Rotation>
 				</RectangleNode>
 				<Path SourceId="1717147450417" TargetId="1717147298950">
@@ -7599,8 +8116,8 @@ if (bernoulli(factor) == 1) {
 						<SlopeType>angle</SlopeType>	
 					</Slope>
 
-					<Width>350</Width>
-					<Height>900</Height>
+					<Width>750</Width>
+					<Height>920</Height>
 					<Rotation>0.0</Rotation>
 				</RectangleNode>
 				<Path SourceId="1717147450417" TargetId="1717147184810">
@@ -7668,9 +8185,9 @@ if (bernoulli(factor) == 1) {
 						<Point><X>0</X><Y>0</Y><Z>0</Z></Point>
 						<Point><X>-25</X><Y>0</Y><Z>0</Z></Point>
 						<Point><X>25</X><Y>0</Y><Z>0</Z></Point>
-						<Point><X>190</X><Y>0</Y><Z>0</Z></Point>
-						<Point><X>165</X><Y>0</Y><Z>0</Z></Point>
-						<Point><X>-10</X><Y>0</Y><Z>0</Z></Point>
+						<Point><X>60</X><Y>0</Y><Z>0</Z></Point>
+						<Point><X>35</X><Y>0</Y><Z>0</Z></Point>
+						<Point><X>-140</X><Y>0</Y><Z>0</Z></Point>
 					</Points>
 					<Bidirectional>true</Bidirectional>
 					<SpeedLimit>false</SpeedLimit>
@@ -9339,7 +9856,7 @@ if (bernoulli(factor) == 1) {
 					<Id>1717157013409</Id>
 					<Name><![CDATA[window3d]]></Name>
 					<X>40</X><Y>980</Y>
-					<Width>600</Width>
+					<Width>660</Width>
 					<Height>570</Height>
 					<MakeDefaultViewArea>true</MakeDefaultViewArea>
 					<Label><X>0</X><Y>-10</Y></Label>
@@ -9348,6 +9865,1392 @@ if (bernoulli(factor) == 1) {
 					<NavigationType>full</NavigationType>
 					<FarClippingDistance>2000</FarClippingDistance>
 				</Control>
+				<Figure3D>
+					<Id>1717243254511</Id>
+					<Name><![CDATA[table_2]]></Name>
+					<X>1258.692</X><Y>67.364</Y>
+					<Label><X>0</X><Y>-10</Y></Label>
+					<PublicFlag>true</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>false</ShowLabel>
+					<DrawMode>SHAPE_DRAW_2D3D</DrawMode>
+					<X>1258.692</X><Y>67.364</Y><Z>0</Z>
+					<Label><X>0</X><Y>-10</Y></Label>
+					<ResourceReference>
+						<PackageName><![CDATA[cw_varus]]></PackageName>
+						<ClassName><![CDATA[3d/table_2.dae]]></ClassName>
+					</ResourceReference>
+					<ColorTable>
+						<ColorMapping>
+							<Name><![CDATA[material0]]></Name>
+							<OriginalColor>-10526881</OriginalColor>
+						</ColorMapping>
+						<ColorMapping>
+							<Name><![CDATA[material1]]></Name>
+							<OriginalColor>-3619384</OriginalColor>
+						</ColorMapping>
+					</ColorTable>
+					<AutoScale>true</AutoScale>
+					<Scale>1.1</Scale>
+					<Rotation>90.0</Rotation>
+					<AxisOrder>XYZ_AXIS_ORDER</AxisOrder>
+					<ApplyShading>true</ApplyShading>
+					<InternalLighting>OFF</InternalLighting>
+					<IgnoreSceneLights>false</IgnoreSceneLights>
+				</Figure3D>
+				<Figure3D>
+					<Id>1717243275551</Id>
+					<Name><![CDATA[table_3]]></Name>
+					<X>1258.692</X><Y>107.364</Y>
+					<Label><X>0</X><Y>-10</Y></Label>
+					<PublicFlag>true</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>false</ShowLabel>
+					<DrawMode>SHAPE_DRAW_2D3D</DrawMode>
+					<X>1258.692</X><Y>107.364</Y><Z>0</Z>
+					<Label><X>0</X><Y>-10</Y></Label>
+					<ResourceReference>
+						<PackageName><![CDATA[cw_varus]]></PackageName>
+						<ClassName><![CDATA[3d/table_2.dae]]></ClassName>
+					</ResourceReference>
+					<ColorTable>
+						<ColorMapping>
+							<Name><![CDATA[material0]]></Name>
+							<OriginalColor>-10526881</OriginalColor>
+						</ColorMapping>
+						<ColorMapping>
+							<Name><![CDATA[material1]]></Name>
+							<OriginalColor>-3619384</OriginalColor>
+						</ColorMapping>
+					</ColorTable>
+					<AutoScale>true</AutoScale>
+					<Scale>1.1</Scale>
+					<Rotation>90.0</Rotation>
+					<AxisOrder>XYZ_AXIS_ORDER</AxisOrder>
+					<ApplyShading>true</ApplyShading>
+					<InternalLighting>OFF</InternalLighting>
+					<IgnoreSceneLights>false</IgnoreSceneLights>
+				</Figure3D>
+				<Figure3D>
+					<Id>1717243279529</Id>
+					<Name><![CDATA[table_4]]></Name>
+					<X>1258.692</X><Y>147.364</Y>
+					<Label><X>0</X><Y>-10</Y></Label>
+					<PublicFlag>true</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>false</ShowLabel>
+					<DrawMode>SHAPE_DRAW_2D3D</DrawMode>
+					<X>1258.692</X><Y>147.364</Y><Z>0</Z>
+					<Label><X>0</X><Y>-10</Y></Label>
+					<ResourceReference>
+						<PackageName><![CDATA[cw_varus]]></PackageName>
+						<ClassName><![CDATA[3d/table_2.dae]]></ClassName>
+					</ResourceReference>
+					<ColorTable>
+						<ColorMapping>
+							<Name><![CDATA[material0]]></Name>
+							<OriginalColor>-10526881</OriginalColor>
+						</ColorMapping>
+						<ColorMapping>
+							<Name><![CDATA[material1]]></Name>
+							<OriginalColor>-3619384</OriginalColor>
+						</ColorMapping>
+					</ColorTable>
+					<AutoScale>true</AutoScale>
+					<Scale>1.1</Scale>
+					<Rotation>90.0</Rotation>
+					<AxisOrder>XYZ_AXIS_ORDER</AxisOrder>
+					<ApplyShading>true</ApplyShading>
+					<InternalLighting>OFF</InternalLighting>
+					<IgnoreSceneLights>false</IgnoreSceneLights>
+				</Figure3D>
+				<Figure3D>
+					<Id>1717243282829</Id>
+					<Name><![CDATA[table_5]]></Name>
+					<X>1258.692</X><Y>187.364</Y>
+					<Label><X>0</X><Y>-10</Y></Label>
+					<PublicFlag>true</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>false</ShowLabel>
+					<DrawMode>SHAPE_DRAW_2D3D</DrawMode>
+					<X>1258.692</X><Y>187.364</Y><Z>0</Z>
+					<Label><X>0</X><Y>-10</Y></Label>
+					<ResourceReference>
+						<PackageName><![CDATA[cw_varus]]></PackageName>
+						<ClassName><![CDATA[3d/table_2.dae]]></ClassName>
+					</ResourceReference>
+					<ColorTable>
+						<ColorMapping>
+							<Name><![CDATA[material0]]></Name>
+							<OriginalColor>-10526881</OriginalColor>
+						</ColorMapping>
+						<ColorMapping>
+							<Name><![CDATA[material1]]></Name>
+							<OriginalColor>-3619384</OriginalColor>
+						</ColorMapping>
+					</ColorTable>
+					<AutoScale>true</AutoScale>
+					<Scale>1.1</Scale>
+					<Rotation>90.0</Rotation>
+					<AxisOrder>XYZ_AXIS_ORDER</AxisOrder>
+					<ApplyShading>true</ApplyShading>
+					<InternalLighting>OFF</InternalLighting>
+					<IgnoreSceneLights>false</IgnoreSceneLights>
+				</Figure3D>
+				<Figure3D>
+					<Id>1717243285596</Id>
+					<Name><![CDATA[table_6]]></Name>
+					<X>1258.692</X><Y>227.364</Y>
+					<Label><X>0</X><Y>-10</Y></Label>
+					<PublicFlag>true</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>false</ShowLabel>
+					<DrawMode>SHAPE_DRAW_2D3D</DrawMode>
+					<X>1258.692</X><Y>227.364</Y><Z>0</Z>
+					<Label><X>0</X><Y>-10</Y></Label>
+					<ResourceReference>
+						<PackageName><![CDATA[cw_varus]]></PackageName>
+						<ClassName><![CDATA[3d/table_2.dae]]></ClassName>
+					</ResourceReference>
+					<ColorTable>
+						<ColorMapping>
+							<Name><![CDATA[material0]]></Name>
+							<OriginalColor>-10526881</OriginalColor>
+						</ColorMapping>
+						<ColorMapping>
+							<Name><![CDATA[material1]]></Name>
+							<OriginalColor>-3619384</OriginalColor>
+						</ColorMapping>
+					</ColorTable>
+					<AutoScale>true</AutoScale>
+					<Scale>1.1</Scale>
+					<Rotation>90.0</Rotation>
+					<AxisOrder>XYZ_AXIS_ORDER</AxisOrder>
+					<ApplyShading>true</ApplyShading>
+					<InternalLighting>OFF</InternalLighting>
+					<IgnoreSceneLights>false</IgnoreSceneLights>
+				</Figure3D>
+				<Figure3D>
+					<Id>1717243288501</Id>
+					<Name><![CDATA[table_7]]></Name>
+					<X>1258.692</X><Y>267.364</Y>
+					<Label><X>0</X><Y>-10</Y></Label>
+					<PublicFlag>true</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>false</ShowLabel>
+					<DrawMode>SHAPE_DRAW_2D3D</DrawMode>
+					<X>1258.692</X><Y>267.364</Y><Z>0</Z>
+					<Label><X>0</X><Y>-10</Y></Label>
+					<ResourceReference>
+						<PackageName><![CDATA[cw_varus]]></PackageName>
+						<ClassName><![CDATA[3d/table_2.dae]]></ClassName>
+					</ResourceReference>
+					<ColorTable>
+						<ColorMapping>
+							<Name><![CDATA[material0]]></Name>
+							<OriginalColor>-10526881</OriginalColor>
+						</ColorMapping>
+						<ColorMapping>
+							<Name><![CDATA[material1]]></Name>
+							<OriginalColor>-3619384</OriginalColor>
+						</ColorMapping>
+					</ColorTable>
+					<AutoScale>true</AutoScale>
+					<Scale>1.1</Scale>
+					<Rotation>90.0</Rotation>
+					<AxisOrder>XYZ_AXIS_ORDER</AxisOrder>
+					<ApplyShading>true</ApplyShading>
+					<InternalLighting>OFF</InternalLighting>
+					<IgnoreSceneLights>false</IgnoreSceneLights>
+				</Figure3D>
+				<Figure3D>
+					<Id>1717243291314</Id>
+					<Name><![CDATA[table_8]]></Name>
+					<X>1258.692</X><Y>307.364</Y>
+					<Label><X>0</X><Y>-10</Y></Label>
+					<PublicFlag>true</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>false</ShowLabel>
+					<DrawMode>SHAPE_DRAW_2D3D</DrawMode>
+					<X>1258.692</X><Y>307.364</Y><Z>0</Z>
+					<Label><X>0</X><Y>-10</Y></Label>
+					<ResourceReference>
+						<PackageName><![CDATA[cw_varus]]></PackageName>
+						<ClassName><![CDATA[3d/table_2.dae]]></ClassName>
+					</ResourceReference>
+					<ColorTable>
+						<ColorMapping>
+							<Name><![CDATA[material0]]></Name>
+							<OriginalColor>-10526881</OriginalColor>
+						</ColorMapping>
+						<ColorMapping>
+							<Name><![CDATA[material1]]></Name>
+							<OriginalColor>-3619384</OriginalColor>
+						</ColorMapping>
+					</ColorTable>
+					<AutoScale>true</AutoScale>
+					<Scale>1.1</Scale>
+					<Rotation>90.0</Rotation>
+					<AxisOrder>XYZ_AXIS_ORDER</AxisOrder>
+					<ApplyShading>true</ApplyShading>
+					<InternalLighting>OFF</InternalLighting>
+					<IgnoreSceneLights>false</IgnoreSceneLights>
+				</Figure3D>
+				<Figure3D>
+					<Id>1717243729509</Id>
+					<Name><![CDATA[table_9]]></Name>
+					<X>1316.077</X><Y>71.364</Y>
+					<Label><X>0</X><Y>-10</Y></Label>
+					<PublicFlag>true</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>false</ShowLabel>
+					<DrawMode>SHAPE_DRAW_2D3D</DrawMode>
+					<X>1316.077</X><Y>71.364</Y><Z>0</Z>
+					<Label><X>0</X><Y>-10</Y></Label>
+					<ResourceReference>
+						<PackageName><![CDATA[cw_varus]]></PackageName>
+						<ClassName><![CDATA[3d/table_2.dae]]></ClassName>
+					</ResourceReference>
+					<ColorTable>
+						<ColorMapping>
+							<Name><![CDATA[material0]]></Name>
+							<OriginalColor>-10526881</OriginalColor>
+						</ColorMapping>
+						<ColorMapping>
+							<Name><![CDATA[material1]]></Name>
+							<OriginalColor>-3619384</OriginalColor>
+						</ColorMapping>
+					</ColorTable>
+					<AutoScale>true</AutoScale>
+					<Scale>1.1</Scale>
+					<Rotation>90.0</Rotation>
+					<AxisOrder>XYZ_AXIS_ORDER</AxisOrder>
+					<ApplyShading>true</ApplyShading>
+					<InternalLighting>OFF</InternalLighting>
+					<IgnoreSceneLights>false</IgnoreSceneLights>
+				</Figure3D>
+				<Figure3D>
+					<Id>1717243729515</Id>
+					<Name><![CDATA[table_10]]></Name>
+					<X>1316.077</X><Y>111.364</Y>
+					<Label><X>0</X><Y>-10</Y></Label>
+					<PublicFlag>true</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>false</ShowLabel>
+					<DrawMode>SHAPE_DRAW_2D3D</DrawMode>
+					<X>1316.077</X><Y>111.364</Y><Z>0</Z>
+					<Label><X>0</X><Y>-10</Y></Label>
+					<ResourceReference>
+						<PackageName><![CDATA[cw_varus]]></PackageName>
+						<ClassName><![CDATA[3d/table_2.dae]]></ClassName>
+					</ResourceReference>
+					<ColorTable>
+						<ColorMapping>
+							<Name><![CDATA[material0]]></Name>
+							<OriginalColor>-10526881</OriginalColor>
+						</ColorMapping>
+						<ColorMapping>
+							<Name><![CDATA[material1]]></Name>
+							<OriginalColor>-3619384</OriginalColor>
+						</ColorMapping>
+					</ColorTable>
+					<AutoScale>true</AutoScale>
+					<Scale>1.1</Scale>
+					<Rotation>90.0</Rotation>
+					<AxisOrder>XYZ_AXIS_ORDER</AxisOrder>
+					<ApplyShading>true</ApplyShading>
+					<InternalLighting>OFF</InternalLighting>
+					<IgnoreSceneLights>false</IgnoreSceneLights>
+				</Figure3D>
+				<Figure3D>
+					<Id>1717243729517</Id>
+					<Name><![CDATA[table_11]]></Name>
+					<X>1316.077</X><Y>151.364</Y>
+					<Label><X>0</X><Y>-10</Y></Label>
+					<PublicFlag>true</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>false</ShowLabel>
+					<DrawMode>SHAPE_DRAW_2D3D</DrawMode>
+					<X>1316.077</X><Y>151.364</Y><Z>0</Z>
+					<Label><X>0</X><Y>-10</Y></Label>
+					<ResourceReference>
+						<PackageName><![CDATA[cw_varus]]></PackageName>
+						<ClassName><![CDATA[3d/table_2.dae]]></ClassName>
+					</ResourceReference>
+					<ColorTable>
+						<ColorMapping>
+							<Name><![CDATA[material0]]></Name>
+							<OriginalColor>-10526881</OriginalColor>
+						</ColorMapping>
+						<ColorMapping>
+							<Name><![CDATA[material1]]></Name>
+							<OriginalColor>-3619384</OriginalColor>
+						</ColorMapping>
+					</ColorTable>
+					<AutoScale>true</AutoScale>
+					<Scale>1.1</Scale>
+					<Rotation>90.0</Rotation>
+					<AxisOrder>XYZ_AXIS_ORDER</AxisOrder>
+					<ApplyShading>true</ApplyShading>
+					<InternalLighting>OFF</InternalLighting>
+					<IgnoreSceneLights>false</IgnoreSceneLights>
+				</Figure3D>
+				<Figure3D>
+					<Id>1717243729519</Id>
+					<Name><![CDATA[table_12]]></Name>
+					<X>1316.077</X><Y>191.364</Y>
+					<Label><X>0</X><Y>-10</Y></Label>
+					<PublicFlag>true</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>false</ShowLabel>
+					<DrawMode>SHAPE_DRAW_2D3D</DrawMode>
+					<X>1316.077</X><Y>191.364</Y><Z>0</Z>
+					<Label><X>0</X><Y>-10</Y></Label>
+					<ResourceReference>
+						<PackageName><![CDATA[cw_varus]]></PackageName>
+						<ClassName><![CDATA[3d/table_2.dae]]></ClassName>
+					</ResourceReference>
+					<ColorTable>
+						<ColorMapping>
+							<Name><![CDATA[material0]]></Name>
+							<OriginalColor>-10526881</OriginalColor>
+						</ColorMapping>
+						<ColorMapping>
+							<Name><![CDATA[material1]]></Name>
+							<OriginalColor>-3619384</OriginalColor>
+						</ColorMapping>
+					</ColorTable>
+					<AutoScale>true</AutoScale>
+					<Scale>1.1</Scale>
+					<Rotation>90.0</Rotation>
+					<AxisOrder>XYZ_AXIS_ORDER</AxisOrder>
+					<ApplyShading>true</ApplyShading>
+					<InternalLighting>OFF</InternalLighting>
+					<IgnoreSceneLights>false</IgnoreSceneLights>
+				</Figure3D>
+				<Figure3D>
+					<Id>1717243729521</Id>
+					<Name><![CDATA[table_13]]></Name>
+					<X>1316.077</X><Y>231.364</Y>
+					<Label><X>0</X><Y>-10</Y></Label>
+					<PublicFlag>true</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>false</ShowLabel>
+					<DrawMode>SHAPE_DRAW_2D3D</DrawMode>
+					<X>1316.077</X><Y>231.364</Y><Z>0</Z>
+					<Label><X>0</X><Y>-10</Y></Label>
+					<ResourceReference>
+						<PackageName><![CDATA[cw_varus]]></PackageName>
+						<ClassName><![CDATA[3d/table_2.dae]]></ClassName>
+					</ResourceReference>
+					<ColorTable>
+						<ColorMapping>
+							<Name><![CDATA[material0]]></Name>
+							<OriginalColor>-10526881</OriginalColor>
+						</ColorMapping>
+						<ColorMapping>
+							<Name><![CDATA[material1]]></Name>
+							<OriginalColor>-3619384</OriginalColor>
+						</ColorMapping>
+					</ColorTable>
+					<AutoScale>true</AutoScale>
+					<Scale>1.1</Scale>
+					<Rotation>90.0</Rotation>
+					<AxisOrder>XYZ_AXIS_ORDER</AxisOrder>
+					<ApplyShading>true</ApplyShading>
+					<InternalLighting>OFF</InternalLighting>
+					<IgnoreSceneLights>false</IgnoreSceneLights>
+				</Figure3D>
+				<Figure3D>
+					<Id>1717243729531</Id>
+					<Name><![CDATA[table_14]]></Name>
+					<X>1316.077</X><Y>271.364</Y>
+					<Label><X>0</X><Y>-10</Y></Label>
+					<PublicFlag>true</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>false</ShowLabel>
+					<DrawMode>SHAPE_DRAW_2D3D</DrawMode>
+					<X>1316.077</X><Y>271.364</Y><Z>0</Z>
+					<Label><X>0</X><Y>-10</Y></Label>
+					<ResourceReference>
+						<PackageName><![CDATA[cw_varus]]></PackageName>
+						<ClassName><![CDATA[3d/table_2.dae]]></ClassName>
+					</ResourceReference>
+					<ColorTable>
+						<ColorMapping>
+							<Name><![CDATA[material0]]></Name>
+							<OriginalColor>-10526881</OriginalColor>
+						</ColorMapping>
+						<ColorMapping>
+							<Name><![CDATA[material1]]></Name>
+							<OriginalColor>-3619384</OriginalColor>
+						</ColorMapping>
+					</ColorTable>
+					<AutoScale>true</AutoScale>
+					<Scale>1.1</Scale>
+					<Rotation>90.0</Rotation>
+					<AxisOrder>XYZ_AXIS_ORDER</AxisOrder>
+					<ApplyShading>true</ApplyShading>
+					<InternalLighting>OFF</InternalLighting>
+					<IgnoreSceneLights>false</IgnoreSceneLights>
+				</Figure3D>
+				<Figure3D>
+					<Id>1717243729533</Id>
+					<Name><![CDATA[table_15]]></Name>
+					<X>1316.077</X><Y>311.364</Y>
+					<Label><X>0</X><Y>-10</Y></Label>
+					<PublicFlag>true</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>false</ShowLabel>
+					<DrawMode>SHAPE_DRAW_2D3D</DrawMode>
+					<X>1316.077</X><Y>311.364</Y><Z>0</Z>
+					<Label><X>0</X><Y>-10</Y></Label>
+					<ResourceReference>
+						<PackageName><![CDATA[cw_varus]]></PackageName>
+						<ClassName><![CDATA[3d/table_2.dae]]></ClassName>
+					</ResourceReference>
+					<ColorTable>
+						<ColorMapping>
+							<Name><![CDATA[material0]]></Name>
+							<OriginalColor>-10526881</OriginalColor>
+						</ColorMapping>
+						<ColorMapping>
+							<Name><![CDATA[material1]]></Name>
+							<OriginalColor>-3619384</OriginalColor>
+						</ColorMapping>
+					</ColorTable>
+					<AutoScale>true</AutoScale>
+					<Scale>1.1</Scale>
+					<Rotation>90.0</Rotation>
+					<AxisOrder>XYZ_AXIS_ORDER</AxisOrder>
+					<ApplyShading>true</ApplyShading>
+					<InternalLighting>OFF</InternalLighting>
+					<IgnoreSceneLights>false</IgnoreSceneLights>
+				</Figure3D>
+				<Figure3D>
+					<Id>1717243947382</Id>
+					<Name><![CDATA[table_16]]></Name>
+					<X>1380.5</X><Y>71</Y>
+					<Label><X>0</X><Y>-10</Y></Label>
+					<PublicFlag>true</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>false</ShowLabel>
+					<DrawMode>SHAPE_DRAW_2D3D</DrawMode>
+					<X>1380.5</X><Y>71</Y><Z>0</Z>
+					<Label><X>0</X><Y>-10</Y></Label>
+					<ResourceReference>
+						<PackageName><![CDATA[cw_varus]]></PackageName>
+						<ClassName><![CDATA[3d/table_2.dae]]></ClassName>
+					</ResourceReference>
+					<ColorTable>
+						<ColorMapping>
+							<Name><![CDATA[material0]]></Name>
+							<OriginalColor>-10526881</OriginalColor>
+						</ColorMapping>
+						<ColorMapping>
+							<Name><![CDATA[material1]]></Name>
+							<OriginalColor>-3619384</OriginalColor>
+						</ColorMapping>
+					</ColorTable>
+					<AutoScale>true</AutoScale>
+					<Scale>1.1</Scale>
+					<Rotation>90.0</Rotation>
+					<AxisOrder>XYZ_AXIS_ORDER</AxisOrder>
+					<ApplyShading>true</ApplyShading>
+					<InternalLighting>OFF</InternalLighting>
+					<IgnoreSceneLights>false</IgnoreSceneLights>
+				</Figure3D>
+				<Figure3D>
+					<Id>1717243947386</Id>
+					<Name><![CDATA[table_17]]></Name>
+					<X>1380.5</X><Y>111</Y>
+					<Label><X>0</X><Y>-10</Y></Label>
+					<PublicFlag>true</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>false</ShowLabel>
+					<DrawMode>SHAPE_DRAW_2D3D</DrawMode>
+					<X>1380.5</X><Y>111</Y><Z>0</Z>
+					<Label><X>0</X><Y>-10</Y></Label>
+					<ResourceReference>
+						<PackageName><![CDATA[cw_varus]]></PackageName>
+						<ClassName><![CDATA[3d/table_2.dae]]></ClassName>
+					</ResourceReference>
+					<ColorTable>
+						<ColorMapping>
+							<Name><![CDATA[material0]]></Name>
+							<OriginalColor>-10526881</OriginalColor>
+						</ColorMapping>
+						<ColorMapping>
+							<Name><![CDATA[material1]]></Name>
+							<OriginalColor>-3619384</OriginalColor>
+						</ColorMapping>
+					</ColorTable>
+					<AutoScale>true</AutoScale>
+					<Scale>1.1</Scale>
+					<Rotation>90.0</Rotation>
+					<AxisOrder>XYZ_AXIS_ORDER</AxisOrder>
+					<ApplyShading>true</ApplyShading>
+					<InternalLighting>OFF</InternalLighting>
+					<IgnoreSceneLights>false</IgnoreSceneLights>
+				</Figure3D>
+				<Figure3D>
+					<Id>1717243947388</Id>
+					<Name><![CDATA[table_18]]></Name>
+					<X>1380.5</X><Y>151</Y>
+					<Label><X>0</X><Y>-10</Y></Label>
+					<PublicFlag>true</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>false</ShowLabel>
+					<DrawMode>SHAPE_DRAW_2D3D</DrawMode>
+					<X>1380.5</X><Y>151</Y><Z>0</Z>
+					<Label><X>0</X><Y>-10</Y></Label>
+					<ResourceReference>
+						<PackageName><![CDATA[cw_varus]]></PackageName>
+						<ClassName><![CDATA[3d/table_2.dae]]></ClassName>
+					</ResourceReference>
+					<ColorTable>
+						<ColorMapping>
+							<Name><![CDATA[material0]]></Name>
+							<OriginalColor>-10526881</OriginalColor>
+						</ColorMapping>
+						<ColorMapping>
+							<Name><![CDATA[material1]]></Name>
+							<OriginalColor>-3619384</OriginalColor>
+						</ColorMapping>
+					</ColorTable>
+					<AutoScale>true</AutoScale>
+					<Scale>1.1</Scale>
+					<Rotation>90.0</Rotation>
+					<AxisOrder>XYZ_AXIS_ORDER</AxisOrder>
+					<ApplyShading>true</ApplyShading>
+					<InternalLighting>OFF</InternalLighting>
+					<IgnoreSceneLights>false</IgnoreSceneLights>
+				</Figure3D>
+				<Figure3D>
+					<Id>1717243947390</Id>
+					<Name><![CDATA[table_19]]></Name>
+					<X>1380.5</X><Y>191</Y>
+					<Label><X>0</X><Y>-10</Y></Label>
+					<PublicFlag>true</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>false</ShowLabel>
+					<DrawMode>SHAPE_DRAW_2D3D</DrawMode>
+					<X>1380.5</X><Y>191</Y><Z>0</Z>
+					<Label><X>0</X><Y>-10</Y></Label>
+					<ResourceReference>
+						<PackageName><![CDATA[cw_varus]]></PackageName>
+						<ClassName><![CDATA[3d/table_2.dae]]></ClassName>
+					</ResourceReference>
+					<ColorTable>
+						<ColorMapping>
+							<Name><![CDATA[material0]]></Name>
+							<OriginalColor>-10526881</OriginalColor>
+						</ColorMapping>
+						<ColorMapping>
+							<Name><![CDATA[material1]]></Name>
+							<OriginalColor>-3619384</OriginalColor>
+						</ColorMapping>
+					</ColorTable>
+					<AutoScale>true</AutoScale>
+					<Scale>1.1</Scale>
+					<Rotation>90.0</Rotation>
+					<AxisOrder>XYZ_AXIS_ORDER</AxisOrder>
+					<ApplyShading>true</ApplyShading>
+					<InternalLighting>OFF</InternalLighting>
+					<IgnoreSceneLights>false</IgnoreSceneLights>
+				</Figure3D>
+				<Figure3D>
+					<Id>1717243947392</Id>
+					<Name><![CDATA[table_20]]></Name>
+					<X>1380.5</X><Y>231</Y>
+					<Label><X>0</X><Y>-10</Y></Label>
+					<PublicFlag>true</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>false</ShowLabel>
+					<DrawMode>SHAPE_DRAW_2D3D</DrawMode>
+					<X>1380.5</X><Y>231</Y><Z>0</Z>
+					<Label><X>0</X><Y>-10</Y></Label>
+					<ResourceReference>
+						<PackageName><![CDATA[cw_varus]]></PackageName>
+						<ClassName><![CDATA[3d/table_2.dae]]></ClassName>
+					</ResourceReference>
+					<ColorTable>
+						<ColorMapping>
+							<Name><![CDATA[material0]]></Name>
+							<OriginalColor>-10526881</OriginalColor>
+						</ColorMapping>
+						<ColorMapping>
+							<Name><![CDATA[material1]]></Name>
+							<OriginalColor>-3619384</OriginalColor>
+						</ColorMapping>
+					</ColorTable>
+					<AutoScale>true</AutoScale>
+					<Scale>1.1</Scale>
+					<Rotation>90.0</Rotation>
+					<AxisOrder>XYZ_AXIS_ORDER</AxisOrder>
+					<ApplyShading>true</ApplyShading>
+					<InternalLighting>OFF</InternalLighting>
+					<IgnoreSceneLights>false</IgnoreSceneLights>
+				</Figure3D>
+				<Figure3D>
+					<Id>1717243947394</Id>
+					<Name><![CDATA[table_21]]></Name>
+					<X>1380.5</X><Y>271</Y>
+					<Label><X>0</X><Y>-10</Y></Label>
+					<PublicFlag>true</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>false</ShowLabel>
+					<DrawMode>SHAPE_DRAW_2D3D</DrawMode>
+					<X>1380.5</X><Y>271</Y><Z>0</Z>
+					<Label><X>0</X><Y>-10</Y></Label>
+					<ResourceReference>
+						<PackageName><![CDATA[cw_varus]]></PackageName>
+						<ClassName><![CDATA[3d/table_2.dae]]></ClassName>
+					</ResourceReference>
+					<ColorTable>
+						<ColorMapping>
+							<Name><![CDATA[material0]]></Name>
+							<OriginalColor>-10526881</OriginalColor>
+						</ColorMapping>
+						<ColorMapping>
+							<Name><![CDATA[material1]]></Name>
+							<OriginalColor>-3619384</OriginalColor>
+						</ColorMapping>
+					</ColorTable>
+					<AutoScale>true</AutoScale>
+					<Scale>1.1</Scale>
+					<Rotation>90.0</Rotation>
+					<AxisOrder>XYZ_AXIS_ORDER</AxisOrder>
+					<ApplyShading>true</ApplyShading>
+					<InternalLighting>OFF</InternalLighting>
+					<IgnoreSceneLights>false</IgnoreSceneLights>
+				</Figure3D>
+				<Figure3D>
+					<Id>1717243947396</Id>
+					<Name><![CDATA[table_22]]></Name>
+					<X>1380.5</X><Y>311</Y>
+					<Label><X>0</X><Y>-10</Y></Label>
+					<PublicFlag>true</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>false</ShowLabel>
+					<DrawMode>SHAPE_DRAW_2D3D</DrawMode>
+					<X>1380.5</X><Y>311</Y><Z>0</Z>
+					<Label><X>0</X><Y>-10</Y></Label>
+					<ResourceReference>
+						<PackageName><![CDATA[cw_varus]]></PackageName>
+						<ClassName><![CDATA[3d/table_2.dae]]></ClassName>
+					</ResourceReference>
+					<ColorTable>
+						<ColorMapping>
+							<Name><![CDATA[material0]]></Name>
+							<OriginalColor>-10526881</OriginalColor>
+						</ColorMapping>
+						<ColorMapping>
+							<Name><![CDATA[material1]]></Name>
+							<OriginalColor>-3619384</OriginalColor>
+						</ColorMapping>
+					</ColorTable>
+					<AutoScale>true</AutoScale>
+					<Scale>1.1</Scale>
+					<Rotation>90.0</Rotation>
+					<AxisOrder>XYZ_AXIS_ORDER</AxisOrder>
+					<ApplyShading>true</ApplyShading>
+					<InternalLighting>OFF</InternalLighting>
+					<IgnoreSceneLights>false</IgnoreSceneLights>
+				</Figure3D>
+				<Figure3D>
+					<Id>1717244075835</Id>
+					<Name><![CDATA[table_23]]></Name>
+					<X>1441</X><Y>71</Y>
+					<Label><X>0</X><Y>-10</Y></Label>
+					<PublicFlag>true</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>false</ShowLabel>
+					<DrawMode>SHAPE_DRAW_2D3D</DrawMode>
+					<X>1441</X><Y>71</Y><Z>0</Z>
+					<Label><X>0</X><Y>-10</Y></Label>
+					<ResourceReference>
+						<PackageName><![CDATA[cw_varus]]></PackageName>
+						<ClassName><![CDATA[3d/table_2.dae]]></ClassName>
+					</ResourceReference>
+					<ColorTable>
+						<ColorMapping>
+							<Name><![CDATA[material0]]></Name>
+							<OriginalColor>-10526881</OriginalColor>
+						</ColorMapping>
+						<ColorMapping>
+							<Name><![CDATA[material1]]></Name>
+							<OriginalColor>-3619384</OriginalColor>
+						</ColorMapping>
+					</ColorTable>
+					<AutoScale>true</AutoScale>
+					<Scale>1.1</Scale>
+					<Rotation>90.0</Rotation>
+					<AxisOrder>XYZ_AXIS_ORDER</AxisOrder>
+					<ApplyShading>true</ApplyShading>
+					<InternalLighting>OFF</InternalLighting>
+					<IgnoreSceneLights>false</IgnoreSceneLights>
+				</Figure3D>
+				<Figure3D>
+					<Id>1717244075838</Id>
+					<Name><![CDATA[table_24]]></Name>
+					<X>1441</X><Y>111</Y>
+					<Label><X>0</X><Y>-10</Y></Label>
+					<PublicFlag>true</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>false</ShowLabel>
+					<DrawMode>SHAPE_DRAW_2D3D</DrawMode>
+					<X>1441</X><Y>111</Y><Z>0</Z>
+					<Label><X>0</X><Y>-10</Y></Label>
+					<ResourceReference>
+						<PackageName><![CDATA[cw_varus]]></PackageName>
+						<ClassName><![CDATA[3d/table_2.dae]]></ClassName>
+					</ResourceReference>
+					<ColorTable>
+						<ColorMapping>
+							<Name><![CDATA[material0]]></Name>
+							<OriginalColor>-10526881</OriginalColor>
+						</ColorMapping>
+						<ColorMapping>
+							<Name><![CDATA[material1]]></Name>
+							<OriginalColor>-3619384</OriginalColor>
+						</ColorMapping>
+					</ColorTable>
+					<AutoScale>true</AutoScale>
+					<Scale>1.1</Scale>
+					<Rotation>90.0</Rotation>
+					<AxisOrder>XYZ_AXIS_ORDER</AxisOrder>
+					<ApplyShading>true</ApplyShading>
+					<InternalLighting>OFF</InternalLighting>
+					<IgnoreSceneLights>false</IgnoreSceneLights>
+				</Figure3D>
+				<Figure3D>
+					<Id>1717244075840</Id>
+					<Name><![CDATA[table_25]]></Name>
+					<X>1441</X><Y>151</Y>
+					<Label><X>0</X><Y>-10</Y></Label>
+					<PublicFlag>true</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>false</ShowLabel>
+					<DrawMode>SHAPE_DRAW_2D3D</DrawMode>
+					<X>1441</X><Y>151</Y><Z>0</Z>
+					<Label><X>0</X><Y>-10</Y></Label>
+					<ResourceReference>
+						<PackageName><![CDATA[cw_varus]]></PackageName>
+						<ClassName><![CDATA[3d/table_2.dae]]></ClassName>
+					</ResourceReference>
+					<ColorTable>
+						<ColorMapping>
+							<Name><![CDATA[material0]]></Name>
+							<OriginalColor>-10526881</OriginalColor>
+						</ColorMapping>
+						<ColorMapping>
+							<Name><![CDATA[material1]]></Name>
+							<OriginalColor>-3619384</OriginalColor>
+						</ColorMapping>
+					</ColorTable>
+					<AutoScale>true</AutoScale>
+					<Scale>1.1</Scale>
+					<Rotation>90.0</Rotation>
+					<AxisOrder>XYZ_AXIS_ORDER</AxisOrder>
+					<ApplyShading>true</ApplyShading>
+					<InternalLighting>OFF</InternalLighting>
+					<IgnoreSceneLights>false</IgnoreSceneLights>
+				</Figure3D>
+				<Figure3D>
+					<Id>1717244075842</Id>
+					<Name><![CDATA[table_26]]></Name>
+					<X>1441</X><Y>191</Y>
+					<Label><X>0</X><Y>-10</Y></Label>
+					<PublicFlag>true</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>false</ShowLabel>
+					<DrawMode>SHAPE_DRAW_2D3D</DrawMode>
+					<X>1441</X><Y>191</Y><Z>0</Z>
+					<Label><X>0</X><Y>-10</Y></Label>
+					<ResourceReference>
+						<PackageName><![CDATA[cw_varus]]></PackageName>
+						<ClassName><![CDATA[3d/table_2.dae]]></ClassName>
+					</ResourceReference>
+					<ColorTable>
+						<ColorMapping>
+							<Name><![CDATA[material0]]></Name>
+							<OriginalColor>-10526881</OriginalColor>
+						</ColorMapping>
+						<ColorMapping>
+							<Name><![CDATA[material1]]></Name>
+							<OriginalColor>-3619384</OriginalColor>
+						</ColorMapping>
+					</ColorTable>
+					<AutoScale>true</AutoScale>
+					<Scale>1.1</Scale>
+					<Rotation>90.0</Rotation>
+					<AxisOrder>XYZ_AXIS_ORDER</AxisOrder>
+					<ApplyShading>true</ApplyShading>
+					<InternalLighting>OFF</InternalLighting>
+					<IgnoreSceneLights>false</IgnoreSceneLights>
+				</Figure3D>
+				<Figure3D>
+					<Id>1717244075844</Id>
+					<Name><![CDATA[table_27]]></Name>
+					<X>1441</X><Y>231</Y>
+					<Label><X>0</X><Y>-10</Y></Label>
+					<PublicFlag>true</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>false</ShowLabel>
+					<DrawMode>SHAPE_DRAW_2D3D</DrawMode>
+					<X>1441</X><Y>231</Y><Z>0</Z>
+					<Label><X>0</X><Y>-10</Y></Label>
+					<ResourceReference>
+						<PackageName><![CDATA[cw_varus]]></PackageName>
+						<ClassName><![CDATA[3d/table_2.dae]]></ClassName>
+					</ResourceReference>
+					<ColorTable>
+						<ColorMapping>
+							<Name><![CDATA[material0]]></Name>
+							<OriginalColor>-10526881</OriginalColor>
+						</ColorMapping>
+						<ColorMapping>
+							<Name><![CDATA[material1]]></Name>
+							<OriginalColor>-3619384</OriginalColor>
+						</ColorMapping>
+					</ColorTable>
+					<AutoScale>true</AutoScale>
+					<Scale>1.1</Scale>
+					<Rotation>90.0</Rotation>
+					<AxisOrder>XYZ_AXIS_ORDER</AxisOrder>
+					<ApplyShading>true</ApplyShading>
+					<InternalLighting>OFF</InternalLighting>
+					<IgnoreSceneLights>false</IgnoreSceneLights>
+				</Figure3D>
+				<Figure3D>
+					<Id>1717244075846</Id>
+					<Name><![CDATA[table_28]]></Name>
+					<X>1441</X><Y>271</Y>
+					<Label><X>0</X><Y>-10</Y></Label>
+					<PublicFlag>true</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>false</ShowLabel>
+					<DrawMode>SHAPE_DRAW_2D3D</DrawMode>
+					<X>1441</X><Y>271</Y><Z>0</Z>
+					<Label><X>0</X><Y>-10</Y></Label>
+					<ResourceReference>
+						<PackageName><![CDATA[cw_varus]]></PackageName>
+						<ClassName><![CDATA[3d/table_2.dae]]></ClassName>
+					</ResourceReference>
+					<ColorTable>
+						<ColorMapping>
+							<Name><![CDATA[material0]]></Name>
+							<OriginalColor>-10526881</OriginalColor>
+						</ColorMapping>
+						<ColorMapping>
+							<Name><![CDATA[material1]]></Name>
+							<OriginalColor>-3619384</OriginalColor>
+						</ColorMapping>
+					</ColorTable>
+					<AutoScale>true</AutoScale>
+					<Scale>1.1</Scale>
+					<Rotation>90.0</Rotation>
+					<AxisOrder>XYZ_AXIS_ORDER</AxisOrder>
+					<ApplyShading>true</ApplyShading>
+					<InternalLighting>OFF</InternalLighting>
+					<IgnoreSceneLights>false</IgnoreSceneLights>
+				</Figure3D>
+				<Figure3D>
+					<Id>1717244075848</Id>
+					<Name><![CDATA[table_29]]></Name>
+					<X>1441</X><Y>311</Y>
+					<Label><X>0</X><Y>-10</Y></Label>
+					<PublicFlag>true</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>false</ShowLabel>
+					<DrawMode>SHAPE_DRAW_2D3D</DrawMode>
+					<X>1441</X><Y>311</Y><Z>0</Z>
+					<Label><X>0</X><Y>-10</Y></Label>
+					<ResourceReference>
+						<PackageName><![CDATA[cw_varus]]></PackageName>
+						<ClassName><![CDATA[3d/table_2.dae]]></ClassName>
+					</ResourceReference>
+					<ColorTable>
+						<ColorMapping>
+							<Name><![CDATA[material0]]></Name>
+							<OriginalColor>-10526881</OriginalColor>
+						</ColorMapping>
+						<ColorMapping>
+							<Name><![CDATA[material1]]></Name>
+							<OriginalColor>-3619384</OriginalColor>
+						</ColorMapping>
+					</ColorTable>
+					<AutoScale>true</AutoScale>
+					<Scale>1.1</Scale>
+					<Rotation>90.0</Rotation>
+					<AxisOrder>XYZ_AXIS_ORDER</AxisOrder>
+					<ApplyShading>true</ApplyShading>
+					<InternalLighting>OFF</InternalLighting>
+					<IgnoreSceneLights>false</IgnoreSceneLights>
+				</Figure3D>
+				<Figure3D>
+					<Id>1717244129646</Id>
+					<Name><![CDATA[table_30]]></Name>
+					<X>1501</X><Y>71</Y>
+					<Label><X>0</X><Y>-10</Y></Label>
+					<PublicFlag>true</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>false</ShowLabel>
+					<DrawMode>SHAPE_DRAW_2D3D</DrawMode>
+					<X>1501</X><Y>71</Y><Z>0</Z>
+					<Label><X>0</X><Y>-10</Y></Label>
+					<ResourceReference>
+						<PackageName><![CDATA[cw_varus]]></PackageName>
+						<ClassName><![CDATA[3d/table_2.dae]]></ClassName>
+					</ResourceReference>
+					<ColorTable>
+						<ColorMapping>
+							<Name><![CDATA[material0]]></Name>
+							<OriginalColor>-10526881</OriginalColor>
+						</ColorMapping>
+						<ColorMapping>
+							<Name><![CDATA[material1]]></Name>
+							<OriginalColor>-3619384</OriginalColor>
+						</ColorMapping>
+					</ColorTable>
+					<AutoScale>true</AutoScale>
+					<Scale>1.1</Scale>
+					<Rotation>90.0</Rotation>
+					<AxisOrder>XYZ_AXIS_ORDER</AxisOrder>
+					<ApplyShading>true</ApplyShading>
+					<InternalLighting>OFF</InternalLighting>
+					<IgnoreSceneLights>false</IgnoreSceneLights>
+				</Figure3D>
+				<Figure3D>
+					<Id>1717244129652</Id>
+					<Name><![CDATA[table_31]]></Name>
+					<X>1501</X><Y>111</Y>
+					<Label><X>0</X><Y>-10</Y></Label>
+					<PublicFlag>true</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>false</ShowLabel>
+					<DrawMode>SHAPE_DRAW_2D3D</DrawMode>
+					<X>1501</X><Y>111</Y><Z>0</Z>
+					<Label><X>0</X><Y>-10</Y></Label>
+					<ResourceReference>
+						<PackageName><![CDATA[cw_varus]]></PackageName>
+						<ClassName><![CDATA[3d/table_2.dae]]></ClassName>
+					</ResourceReference>
+					<ColorTable>
+						<ColorMapping>
+							<Name><![CDATA[material0]]></Name>
+							<OriginalColor>-10526881</OriginalColor>
+						</ColorMapping>
+						<ColorMapping>
+							<Name><![CDATA[material1]]></Name>
+							<OriginalColor>-3619384</OriginalColor>
+						</ColorMapping>
+					</ColorTable>
+					<AutoScale>true</AutoScale>
+					<Scale>1.1</Scale>
+					<Rotation>90.0</Rotation>
+					<AxisOrder>XYZ_AXIS_ORDER</AxisOrder>
+					<ApplyShading>true</ApplyShading>
+					<InternalLighting>OFF</InternalLighting>
+					<IgnoreSceneLights>false</IgnoreSceneLights>
+				</Figure3D>
+				<Figure3D>
+					<Id>1717244129654</Id>
+					<Name><![CDATA[table_32]]></Name>
+					<X>1501</X><Y>151</Y>
+					<Label><X>0</X><Y>-10</Y></Label>
+					<PublicFlag>true</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>false</ShowLabel>
+					<DrawMode>SHAPE_DRAW_2D3D</DrawMode>
+					<X>1501</X><Y>151</Y><Z>0</Z>
+					<Label><X>0</X><Y>-10</Y></Label>
+					<ResourceReference>
+						<PackageName><![CDATA[cw_varus]]></PackageName>
+						<ClassName><![CDATA[3d/table_2.dae]]></ClassName>
+					</ResourceReference>
+					<ColorTable>
+						<ColorMapping>
+							<Name><![CDATA[material0]]></Name>
+							<OriginalColor>-10526881</OriginalColor>
+						</ColorMapping>
+						<ColorMapping>
+							<Name><![CDATA[material1]]></Name>
+							<OriginalColor>-3619384</OriginalColor>
+						</ColorMapping>
+					</ColorTable>
+					<AutoScale>true</AutoScale>
+					<Scale>1.1</Scale>
+					<Rotation>90.0</Rotation>
+					<AxisOrder>XYZ_AXIS_ORDER</AxisOrder>
+					<ApplyShading>true</ApplyShading>
+					<InternalLighting>OFF</InternalLighting>
+					<IgnoreSceneLights>false</IgnoreSceneLights>
+				</Figure3D>
+				<Figure3D>
+					<Id>1717244129656</Id>
+					<Name><![CDATA[table_33]]></Name>
+					<X>1501</X><Y>191</Y>
+					<Label><X>0</X><Y>-10</Y></Label>
+					<PublicFlag>true</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>false</ShowLabel>
+					<DrawMode>SHAPE_DRAW_2D3D</DrawMode>
+					<X>1501</X><Y>191</Y><Z>0</Z>
+					<Label><X>0</X><Y>-10</Y></Label>
+					<ResourceReference>
+						<PackageName><![CDATA[cw_varus]]></PackageName>
+						<ClassName><![CDATA[3d/table_2.dae]]></ClassName>
+					</ResourceReference>
+					<ColorTable>
+						<ColorMapping>
+							<Name><![CDATA[material0]]></Name>
+							<OriginalColor>-10526881</OriginalColor>
+						</ColorMapping>
+						<ColorMapping>
+							<Name><![CDATA[material1]]></Name>
+							<OriginalColor>-3619384</OriginalColor>
+						</ColorMapping>
+					</ColorTable>
+					<AutoScale>true</AutoScale>
+					<Scale>1.1</Scale>
+					<Rotation>90.0</Rotation>
+					<AxisOrder>XYZ_AXIS_ORDER</AxisOrder>
+					<ApplyShading>true</ApplyShading>
+					<InternalLighting>OFF</InternalLighting>
+					<IgnoreSceneLights>false</IgnoreSceneLights>
+				</Figure3D>
+				<Figure3D>
+					<Id>1717244129659</Id>
+					<Name><![CDATA[table_34]]></Name>
+					<X>1501</X><Y>231</Y>
+					<Label><X>0</X><Y>-10</Y></Label>
+					<PublicFlag>true</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>false</ShowLabel>
+					<DrawMode>SHAPE_DRAW_2D3D</DrawMode>
+					<X>1501</X><Y>231</Y><Z>0</Z>
+					<Label><X>0</X><Y>-10</Y></Label>
+					<ResourceReference>
+						<PackageName><![CDATA[cw_varus]]></PackageName>
+						<ClassName><![CDATA[3d/table_2.dae]]></ClassName>
+					</ResourceReference>
+					<ColorTable>
+						<ColorMapping>
+							<Name><![CDATA[material0]]></Name>
+							<OriginalColor>-10526881</OriginalColor>
+						</ColorMapping>
+						<ColorMapping>
+							<Name><![CDATA[material1]]></Name>
+							<OriginalColor>-3619384</OriginalColor>
+						</ColorMapping>
+					</ColorTable>
+					<AutoScale>true</AutoScale>
+					<Scale>1.1</Scale>
+					<Rotation>90.0</Rotation>
+					<AxisOrder>XYZ_AXIS_ORDER</AxisOrder>
+					<ApplyShading>true</ApplyShading>
+					<InternalLighting>OFF</InternalLighting>
+					<IgnoreSceneLights>false</IgnoreSceneLights>
+				</Figure3D>
+				<Figure3D>
+					<Id>1717244129661</Id>
+					<Name><![CDATA[table_35]]></Name>
+					<X>1501</X><Y>271</Y>
+					<Label><X>0</X><Y>-10</Y></Label>
+					<PublicFlag>true</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>false</ShowLabel>
+					<DrawMode>SHAPE_DRAW_2D3D</DrawMode>
+					<X>1501</X><Y>271</Y><Z>0</Z>
+					<Label><X>0</X><Y>-10</Y></Label>
+					<ResourceReference>
+						<PackageName><![CDATA[cw_varus]]></PackageName>
+						<ClassName><![CDATA[3d/table_2.dae]]></ClassName>
+					</ResourceReference>
+					<ColorTable>
+						<ColorMapping>
+							<Name><![CDATA[material0]]></Name>
+							<OriginalColor>-10526881</OriginalColor>
+						</ColorMapping>
+						<ColorMapping>
+							<Name><![CDATA[material1]]></Name>
+							<OriginalColor>-3619384</OriginalColor>
+						</ColorMapping>
+					</ColorTable>
+					<AutoScale>true</AutoScale>
+					<Scale>1.1</Scale>
+					<Rotation>90.0</Rotation>
+					<AxisOrder>XYZ_AXIS_ORDER</AxisOrder>
+					<ApplyShading>true</ApplyShading>
+					<InternalLighting>OFF</InternalLighting>
+					<IgnoreSceneLights>false</IgnoreSceneLights>
+				</Figure3D>
+				<Figure3D>
+					<Id>1717244129663</Id>
+					<Name><![CDATA[table_36]]></Name>
+					<X>1501</X><Y>311</Y>
+					<Label><X>0</X><Y>-10</Y></Label>
+					<PublicFlag>true</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>false</ShowLabel>
+					<DrawMode>SHAPE_DRAW_2D3D</DrawMode>
+					<X>1501</X><Y>311</Y><Z>0</Z>
+					<Label><X>0</X><Y>-10</Y></Label>
+					<ResourceReference>
+						<PackageName><![CDATA[cw_varus]]></PackageName>
+						<ClassName><![CDATA[3d/table_2.dae]]></ClassName>
+					</ResourceReference>
+					<ColorTable>
+						<ColorMapping>
+							<Name><![CDATA[material0]]></Name>
+							<OriginalColor>-10526881</OriginalColor>
+						</ColorMapping>
+						<ColorMapping>
+							<Name><![CDATA[material1]]></Name>
+							<OriginalColor>-3619384</OriginalColor>
+						</ColorMapping>
+					</ColorTable>
+					<AutoScale>true</AutoScale>
+					<Scale>1.1</Scale>
+					<Rotation>90.0</Rotation>
+					<AxisOrder>XYZ_AXIS_ORDER</AxisOrder>
+					<ApplyShading>true</ApplyShading>
+					<InternalLighting>OFF</InternalLighting>
+					<IgnoreSceneLights>false</IgnoreSceneLights>
+				</Figure3D>
+				<Figure3D>
+					<Id>1717244191179</Id>
+					<Name><![CDATA[table_37]]></Name>
+					<X>1555.5</X><Y>71</Y>
+					<Label><X>0</X><Y>-10</Y></Label>
+					<PublicFlag>true</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>false</ShowLabel>
+					<DrawMode>SHAPE_DRAW_2D3D</DrawMode>
+					<X>1555.5</X><Y>71</Y><Z>0</Z>
+					<Label><X>0</X><Y>-10</Y></Label>
+					<ResourceReference>
+						<PackageName><![CDATA[cw_varus]]></PackageName>
+						<ClassName><![CDATA[3d/table_2.dae]]></ClassName>
+					</ResourceReference>
+					<ColorTable>
+						<ColorMapping>
+							<Name><![CDATA[material0]]></Name>
+							<OriginalColor>-10526881</OriginalColor>
+						</ColorMapping>
+						<ColorMapping>
+							<Name><![CDATA[material1]]></Name>
+							<OriginalColor>-3619384</OriginalColor>
+						</ColorMapping>
+					</ColorTable>
+					<AutoScale>true</AutoScale>
+					<Scale>1.1</Scale>
+					<Rotation>90.0</Rotation>
+					<AxisOrder>XYZ_AXIS_ORDER</AxisOrder>
+					<ApplyShading>true</ApplyShading>
+					<InternalLighting>OFF</InternalLighting>
+					<IgnoreSceneLights>false</IgnoreSceneLights>
+				</Figure3D>
+				<Figure3D>
+					<Id>1717244191182</Id>
+					<Name><![CDATA[table_38]]></Name>
+					<X>1555.5</X><Y>111</Y>
+					<Label><X>0</X><Y>-10</Y></Label>
+					<PublicFlag>true</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>false</ShowLabel>
+					<DrawMode>SHAPE_DRAW_2D3D</DrawMode>
+					<X>1555.5</X><Y>111</Y><Z>0</Z>
+					<Label><X>0</X><Y>-10</Y></Label>
+					<ResourceReference>
+						<PackageName><![CDATA[cw_varus]]></PackageName>
+						<ClassName><![CDATA[3d/table_2.dae]]></ClassName>
+					</ResourceReference>
+					<ColorTable>
+						<ColorMapping>
+							<Name><![CDATA[material0]]></Name>
+							<OriginalColor>-10526881</OriginalColor>
+						</ColorMapping>
+						<ColorMapping>
+							<Name><![CDATA[material1]]></Name>
+							<OriginalColor>-3619384</OriginalColor>
+						</ColorMapping>
+					</ColorTable>
+					<AutoScale>true</AutoScale>
+					<Scale>1.1</Scale>
+					<Rotation>90.0</Rotation>
+					<AxisOrder>XYZ_AXIS_ORDER</AxisOrder>
+					<ApplyShading>true</ApplyShading>
+					<InternalLighting>OFF</InternalLighting>
+					<IgnoreSceneLights>false</IgnoreSceneLights>
+				</Figure3D>
+				<Figure3D>
+					<Id>1717244191184</Id>
+					<Name><![CDATA[table_39]]></Name>
+					<X>1555.5</X><Y>151</Y>
+					<Label><X>0</X><Y>-10</Y></Label>
+					<PublicFlag>true</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>false</ShowLabel>
+					<DrawMode>SHAPE_DRAW_2D3D</DrawMode>
+					<X>1555.5</X><Y>151</Y><Z>0</Z>
+					<Label><X>0</X><Y>-10</Y></Label>
+					<ResourceReference>
+						<PackageName><![CDATA[cw_varus]]></PackageName>
+						<ClassName><![CDATA[3d/table_2.dae]]></ClassName>
+					</ResourceReference>
+					<ColorTable>
+						<ColorMapping>
+							<Name><![CDATA[material0]]></Name>
+							<OriginalColor>-10526881</OriginalColor>
+						</ColorMapping>
+						<ColorMapping>
+							<Name><![CDATA[material1]]></Name>
+							<OriginalColor>-3619384</OriginalColor>
+						</ColorMapping>
+					</ColorTable>
+					<AutoScale>true</AutoScale>
+					<Scale>1.1</Scale>
+					<Rotation>90.0</Rotation>
+					<AxisOrder>XYZ_AXIS_ORDER</AxisOrder>
+					<ApplyShading>true</ApplyShading>
+					<InternalLighting>OFF</InternalLighting>
+					<IgnoreSceneLights>false</IgnoreSceneLights>
+				</Figure3D>
+				<Figure3D>
+					<Id>1717244191186</Id>
+					<Name><![CDATA[table_40]]></Name>
+					<X>1555.5</X><Y>191</Y>
+					<Label><X>0</X><Y>-10</Y></Label>
+					<PublicFlag>true</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>false</ShowLabel>
+					<DrawMode>SHAPE_DRAW_2D3D</DrawMode>
+					<X>1555.5</X><Y>191</Y><Z>0</Z>
+					<Label><X>0</X><Y>-10</Y></Label>
+					<ResourceReference>
+						<PackageName><![CDATA[cw_varus]]></PackageName>
+						<ClassName><![CDATA[3d/table_2.dae]]></ClassName>
+					</ResourceReference>
+					<ColorTable>
+						<ColorMapping>
+							<Name><![CDATA[material0]]></Name>
+							<OriginalColor>-10526881</OriginalColor>
+						</ColorMapping>
+						<ColorMapping>
+							<Name><![CDATA[material1]]></Name>
+							<OriginalColor>-3619384</OriginalColor>
+						</ColorMapping>
+					</ColorTable>
+					<AutoScale>true</AutoScale>
+					<Scale>1.1</Scale>
+					<Rotation>90.0</Rotation>
+					<AxisOrder>XYZ_AXIS_ORDER</AxisOrder>
+					<ApplyShading>true</ApplyShading>
+					<InternalLighting>OFF</InternalLighting>
+					<IgnoreSceneLights>false</IgnoreSceneLights>
+				</Figure3D>
+				<Figure3D>
+					<Id>1717244191188</Id>
+					<Name><![CDATA[table_41]]></Name>
+					<X>1555.5</X><Y>231</Y>
+					<Label><X>0</X><Y>-10</Y></Label>
+					<PublicFlag>true</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>false</ShowLabel>
+					<DrawMode>SHAPE_DRAW_2D3D</DrawMode>
+					<X>1555.5</X><Y>231</Y><Z>0</Z>
+					<Label><X>0</X><Y>-10</Y></Label>
+					<ResourceReference>
+						<PackageName><![CDATA[cw_varus]]></PackageName>
+						<ClassName><![CDATA[3d/table_2.dae]]></ClassName>
+					</ResourceReference>
+					<ColorTable>
+						<ColorMapping>
+							<Name><![CDATA[material0]]></Name>
+							<OriginalColor>-10526881</OriginalColor>
+						</ColorMapping>
+						<ColorMapping>
+							<Name><![CDATA[material1]]></Name>
+							<OriginalColor>-3619384</OriginalColor>
+						</ColorMapping>
+					</ColorTable>
+					<AutoScale>true</AutoScale>
+					<Scale>1.1</Scale>
+					<Rotation>90.0</Rotation>
+					<AxisOrder>XYZ_AXIS_ORDER</AxisOrder>
+					<ApplyShading>true</ApplyShading>
+					<InternalLighting>OFF</InternalLighting>
+					<IgnoreSceneLights>false</IgnoreSceneLights>
+				</Figure3D>
+				<Figure3D>
+					<Id>1717244191190</Id>
+					<Name><![CDATA[table_42]]></Name>
+					<X>1555.5</X><Y>271</Y>
+					<Label><X>0</X><Y>-10</Y></Label>
+					<PublicFlag>true</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>false</ShowLabel>
+					<DrawMode>SHAPE_DRAW_2D3D</DrawMode>
+					<X>1555.5</X><Y>271</Y><Z>0</Z>
+					<Label><X>0</X><Y>-10</Y></Label>
+					<ResourceReference>
+						<PackageName><![CDATA[cw_varus]]></PackageName>
+						<ClassName><![CDATA[3d/table_2.dae]]></ClassName>
+					</ResourceReference>
+					<ColorTable>
+						<ColorMapping>
+							<Name><![CDATA[material0]]></Name>
+							<OriginalColor>-10526881</OriginalColor>
+						</ColorMapping>
+						<ColorMapping>
+							<Name><![CDATA[material1]]></Name>
+							<OriginalColor>-3619384</OriginalColor>
+						</ColorMapping>
+					</ColorTable>
+					<AutoScale>true</AutoScale>
+					<Scale>1.1</Scale>
+					<Rotation>90.0</Rotation>
+					<AxisOrder>XYZ_AXIS_ORDER</AxisOrder>
+					<ApplyShading>true</ApplyShading>
+					<InternalLighting>OFF</InternalLighting>
+					<IgnoreSceneLights>false</IgnoreSceneLights>
+				</Figure3D>
+				<Figure3D>
+					<Id>1717244191192</Id>
+					<Name><![CDATA[table_43]]></Name>
+					<X>1555.5</X><Y>311</Y>
+					<Label><X>0</X><Y>-10</Y></Label>
+					<PublicFlag>true</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>false</ShowLabel>
+					<DrawMode>SHAPE_DRAW_2D3D</DrawMode>
+					<X>1555.5</X><Y>311</Y><Z>0</Z>
+					<Label><X>0</X><Y>-10</Y></Label>
+					<ResourceReference>
+						<PackageName><![CDATA[cw_varus]]></PackageName>
+						<ClassName><![CDATA[3d/table_2.dae]]></ClassName>
+					</ResourceReference>
+					<ColorTable>
+						<ColorMapping>
+							<Name><![CDATA[material0]]></Name>
+							<OriginalColor>-10526881</OriginalColor>
+						</ColorMapping>
+						<ColorMapping>
+							<Name><![CDATA[material1]]></Name>
+							<OriginalColor>-3619384</OriginalColor>
+						</ColorMapping>
+					</ColorTable>
+					<AutoScale>true</AutoScale>
+					<Scale>1.1</Scale>
+					<Rotation>90.0</Rotation>
+					<AxisOrder>XYZ_AXIS_ORDER</AxisOrder>
+					<ApplyShading>true</ApplyShading>
+					<InternalLighting>OFF</InternalLighting>
+					<IgnoreSceneLights>false</IgnoreSceneLights>
+				</Figure3D>
 			</Presentation>
 
 				</Level>
@@ -9502,7 +11405,7 @@ if (bernoulli(factor) == 1) {
 				<Variable Class="PlainVariable">
 					<Id>1717152589345</Id>
 					<Name><![CDATA[severity]]></Name>
-					<X>50</X><Y>100</Y>
+					<X>50</X><Y>150</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>false</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -9572,6 +11475,63 @@ if (bernoulli(factor) == 1) {
 						<InitialValue Class="CodeValue">
 							<Code><![CDATA[-1]]></Code>
 						</InitialValue>
+					</Properties>
+				</Variable>
+				<Variable Class="PlainVariable">
+					<Id>1717247220682</Id>
+					<Name><![CDATA[transmitted_count]]></Name>
+					<X>200</X><Y>50</Y>
+					<Label><X>10</X><Y>0</Y></Label>
+					<PublicFlag>false</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>true</ShowLabel>
+					<Properties SaveInSnapshot="true" Constant="false" AccessType="public" StaticVariable="false">
+						<Type><![CDATA[int]]></Type>        
+						<InitialValue Class="CodeValue">
+							<Code><![CDATA[0]]></Code>
+						</InitialValue>
+					</Properties>
+				</Variable>
+				<Variable Class="PlainVariable">
+					<Id>1717250145305</Id>
+					<Name><![CDATA[last_infected_date]]></Name>
+					<X>50</X><Y>50</Y>
+					<Label><X>10</X><Y>0</Y></Label>
+					<PublicFlag>false</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>true</ShowLabel>
+					<Properties SaveInSnapshot="true" Constant="false" AccessType="public" StaticVariable="false">
+						<Type><![CDATA[double]]></Type>        
+						<InitialValue Class="CodeValue">
+							<Code><![CDATA[-1]]></Code>
+						</InitialValue>
+					</Properties>
+				</Variable>
+				<Variable Class="PlainVariable">
+					<Id>1717254327357</Id>
+					<Name><![CDATA[all_skipped_classes]]></Name>
+					<X>50</X><Y>400</Y>
+					<Label><X>10</X><Y>0</Y></Label>
+					<PublicFlag>false</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>true</ShowLabel>
+					<Properties SaveInSnapshot="true" Constant="false" AccessType="public" StaticVariable="false">
+						<Type><![CDATA[int]]></Type>        
+						<InitialValue Class="CodeValue">
+							<Code><![CDATA[0]]></Code>
+						</InitialValue>
+					</Properties>
+				</Variable>
+				<Variable Class="PlainVariable">
+					<Id>1717254606666</Id>
+					<Name><![CDATA[infected_cnt]]></Name>
+					<X>50</X><Y>100</Y>
+					<Label><X>10</X><Y>0</Y></Label>
+					<PublicFlag>false</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>true</ShowLabel>
+					<Properties SaveInSnapshot="true" Constant="false" AccessType="public" StaticVariable="false">
+						<Type><![CDATA[double]]></Type>        
 					</Properties>
 				</Variable>
 				<Variable Class="Parameter">
@@ -9694,39 +11654,6 @@ if (bernoulli(factor) == 1) {
 						</ParameterEditor>
 					</Properties>                 
 				</Variable>
-				<Variable Class="CollectionVariable">
-					<Id>1717076761894</Id>
-					<Name><![CDATA[infected_dates]]></Name>
-					<X>50</X><Y>50</Y>
-					<Label><X>10</X><Y>0</Y></Label>
-					<PublicFlag>false</PublicFlag>
-					<PresentationFlag>true</PresentationFlag>
-					<ShowLabel>true</ShowLabel>
-					<Properties SaveInSnapshot="true" AccessType="public" StaticVariable="false">
-						<CollectionClass><![CDATA[ArrayList]]></CollectionClass>
-						<ElementClass><![CDATA[Double]]></ElementClass>
-						<ValueElementClass><![CDATA[String]]></ValueElementClass>
-						<CollectionInitializer Class="CodeValue">
-							<Code><![CDATA[{ }]]></Code>
-						</CollectionInitializer>
-					</Properties>
-
-				</Variable>
-				<Variable Class="CollectionVariable">
-					<Id>1717157479271</Id>
-					<Name><![CDATA[transmitted_dates]]></Name>
-					<X>200</X><Y>50</Y>
-					<Label><X>10</X><Y>0</Y></Label>
-					<PublicFlag>false</PublicFlag>
-					<PresentationFlag>true</PresentationFlag>
-					<ShowLabel>true</ShowLabel>
-					<Properties SaveInSnapshot="true" AccessType="public" StaticVariable="false">
-						<CollectionClass><![CDATA[ArrayList]]></CollectionClass>
-						<ElementClass><![CDATA[Double]]></ElementClass>
-						<ValueElementClass><![CDATA[String]]></ValueElementClass>
-					</Properties>
-
-				</Variable>
 			</Variables>
 			<StatechartElements>
 				<StatechartElement Class="State" ParentState="ROOT_NODE">
@@ -9781,7 +11708,8 @@ is_infectious = false;]]></EntryAction>
 					<Properties Width="100" Height="30">
 						<EntryAction><![CDATA[boy.setColor("Material__5__Surf", new Color(255, 0, 255));
 contagiousness = P_contagiousness;
-is_infectious = true;]]></EntryAction>
+is_infectious = true;
+transmitted_count = 0;]]></EntryAction>
 						<FillColor/>
 					</Properties>
 				</StatechartElement>
@@ -9810,7 +11738,10 @@ severity = normal(0, 1, 0.5, 0.3);]]></EntryAction>
 					<Properties Width="100" Height="30">
 						<EntryAction><![CDATA[boy.setColor("Material__5__Surf", new Color(255, 255, 0));
 is_infected = true;
-infected_dates.add(time());]]></EntryAction>
+last_infected_date = time();
+infected_cnt += 1;
+
+get_Main().S_delegate_infected(this);]]></EntryAction>
 						<FillColor/>
 					</Properties>
 				</StatechartElement>
@@ -9966,6 +11897,7 @@ infected_dates.add(time());]]></EntryAction>
 					</Points>
 					<IconOffset>20.0</IconOffset>
 					<Properties Source="1716832932799" Target="1716832719003" Trigger="timeout">
+						<Action><![CDATA[get_Main().S_delegate_cured(this);]]></Action>
 						<Timeout Class="CodeUnitValue">
 							<Code><![CDATA[max(D_infectious_time() - 1, 1)]]></Code>
 							<Unit Class="TimeUnits"><![CDATA[DAY]]></Unit>
@@ -10013,7 +11945,7 @@ infected_dates.add(time());]]></EntryAction>
 					<ReturnType><![CDATA[double]]></ReturnType>
 					<Id>1717076610671</Id>
 					<Name><![CDATA[immunity_factor]]></Name>
-					<X>50</X><Y>150</Y>
+					<X>50</X><Y>200</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>false</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -10022,12 +11954,13 @@ infected_dates.add(time());]]></EntryAction>
 	return D_vaccine_efficiency;
 }
 
-if (infected_dates.size() > 0) {
+if (last_infected_date > 0) {
 	double months = differenceInCalendarUnits(
 		MONTH, 
-		infected_dates.get(infected_dates.size() - 1), 
-		time());
-		
+		last_infected_date, 
+		time()
+	);
+	
 	if (months <= 1) {
 		return months*months;
 	} else {
@@ -10048,10 +11981,11 @@ return 0;]]></Body>
 					<PresentationFlag>true</PresentationFlag>
 					<ShowLabel>true</ShowLabel>
 					<Body><![CDATA[cr_grade = -1;
-infected_dates.clear();
-transmitted_dates.clear();
+last_infected_date = -1;
+transmitted_count = 0;
 contagiousness = 0;
 severity = 0;
+all_skipped_classes = 0;
 is_vaccinated = (bernoulli(P_vaccinated) == 1) ? true : false;
 ]]></Body>
 				</Function>
@@ -10110,7 +12044,9 @@ return false;]]></Body>
 						<Type><![CDATA[Student]]></Type>
 					</Parameter>
 					<Body><![CDATA[send("CatchDesease", victim);
-transmitted_dates.add(time());]]></Body>
+transmitted_count += 1;
+
+]]></Body>
 				</Function>
 				<Function AccessType="default" StaticFunction="false">
 					<ReturnModificator>RETURNS_VALUE</ReturnModificator>
@@ -10123,6 +12059,30 @@ transmitted_dates.add(time());]]></Body>
 					<PresentationFlag>true</PresentationFlag>
 					<ShowLabel>true</ShowLabel>
 					<Body><![CDATA[return severity < T_stay_home;]]></Body>
+				</Function>
+				<Function AccessType="default" StaticFunction="false">
+					<ReturnModificator>RETURNS_VALUE</ReturnModificator>
+					<ReturnType><![CDATA[boolean]]></ReturnType>
+					<Id>1717249731551</Id>
+					<Name><![CDATA[was_ill]]></Name>
+					<X>750</X><Y>250</Y>
+					<Label><X>10</X><Y>0</Y></Label>
+					<PublicFlag>false</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>true</ShowLabel>
+					<Body><![CDATA[return last_infected_date > 0;]]></Body>
+				</Function>
+				<Function AccessType="default" StaticFunction="false">
+					<ReturnModificator>RETURNS_VALUE</ReturnModificator>
+					<ReturnType><![CDATA[double]]></ReturnType>
+					<Id>1717253906300</Id>
+					<Name><![CDATA[get_ill_time]]></Name>
+					<X>650</X><Y>100</Y>
+					<Label><X>10</X><Y>0</Y></Label>
+					<PublicFlag>false</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>true</ShowLabel>
+					<Body><![CDATA[return differenceInCalendarUnits(DAY, last_infected_date, time());]]></Body>
 				</Function>
 			</Functions>
 			<AgentLinks>
@@ -10247,8 +12207,8 @@ transmitted_dates.add(time());]]></Body>
 	<RelativeAccuracy>1.0E-5</RelativeAccuracy>
 	<TimeAccuracy>1.0E-5</TimeAccuracy>
 	<Frame>
-		<Width>1600</Width>
-		<Height>1600</Height>
+		<Width>2050</Width>
+		<Height>1650</Height>
 	</Frame>
 	<Database>
 		<Logging>false</Logging>
@@ -10340,7 +12300,7 @@ transmitted_dates.add(time());]]></Body>
 			</PresentationProperties>
 			<ModelTimeProperties>
 				<StopOption><![CDATA[Never]]></StopOption>
-				<InitialDate><![CDATA[1717143000000]]></InitialDate>	
+				<InitialDate><![CDATA[1725253200000]]></InitialDate>	
 				<InitialTime><![CDATA[0.0]]></InitialTime>	
 				<FinalDate><![CDATA[1693526400000]]></FinalDate>	
 				<FinalTime><![CDATA[113945.0]]></FinalTime>	
@@ -10351,6 +12311,11 @@ transmitted_dates.add(time());]]></Body>
 	<ModelResources>
 		<Resource>
 			<Path><![CDATA[3d/person.dae]]></Path>
+			<ReferencedFromUserCode>false</ReferencedFromUserCode>
+			<Location>FILE_SYSTEM</Location>
+		</Resource>
+		<Resource>
+			<Path><![CDATA[3d/table_2.dae]]></Path>
 			<ReferencedFromUserCode>false</ReferencedFromUserCode>
 			<Location>FILE_SYSTEM</Location>
 		</Resource>
