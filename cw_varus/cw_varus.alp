@@ -2716,6 +2716,12 @@ S_avg_ill_time.add(s.get_ill_time(), time());]]></Body>
 						</Parameter>
 						<Parameter>
 							<Name><![CDATA[onExit]]></Name>
+							<Value Class="CodeValue">
+								<Code><![CDATA[agent.moveTo(
+	agent.getTargetX() + normal(1, 1),
+	agent.getTargetY() + normal(1, 1)
+);]]></Code>
+							</Value>
 						</Parameter>
 						<Parameter>
 							<Name><![CDATA[onRemove]]></Name>
