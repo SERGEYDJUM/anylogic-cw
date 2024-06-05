@@ -720,39 +720,6 @@
 					</Points>
 				</Connector>
 				<Connector>
-					<Id>1717083030688</Id>
-					<Name><![CDATA[connector10]]></Name>
-					<X>380</X><Y>780</Y>
-					<Label><X>10</X><Y>0</Y></Label>
-					<PublicFlag>false</PublicFlag>
-					<PresentationFlag>true</PresentationFlag>
-					<ShowLabel>false</ShowLabel>
-					<SourceEmbeddedObjectReference>
-						<PackageName><![CDATA[cw_varus]]></PackageName>
-						<ClassName><![CDATA[Main]]></ClassName>
-						<ItemName><![CDATA[break_switch]]></ItemName>
-					</SourceEmbeddedObjectReference>
-					<SourceConnectableItemReference>
-						<PackageName><![CDATA[com.anylogic.libraries.processmodeling]]></PackageName>
-						<ClassName><![CDATA[SelectOutputIn]]></ClassName>
-						<ItemName><![CDATA[in]]></ItemName>
-					</SourceConnectableItemReference>
-					<TargetEmbeddedObjectReference>
-						<PackageName><![CDATA[cw_varus]]></PackageName>
-						<ClassName><![CDATA[Main]]></ClassName>
-						<ItemName><![CDATA[lesson]]></ItemName>
-					</TargetEmbeddedObjectReference>
-					<TargetConnectableItemReference>
-						<PackageName><![CDATA[com.anylogic.libraries.processmodeling]]></PackageName>
-						<ClassName><![CDATA[Delay]]></ClassName>
-						<ItemName><![CDATA[out]]></ItemName>
-					</TargetConnectableItemReference>
-					<Points>
-						<Point><X>0</X><Y>0</Y></Point>
-						<Point><X>-20</X><Y>0</Y></Point>
-					</Points>
-				</Connector>
-				<Connector>
 					<Id>1717083404651</Id>
 					<Name><![CDATA[connector15]]></Name>
 					<X>580</X><Y>680</Y>
@@ -951,41 +918,6 @@
 					</Points>
 				</Connector>
 				<Connector>
-					<Id>1717153535044</Id>
-					<Name><![CDATA[connector5]]></Name>
-					<X>275</X><Y>885</Y>
-					<Label><X>10</X><Y>0</Y></Label>
-					<PublicFlag>false</PublicFlag>
-					<PresentationFlag>true</PresentationFlag>
-					<ShowLabel>false</ShowLabel>
-					<SourceEmbeddedObjectReference>
-						<PackageName><![CDATA[cw_varus]]></PackageName>
-						<ClassName><![CDATA[Main]]></ClassName>
-						<ItemName><![CDATA[mv_to_class]]></ItemName>
-					</SourceEmbeddedObjectReference>
-					<SourceConnectableItemReference>
-						<PackageName><![CDATA[com.anylogic.libraries.processmodeling]]></PackageName>
-						<ClassName><![CDATA[MoveTo]]></ClassName>
-						<ItemName><![CDATA[out]]></ItemName>
-					</SourceConnectableItemReference>
-					<TargetEmbeddedObjectReference>
-						<PackageName><![CDATA[cw_varus]]></PackageName>
-						<ClassName><![CDATA[Main]]></ClassName>
-						<ItemName><![CDATA[lesson]]></ItemName>
-					</TargetEmbeddedObjectReference>
-					<TargetConnectableItemReference>
-						<PackageName><![CDATA[com.anylogic.libraries.processmodeling]]></PackageName>
-						<ClassName><![CDATA[Delay]]></ClassName>
-						<ItemName><![CDATA[in]]></ItemName>
-					</TargetConnectableItemReference>
-					<Points>
-						<Point><X>0</X><Y>0</Y></Point>
-						<Point><X>25</X><Y>0</Y></Point>
-						<Point><X>25</X><Y>-105</Y></Point>
-						<Point><X>45</X><Y>-105</Y></Point>
-					</Points>
-				</Connector>
-				<Connector>
 					<Id>1717153541356</Id>
 					<Name><![CDATA[connector11]]></Name>
 					<X>275</X><Y>780</Y>
@@ -1057,42 +989,6 @@
 					</Points>
 				</Connector>
 				<Connector>
-					<Id>1717156250083</Id>
-					<Name><![CDATA[connector13]]></Name>
-					<X>620</X><Y>680</Y>
-					<Label><X>10</X><Y>0</Y></Label>
-					<PublicFlag>false</PublicFlag>
-					<PresentationFlag>true</PresentationFlag>
-					<ShowLabel>false</ShowLabel>
-					<SourceEmbeddedObjectReference>
-						<PackageName><![CDATA[cw_varus]]></PackageName>
-						<ClassName><![CDATA[Main]]></ClassName>
-						<ItemName><![CDATA[sch_break]]></ItemName>
-					</SourceEmbeddedObjectReference>
-					<SourceConnectableItemReference>
-						<PackageName><![CDATA[com.anylogic.libraries.processmodeling]]></PackageName>
-						<ClassName><![CDATA[Delay]]></ClassName>
-						<ItemName><![CDATA[out]]></ItemName>
-					</SourceConnectableItemReference>
-					<TargetEmbeddedObjectReference>
-						<PackageName><![CDATA[cw_varus]]></PackageName>
-						<ClassName><![CDATA[Main]]></ClassName>
-						<ItemName><![CDATA[pe_switch]]></ItemName>
-					</TargetEmbeddedObjectReference>
-					<TargetConnectableItemReference>
-						<PackageName><![CDATA[com.anylogic.libraries.processmodeling]]></PackageName>
-						<ClassName><![CDATA[SelectOutput]]></ClassName>
-						<ItemName><![CDATA[in]]></ItemName>
-					</TargetConnectableItemReference>
-					<Points>
-						<Point><X>0</X><Y>0</Y></Point>
-						<Point><X>30</X><Y>0</Y></Point>
-						<Point><X>30</X><Y>50</Y></Point>
-						<Point><X>-465</X><Y>50</Y></Point>
-						<Point><X>-465</X><Y>100</Y></Point>
-					</Points>
-				</Connector>
-				<Connector>
 					<Id>1717247727813</Id>
 					<Name><![CDATA[connector2]]></Name>
 					<X>175</X><Y>780</Y>
@@ -1157,6 +1053,110 @@
 						<Point><X>0</X><Y>0</Y></Point>
 						<Point><X>0</X><Y>95</Y></Point>
 						<Point><X>70</X><Y>95</Y></Point>
+					</Points>
+				</Connector>
+				<Connector>
+					<Id>1717156250083</Id>
+					<Name><![CDATA[connector13]]></Name>
+					<X>620</X><Y>680</Y>
+					<Label><X>10</X><Y>0</Y></Label>
+					<PublicFlag>false</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>false</ShowLabel>
+					<SourceEmbeddedObjectReference>
+						<PackageName><![CDATA[cw_varus]]></PackageName>
+						<ClassName><![CDATA[Main]]></ClassName>
+						<ItemName><![CDATA[sch_break]]></ItemName>
+					</SourceEmbeddedObjectReference>
+					<SourceConnectableItemReference>
+						<PackageName><![CDATA[com.anylogic.libraries.processmodeling]]></PackageName>
+						<ClassName><![CDATA[Delay]]></ClassName>
+						<ItemName><![CDATA[out]]></ItemName>
+					</SourceConnectableItemReference>
+					<TargetEmbeddedObjectReference>
+						<PackageName><![CDATA[cw_varus]]></PackageName>
+						<ClassName><![CDATA[Main]]></ClassName>
+						<ItemName><![CDATA[pe_switch]]></ItemName>
+					</TargetEmbeddedObjectReference>
+					<TargetConnectableItemReference>
+						<PackageName><![CDATA[com.anylogic.libraries.processmodeling]]></PackageName>
+						<ClassName><![CDATA[SelectOutput]]></ClassName>
+						<ItemName><![CDATA[in]]></ItemName>
+					</TargetConnectableItemReference>
+					<Points>
+						<Point><X>0</X><Y>0</Y></Point>
+						<Point><X>30</X><Y>0</Y></Point>
+						<Point><X>30</X><Y>50</Y></Point>
+						<Point><X>-465</X><Y>50</Y></Point>
+						<Point><X>-465</X><Y>100</Y></Point>
+					</Points>
+				</Connector>
+				<Connector>
+					<Id>1717153535044</Id>
+					<Name><![CDATA[connector5]]></Name>
+					<X>275</X><Y>885</Y>
+					<Label><X>10</X><Y>0</Y></Label>
+					<PublicFlag>false</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>false</ShowLabel>
+					<SourceEmbeddedObjectReference>
+						<PackageName><![CDATA[cw_varus]]></PackageName>
+						<ClassName><![CDATA[Main]]></ClassName>
+						<ItemName><![CDATA[mv_to_class]]></ItemName>
+					</SourceEmbeddedObjectReference>
+					<SourceConnectableItemReference>
+						<PackageName><![CDATA[com.anylogic.libraries.processmodeling]]></PackageName>
+						<ClassName><![CDATA[MoveTo]]></ClassName>
+						<ItemName><![CDATA[out]]></ItemName>
+					</SourceConnectableItemReference>
+					<TargetEmbeddedObjectReference>
+						<PackageName><![CDATA[cw_varus]]></PackageName>
+						<ClassName><![CDATA[Main]]></ClassName>
+						<ItemName><![CDATA[lesson]]></ItemName>
+					</TargetEmbeddedObjectReference>
+					<TargetConnectableItemReference>
+						<PackageName><![CDATA[com.anylogic.libraries.processmodeling]]></PackageName>
+						<ClassName><![CDATA[Delay]]></ClassName>
+						<ItemName><![CDATA[in]]></ItemName>
+					</TargetConnectableItemReference>
+					<Points>
+						<Point><X>0</X><Y>0</Y></Point>
+						<Point><X>25</X><Y>0</Y></Point>
+						<Point><X>25</X><Y>-105</Y></Point>
+						<Point><X>45</X><Y>-105</Y></Point>
+					</Points>
+				</Connector>
+				<Connector>
+					<Id>1717083030688</Id>
+					<Name><![CDATA[connector10]]></Name>
+					<X>380</X><Y>780</Y>
+					<Label><X>10</X><Y>0</Y></Label>
+					<PublicFlag>false</PublicFlag>
+					<PresentationFlag>true</PresentationFlag>
+					<ShowLabel>false</ShowLabel>
+					<SourceEmbeddedObjectReference>
+						<PackageName><![CDATA[cw_varus]]></PackageName>
+						<ClassName><![CDATA[Main]]></ClassName>
+						<ItemName><![CDATA[break_switch]]></ItemName>
+					</SourceEmbeddedObjectReference>
+					<SourceConnectableItemReference>
+						<PackageName><![CDATA[com.anylogic.libraries.processmodeling]]></PackageName>
+						<ClassName><![CDATA[SelectOutputIn]]></ClassName>
+						<ItemName><![CDATA[in]]></ItemName>
+					</SourceConnectableItemReference>
+					<TargetEmbeddedObjectReference>
+						<PackageName><![CDATA[cw_varus]]></PackageName>
+						<ClassName><![CDATA[Main]]></ClassName>
+						<ItemName><![CDATA[lesson]]></ItemName>
+					</TargetEmbeddedObjectReference>
+					<TargetConnectableItemReference>
+						<PackageName><![CDATA[com.anylogic.libraries.processmodeling]]></PackageName>
+						<ClassName><![CDATA[Delay]]></ClassName>
+						<ItemName><![CDATA[out]]></ItemName>
+					</TargetConnectableItemReference>
+					<Points>
+						<Point><X>0</X><Y>0</Y></Point>
+						<Point><X>-20</X><Y>0</Y></Point>
 					</Points>
 				</Connector>
 			</Connectors>
@@ -13386,7 +13386,7 @@ return 0;]]></Body>
 					<ReturnType><![CDATA[double]]></ReturnType>
 					<Id>1717152323074</Id>
 					<Name><![CDATA[reset]]></Name>
-					<X>670</X><Y>40</Y>
+					<X>210</X><Y>310</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>false</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -13433,7 +13433,7 @@ return false;]]></Body>
 					<ReturnType><![CDATA[boolean]]></ReturnType>
 					<Id>1717157297986</Id>
 					<Name><![CDATA[is_healthy_for_gym]]></Name>
-					<X>800</X><Y>190</Y>
+					<X>830</X><Y>190</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>false</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -13464,7 +13464,7 @@ transmitted_count += 1;
 					<ReturnType><![CDATA[boolean]]></ReturnType>
 					<Id>1717162832552</Id>
 					<Name><![CDATA[is_healthy_for_school]]></Name>
-					<X>800</X><Y>140</Y>
+					<X>830</X><Y>140</Y>
 					<Label><X>10</X><Y>0</Y></Label>
 					<PublicFlag>false</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -13537,7 +13537,7 @@ transmitted_count += 1;
 
 			<ContainerLinks>
 				<ContainerLink>
-					<Id>1717159079323</Id>
+					<Id>1717584301841</Id>
 					<Name><![CDATA[main]]></Name>
 					<X>50</X><Y>-100</Y>
 					<Label><X>10</X><Y>0</Y></Label>
@@ -13683,7 +13683,7 @@ transmitted_count += 1;
 				<Text>
 					<Id>1717540095566</Id>
 					<Name><![CDATA[text36]]></Name>
-					<X>-250</X><Y>240</Y>
+					<X>-250</X><Y>250</Y>
 					<Label><X>0</X><Y>-10</Y></Label>
 					<PublicFlag>false</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -13693,7 +13693,7 @@ transmitted_count += 1;
 					<Z>0</Z>
 					<Rotation>0.0</Rotation>
 					<Color>-16777216</Color>
-					<Text><![CDATA[Параметры учеников]]></Text>
+					<Text><![CDATA[Параметры ученика]]></Text>
 					<Font>
 						<Name>SansSerif</Name>
 						<Size>16</Size>
@@ -13805,7 +13805,7 @@ transmitted_count += 1;
 					<LineColor>-16777216</LineColor>
 					<LineMaterial>null</LineMaterial>
 					<LineStyle>SOLID</LineStyle>
-					<Width>120</Width>
+					<Width>140</Width>
 					<Height>130</Height>
 					<Rotation>0.0</Rotation>
 					<FillColor>-1</FillColor>
@@ -13814,7 +13814,7 @@ transmitted_count += 1;
 				<Rectangle>
 					<Id>1717542708183</Id>
 					<Name><![CDATA[rectangle7]]></Name>
-					<X>780</X><Y>80</Y>
+					<X>800</X><Y>80</Y>
 					<Label><X>10</X><Y>10</Y></Label>
 					<PublicFlag>false</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -13827,7 +13827,7 @@ transmitted_count += 1;
 					<LineColor>-16777216</LineColor>
 					<LineMaterial>null</LineMaterial>
 					<LineStyle>SOLID</LineStyle>
-					<Width>190</Width>
+					<Width>170</Width>
 					<Height>130</Height>
 					<Rotation>0.0</Rotation>
 					<FillColor>-1</FillColor>
@@ -13846,7 +13846,7 @@ transmitted_count += 1;
 					<Z>0</Z>
 					<Rotation>0.0</Rotation>
 					<Color>-16777216</Color>
-					<Text><![CDATA[Параметры и функции класса]]></Text>
+					<Text><![CDATA[Школьные переменные/методы]]></Text>
 					<Font>
 						<Name>SansSerif</Name>
 						<Size>16</Size>
@@ -13867,7 +13867,7 @@ transmitted_count += 1;
 					<Z>0</Z>
 					<Rotation>0.0</Rotation>
 					<Color>-16777216</Color>
-					<Text><![CDATA[Количество зараженных]]></Text>
+					<Text><![CDATA[Вторичные заражения]]></Text>
 					<Font>
 						<Name>SansSerif</Name>
 						<Size>16</Size>
@@ -13888,7 +13888,7 @@ transmitted_count += 1;
 					<Z>0</Z>
 					<Rotation>0.0</Rotation>
 					<Color>-16777216</Color>
-					<Text><![CDATA[Параметры заболевания]]></Text>
+					<Text><![CDATA[Переменные заболевания]]></Text>
 					<Font>
 						<Name>SansSerif</Name>
 						<Size>16</Size>
@@ -13921,7 +13921,7 @@ transmitted_count += 1;
 				<Text>
 					<Id>1717542856207</Id>
 					<Name><![CDATA[text40]]></Name>
-					<X>50</X><Y>180</Y>
+					<X>40</X><Y>180</Y>
 					<Label><X>0</X><Y>-10</Y></Label>
 					<PublicFlag>false</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -13931,7 +13931,7 @@ transmitted_count += 1;
 					<Z>0</Z>
 					<Rotation>0.0</Rotation>
 					<Color>-16777216</Color>
-					<Text><![CDATA[Параметры иммунитета]]></Text>
+					<Text><![CDATA[Иммунитет]]></Text>
 					<Font>
 						<Name>SansSerif</Name>
 						<Size>16</Size>
@@ -13973,7 +13973,7 @@ transmitted_count += 1;
 					<Z>0</Z>
 					<Rotation>0.0</Rotation>
 					<Color>-16777216</Color>
-					<Text><![CDATA[Состояние]]></Text>
+					<Text><![CDATA[Флаги состояний]]></Text>
 					<Font>
 						<Name>SansSerif</Name>
 						<Size>16</Size>
@@ -13984,7 +13984,7 @@ transmitted_count += 1;
 				<Text>
 					<Id>1717542951297</Id>
 					<Name><![CDATA[text43]]></Name>
-					<X>800</X><Y>100</Y>
+					<X>810</X><Y>90</Y>
 					<Label><X>0</X><Y>-10</Y></Label>
 					<PublicFlag>false</PublicFlag>
 					<PresentationFlag>true</PresentationFlag>
@@ -13994,7 +13994,7 @@ transmitted_count += 1;
 					<Z>0</Z>
 					<Rotation>0.0</Rotation>
 					<Color>-16777216</Color>
-					<Text><![CDATA[Посещение]]></Text>
+					<Text><![CDATA[Проверка здоровья]]></Text>
 					<Font>
 						<Name>SansSerif</Name>
 						<Size>16</Size>
@@ -14094,16 +14094,16 @@ transmitted_count += 1;
 
 			<Parameters>			
 				<Parameter>
-					<ParameterName><![CDATA[D_distance_threshold]]></ParameterName>
-				</Parameter>
-				<Parameter>
-					<ParameterName><![CDATA[P_spreading_intensity]]></ParameterName>
+					<ParameterName><![CDATA[lockdown_length]]></ParameterName>
 				</Parameter>
 				<Parameter>
 					<ParameterName><![CDATA[T_lockdown]]></ParameterName>
 				</Parameter>
 				<Parameter>
-					<ParameterName><![CDATA[lockdown_length]]></ParameterName>
+					<ParameterName><![CDATA[P_spreading_intensity]]></ParameterName>
+				</Parameter>
+				<Parameter>
+					<ParameterName><![CDATA[D_distance_threshold]]></ParameterName>
 				</Parameter>
 			</Parameters>			
 			<PresentationProperties>
